@@ -14,7 +14,6 @@ import Parallax from "../components/Parallax.vue";
 
 export default defineComponent({
   name: "HomeView",
-
   components: {
     Parallax,
   },
