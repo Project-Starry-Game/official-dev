@@ -33,13 +33,13 @@ export default {
 .trailer_container{
     background: #D99A57;
     overflow: scroll;
+    overflow-x: hidden;
     max-height: 90vh;
 }
 
 img.background,
 img.foreground{
     top:0;
-    width: 50%;
     height:auto;
     position: sticky;
 }
