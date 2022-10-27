@@ -15,10 +15,7 @@
             <v-img class="background" ref="background" src="@/assets/building.png" />
             <v-img class="foreground" ref="foreground" src="@/assets/character.png" />
         </div>
-
-        
-    </div> 
-
+    </div>
 
 </template>
 
@@ -31,19 +28,24 @@ export default {
 
 <style>
 .trailer_container{
-    background: #D99A57;
+    background: #2E231B;
     overflow: scroll;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     max-height: 90vh;
 }
-
+.trailer_container::-webkit-scrollbar {
+    display: none;
+}
 img.background,
 img.foreground{
     top:0;
-    height:auto;
     position: sticky;
 }
+img.foreground{
+    width: 100%;
+}
 .section{
+    color: #F2CA95;
     display: flex;
     justify-content: center;
 }

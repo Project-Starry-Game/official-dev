@@ -33,6 +33,15 @@ import { ref, onMounted, onUnmounted } from 'vue'
 export default {
   name: "Home",
   components: {},
+  data: () => ({
+      offsetTop: 0,
+    }),
+
+    methods: {
+      onScroll (e) {
+        this.offsetTop = e.target.scrollTop
+      },
+    },
   setup() {
     const foreground = ref(null)
     const background = ref(null)

@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    <trailer />
-    <div class="body">
-      <navbar/>
-      <outline />
-    </div>
-    
+    <!-- <linstener/> -->
+      <trailer />
+      <div class="body">
+        <navbar/>
+        <outline />
+      </div>
     <!-- <carousel />
     <div class="container">
       <div class="row p-2">
@@ -35,7 +35,7 @@ import trailer from "@/components/trailer.vue";
 import navbar from "@/components/navbar.vue";
 import outline from "@/components/outline.vue";
 // import lobby from "@/components/Home/lobby.vue";
-
+import linstener from "@/components/scrollEventListener.vue"
 
 export default {
   name: "Home",
@@ -74,6 +74,7 @@ export default {
     navbar,
     outline,
     // lobby,
+    linstener,
   },
 };
 
