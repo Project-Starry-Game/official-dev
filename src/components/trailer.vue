@@ -44,28 +44,30 @@ export default {
 .trailer_container::-webkit-scrollbar {
   display: none;
 }
-.img_container{
-  
-}
+
 .background {
   margin-top: -100%;
   top: 0%;
 }
 .foreground {
+    position: sticky;
     top: 100%;
     z-index: 100;
 }
 .section {
-    
+    background-image: linear-gradient(to bottom right, #2E231B 0%, #9C8C83 100%);
+    height: 50vh;
+    /* opacity: 0.4; */
     color: #f2ca95;
     display: flex;
     justify-content: center;
-    
 }
+
 .section2_container {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  justify-content: center;
 }
+
 </style>
