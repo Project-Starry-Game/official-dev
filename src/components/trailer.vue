@@ -4,16 +4,16 @@
     fluid
   >
     <!-- style="overflow: scroll; max-height: 95vh" -->
+    <div class="section section-1" ref="first">
+        <v-img class="logo" ref="logo" src="@/assets/logo_shadow.png" />
+    </div>
 
     <div class="img_container"  >
       <v-img class="foreground" ref="foreground" src="@/assets/character.png" />
       <v-img class="background" ref="background" src="@/assets/building.png" />
     </div>
 
-
-    <div class="section section-1" ref="first">
-      <h1>STARRY</h1>
-    </div>
+ 
 
     <div class="section section-2" ref="second" style="margin-bottom: -70px">
       <div class="section2_container">
@@ -24,6 +24,7 @@
         </p>
       </div>
     </div>
+
   </v-container>
 </template>
 
@@ -36,18 +37,19 @@ export default {
 
 <style>
 .trailer_container {
-  background: #2e231b;
+  /* background: #2e231b; */
   overflow: scroll;
   /* overflow-x: hidden; */
   max-height: 90vh;
 }
-.trailer_container::-webkit-scrollbar {
+/* .trailer_container::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .background {
-  margin-top: -100%;
-  top: 0%;
+    position: sticky;
+    margin-top: -100%;
+    top: 0%;
 }
 .foreground {
     position: sticky;
@@ -55,14 +57,20 @@ export default {
     z-index: 100;
 }
 .section {
-    background-image: linear-gradient(to bottom right, #2E231B 0%, #9C8C83 100%);
-    height: 50vh;
-    /* opacity: 0.4; */
+    background-image: linear-gradient(to bottom, #1E140D 70%, #9C8C83 250%);
+    height: 90vh;
+    opacity: 0.9;
+    /* margin-top: -50%; */
+    position:sticky;
     color: #f2ca95;
     display: flex;
+    align-items: center;
     justify-content: center;
+    z-index: 200;
 }
-
+.logo{
+    height: 50vh;
+}
 .section2_container {
   display: flex;
   flex-direction: column;

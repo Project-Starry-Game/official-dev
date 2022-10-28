@@ -1,5 +1,10 @@
 <template>
-  <nav>nav</nav>
+  <nav>
+    <v-img class="bar_logo" ref="logo" src="@/assets/logo_shadow.png" />
+    <div class="bar_items">
+      <div class=""></div>
+    </div>
+  </nav>
   
 </template>
 
@@ -11,9 +16,13 @@ export default {
 
 <style>
 nav{
-  padding: 10px;
+  padding-right: 10px;
   background: lightblue;
   position: sticky;
   top:0;
+}
+.bar_logo{
+  width: 8%;
+  height: auto;
 }
 </style>
