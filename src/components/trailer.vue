@@ -1,19 +1,18 @@
 <template>
   <v-container
-    class="ma-0 pa-0 trailer_container"
+    class="ma-0 pa-0 trailer_container overflow-y-auto"
     fluid
+    id="scroll-target"
   >
     <!-- style="overflow: scroll; max-height: 95vh" -->
     <div class="section section-1" ref="first">
-        <v-img class="logo" ref="logo" src="@/assets/logo_shadow.png" />
+      <v-img class="logo" ref="logo" src="@/assets/logo_shadow.png" />
     </div>
 
-    <div class="img_container"  >
+    <div class="img_container" v-scroll:#scroll-target="onScroll">
       <v-img class="foreground" ref="foreground" src="@/assets/character.png" />
       <v-img class="background" ref="background" src="@/assets/building.png" />
     </div>
-
- 
 
     <div class="section section-2" ref="second" style="margin-bottom: -70px">
       <div class="section2_container">
@@ -24,14 +23,28 @@
         </p>
       </div>
     </div>
-
   </v-container>
 </template>
 
 <script>
 export default {
   name: "Home",
+  data: () => ({
+    offsetTop: 0,
+  }),
   components: {},
+  methods: {
+    onScroll(e) {
+      const foreground = ref(null);
+      const background = ref(null);
+
+      this.offsetTop = e.target.scrollTop;
+      const maxBackgroundSize = 150;
+      const backgroundSize = this.offsetTop / (maxBackgroundSize - 100);
+      background.value.style.transform =
+        "scale(" + (100 + backgroundSize * 0.4) / 100 + ")";
+    },
+  },
 };
 </script>
 
@@ -47,29 +60,29 @@ export default {
 } */
 
 .background {
-    position: sticky;
-    margin-top: -100%;
-    top: 0%;
+  position: sticky;
+  margin-top: -100%;
+  top: 0%;
 }
 .foreground {
-    position: sticky;
-    top: 100%;
-    z-index: 100;
+  position: sticky;
+  top: 100%;
+  z-index: 100;
 }
 .section {
-    background-image: linear-gradient(to bottom, #1E140D 70%, #9C8C83 250%);
-    height: 90vh;
-    opacity: 0.9;
-    /* margin-top: -50%; */
-    position:sticky;
-    color: #f2ca95;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 200;
+  background-image: linear-gradient(to bottom, #1e140d 70%, #9c8c83 250%);
+  height: 90vh;
+  opacity: 0.9;
+  /* margin-top: -50%; */
+  position: sticky;
+  color: #f2ca95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
 }
-.logo{
-    height: 50vh;
+.logo {
+  height: 50vh;
 }
 .section2_container {
   display: flex;
@@ -77,5 +90,4 @@ export default {
   align-items: center;
   justify-content: center;
 }
-
 </style>
