@@ -2,7 +2,6 @@
   <v-container
     class="ma-0 pa-0 trailer_container"
     fluid
-
   >
     <!-- style="overflow: scroll; max-height: 95vh" -->
 
@@ -12,7 +11,7 @@
     </div>
 
 
-     <div class="section section-1" ref="first">
+    <div class="section section-1" ref="first">
       <h1>STARRY</h1>
     </div>
 
@@ -45,16 +44,15 @@ export default {
 .trailer_container::-webkit-scrollbar {
   display: none;
 }
-
+.img_container{
+  
+}
 .background {
-  position: sticky;
-  margin-top:-160px;
+  margin-top: -100%;
+  top: 0%;
 }
 .foreground {
-    position: sticky;
-    top:100%;
-    left: 45%;
-    width: 10%;
+    top: 100%;
     z-index: 100;
 }
 .section {
