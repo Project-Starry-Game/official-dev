@@ -1,10 +1,18 @@
 <template>
   <v-container
-    class="ma-0 pa-0"
+    class="ma-0 pa-0 trailer_container"
     fluid
-    style="overflow: scroll; max-height: 95vh"
+
   >
-    <div class="section section-1" ref="first">
+    <!-- style="overflow: scroll; max-height: 95vh" -->
+
+    <div class="img_container"  >
+      <v-img class="foreground" ref="foreground" src="@/assets/character.png" />
+      <v-img class="background" ref="background" src="@/assets/building.png" />
+    </div>
+
+
+     <div class="section section-1" ref="first">
       <h1>STARRY</h1>
     </div>
 
@@ -16,11 +24,6 @@
           empty bottle in your hand.
         </p>
       </div>
-    </div>
-
-    <div class="img_container">
-      <v-img class="foreground" ref="foreground" src="@/assets/character.png" />
-      <v-img class="background" ref="background" src="@/assets/building.png" />
     </div>
   </v-container>
 </template>
@@ -42,24 +45,29 @@ export default {
 .trailer_container::-webkit-scrollbar {
   display: none;
 }
-img.background {
+
+.background {
   position: sticky;
+  margin-top:-160px;
 }
 .foreground {
-  position: sticky;
-  top: 100%;
-  left: 45%;
-  width: 10%;
-  z-index: 100;
+    position: sticky;
+    top:100%;
+    left: 45%;
+    width: 10%;
+    z-index: 100;
 }
 .section {
-  color: #f2ca95;
-  display: flex;
-  justify-content: center;
+    
+    color: #f2ca95;
+    display: flex;
+    justify-content: center;
+    
 }
 .section2_container {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 </style>
