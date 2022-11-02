@@ -10,8 +10,8 @@
     </div>
 
     <div class="img_container" v-scroll:#scroll-target="onScroll">
-      <v-img class="foreground" ref="foreground" src="@/assets/character.png" />
-      <v-img class="background" ref="background" src="@/assets/building.png" />
+      <v-img class="foreground" id="foreground" ref="foreground" src="@/assets/character.png" />
+      <v-img class="background" id="background" ref="background" src="@/assets/building.png" />
     </div>
 
     <div class="section section-2" ref="second" style="margin-bottom: -70px">
@@ -27,24 +27,42 @@
 </template>
 
 <script>
+import { ref } from 'vue'
 export default {
   name: "Home",
+  components: {},
   data: () => ({
     offsetTop: 0,
   }),
-  components: {},
-  methods: {
-    onScroll(e) {
-      const foreground = ref(null);
-      const background = ref(null);
 
-      this.offsetTop = e.target.scrollTop;
-      const maxBackgroundSize = 150;
-      const backgroundSize = this.offsetTop / (maxBackgroundSize - 100);
-      background.value.style.transform =
-        "scale(" + (100 + backgroundSize * 0.4) / 100 + ")";
+  methods: {
+    onScroll (e) {
+      this.offsetTop = e.target.scrollTop
+       const foreground = ref(null);
+    const background = ref(null);
+
+    const maxBackgroundSize = 150;
+    const backgroundSize = this.offsetTop / (maxBackgroundSize - 100);
+    background.value.style.transform =
+      'scale(' + (100 + backgroundSize * 0.4) / 100 + ')'
     },
+    
   },
+    
+  setup() {
+   
+   
+      
+  
+  return {
+    foreground,
+    background,
+    first,
+    second,
+    }
+
+  },
+
 };
 </script>
 
@@ -70,7 +88,7 @@ export default {
   z-index: 100;
 }
 .section {
-  background-image: linear-gradient(to bottom, #1e140d 70%, #9c8c83 250%);
+  background-image: linear-gradient(to bottom, #1e140d 30%, #9c8c83 150%);
   height: 90vh;
   opacity: 0.9;
   /* margin-top: -50%; */
@@ -91,3 +109,4 @@ export default {
   justify-content: center;
 }
 </style>
+ㄝ

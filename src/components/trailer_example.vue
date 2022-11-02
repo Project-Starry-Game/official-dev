@@ -12,16 +12,16 @@
     <div class="section section-1" ref="first">
       <div class="section1_container">
         <h1>STARRY</h1>
-      </div>
-        
+      </div>    
     </div>
+
     <div class="section section-2" ref="second">
       <div class="section2_container">
         <p>Swallow the Black liquid, tell me what you see. </p>
         <p>A beautiful world with silence? A broken coffin ?Or even just that empty bottle in your hand.</p>
       </div>
-    </div>
-  
+    </div> 
+
   </div>
   
 </template>
@@ -29,24 +29,13 @@
 
 <script>
 import { ref, onMounted, onUnmounted } from 'vue'
-
 export default {
-  name: "Home",
-  components: {},
-  data: () => ({
-      offsetTop: 0,
-    }),
-
-    methods: {
-      onScroll (e) {
-        this.offsetTop = e.target.scrollTop
-      },
-    },
   setup() {
     const foreground = ref(null)
     const background = ref(null)
     const first = ref(null)
     const second = ref(null)
+
     onMounted(() => {
       document.addEventListener('scroll', handleScroll)
     })
@@ -56,24 +45,26 @@ export default {
     })
 
     const handleScroll = (evt) => {
-      const scrollY = window.scrollY
-      console.log(scrollY);
-      // decreases as user scrolls
-      first.value.style.opacity =
-        (100 - (scrollY + window.innerHeight - first.value.offsetHeight)*0.2) / 100
-      // increases as user scrolls
-      // second.value.style.opacity =
-      //   (scrollY + window.innerHeight - second.value.offsetTop*0.5) / 100
-      second.value.style.opacity =
-        ((scrollY + window.innerHeight - second.value.offsetTop)*0.2) / 100  
-      const maxBackgroundSize = 150
-      const backgroundSize = scrollY / ( maxBackgroundSize- 100) // increases as user scrolls
-      // zoom the background at a slower rate
-      background.value.style.transform =
-        'scale(' + (100 + backgroundSize * 0.4) / 100 + ')'
-      // foreground.value.style.transform =
-      //   'scale(' + (100 + backgroundSize) / 100 + ')'
+    const scrollY = window.scrollY
+    // decreases as user scrolls
+    first.value.style.opacity =
+      (100 - (scrollY + window.innerHeight - first.value.offsetHeight)) / 100
+    // increases as user scrolls
+    second.value.style.opacity =
+      (scrollY + window.innerHeight - second.value.offsetTop) / 100
+
+    const maxBackgroundSize = 120
+    const backgroundSize = scrollY / (maxBackgroundSize - 100) // increases as user scrolls
+
+    // zoom the background at a slower rate
+    background.value.style.transform =
+      'scale(' + (100 + backgroundSize * 0.4) / 100 + ')'
+    foreground.value.style.transform =
+      'scale(' + (100 + backgroundSize) / 100 + ')'
   }
+
+
+
     return {
       foreground,
       background,
@@ -81,9 +72,9 @@ export default {
       second,
     }
   },
-  
 }
 </script>
+
 
 <style>
 .img_container{
@@ -168,7 +159,7 @@ img.foreground {
   line-height: 150%;
   
 }
-.section1_container{
+.section1_container{ 
   background-image: linear-gradient(to bottom right, #2E231B 40%, #9C8C83 130%);
   width: 100vw;
   height: 50vh;
@@ -183,4 +174,4 @@ h1{
   justify-items: center;
 
 }
-</style>
+</style>78;-l=i=lili9=ii==
