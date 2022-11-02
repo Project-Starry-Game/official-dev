@@ -1,74 +1,102 @@
 <template>
-  <div>
-    <v-row
-      justify="center"
-      align="center"
-    >
-      <v-subheader>Offset Top</v-subheader>
-      {{ offsetTop }}
-    </v-row>
-    <v-container
-      id="scroll-target"
-        class=" pa-0 ma-0"
-    >
-    <!-- class="overflow-y-auto" -->
-      <!-- <v-row
-        v-scroll:#scroll-target="onScroll"
-        align="center"
-        justify="center"
-        style="height: 1000px" 
-      >
-      </v-row> -->
-    <v-container class="trailer_container  pa-0 ma-0" v-scroll:#scroll-target="onScroll">
-        <div class="section section-1" ref="first">
-            <h1>STARRY</h1>
-        </div>
+  <v-container
+    class="ma-0 pa-0 trailer_container overflow-y-auto"
+    fluid
+    id="scroll-target"
+  >
+    <!-- style="overflow: scroll; max-height: 95vh" -->
+    <div class="section section-1" ref="first">
+      <v-img class="logo" ref="logo" src="@/assets/logo_shadow.png" />
+    </div>
 
-        <div class="section section-2" ref="second">
-            <div class="section2_container">
-                <p>Swallow the Black liquid, tell me what you see. </p>
-                <p>A beautiful world with silence? A broken coffin ?Or even just that empty bottle in your hand.</p>
-            </div>
-        </div>    
+    <div class="img_container" v-scroll:#scroll-target="onScroll">
+      <v-img
+        class="foreground"
+        id="foreground"
+        ref="foreground"
+        src="@/assets/character.png"
+      />
+      <v-img
+        class="background"
+        id="background"
+        ref="background"
+        src="@/assets/building.png"
+      />
+    </div>
 
-        <div class="img_container">
-            <v-img class="background" id="background" ref="background" src="@/assets/building.png" />
-            <v-img class="foreground" ref="foreground" src="@/assets/character.png" />
-        </div>
-    </v-container>
-    </v-container>
-  </div>
-</template>  
+    <div class="section section-2" ref="second" style="margin-bottom: -70px">
+      <div class="section2_container">
+        <p>Swallow the Black liquid, tell me what you see.</p>
+        <p>
+          A beautiful world with silence? A broken coffin ?Or even just that
+          empty bottle in your hand.
+        </p>
+      </div>
+    </div>
+  </v-container>
+</template>
 
 <script>
-  export default {
-    data: () => ({
-      offsetTop: 0,
-    }),
-
-    methods: {
-      onScroll (e) {
-        this.offsetTop = e.target.scrollTop
-
-        const maxBackgroundSize = 150;
-        const backgroundSize = this.offsetTop / (maxBackgroundSize - 100);
-        document.getElementById("background").style.transform = 
-            'scale(' + (100 + backgroundSize * 0.4) / 100 + ')'
-        },
+export default {
+  name: "Home",
+  data: () => ({
+    offsetTop: 0,
+  }),
+  components: {},
+  methods: {
+    onScroll(e) {
+      console.log(e);
+      this.offsetTop = e.target.scrollTop / e.target.scrollHeight;
+      console.log(this.offsetTop);
+      const maxBackgroundSize = 150;
+      const backgroundSize = this.offsetTop / (maxBackgroundSize - 100);
+      var bk = document.getElementById("background");
+      bk.style.transform = "scale(" + (100 + backgroundSize * 5) / 100 + ")";
     },
-    
-  }
+  },
+};
 </script>
 
 <style>
-
 .trailer_container {
   /* background: #2e231b; */
   overflow: scroll;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   max-height: 90vh;
 }
 /* .trailer_container::-webkit-scrollbar {
   display: none;
 } */
+
+.background {
+  position: sticky;
+  margin-top: -100%;
+  top: 0%;
+}
+.foreground {
+  position: sticky;
+  top: 100%;
+  z-index: 100;
+}
+.section {
+  background-image: linear-gradient(to bottom, #1e140d 70%, #9c8c83 250%);
+  height: 90vh;
+  opacity: 0.9;
+  /* margin-top: -50%; */
+  position: sticky;
+  color: #f2ca95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+.logo {
+  height: 50vh;
+}
+.section2_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 </style>
