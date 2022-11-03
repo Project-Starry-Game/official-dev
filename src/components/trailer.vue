@@ -1,15 +1,14 @@
 <template>
-  <v-container
+  <canvas
     class="ma-0 pa-0 trailer_container overflow-y-auto"
     fluid
     id="scroll-target"
   >
-    <!-- style="overflow: scroll; max-height: 95vh" -->
-    <div class="section section-1" id="first" ref="first">
+    <!-- <div class="section section-1" id="first" ref="first">
       <v-img class="logo" ref="logo" src="@/assets/logo_shadow.png" />
-    </div>
-
+    </div> -->
     <div class="img_container" v-scroll:#scroll-target="onScroll">
+    
       <v-img
         class="foreground"
         id="foreground"
@@ -24,8 +23,9 @@
       />
     </div>
 
-    <div class="section section-2" ref="second" >
-      <!-- style="margin-bottom: -70px" -->
+
+    <!-- <div class="section section-2" ref="second" >
+  
       <div class="section2_container">
         <p>Swallow the Black liquid, tell me what you see.</p>
         <p>
@@ -33,8 +33,8 @@
           empty bottle in your hand.
         </p>
       </div>
-    </div>
-  </v-container>
+    </div> -->
+  </canvas>
 </template>
 
 <script>
@@ -44,6 +44,27 @@ export default {
     offsetTop: 0,
   }),
   components: {},
+  setup() {
+     const canvas = document.getElementById("scroll-target");
+    onMounted(() => {
+        
+
+
+        context = canvas.getContext('2d');  
+        background_img = new Image();
+        background_img.src = "assets/building.png";
+        canvas.height=500
+        canvas.width=400
+        context.drawImage(background_img, 100, 100);
+
+      })
+      return{
+        canvas,
+      }
+
+
+  },
+  
   methods: {
     onScroll(e) {
       this.offsetTop = e.target.scrollTop;
@@ -55,36 +76,40 @@ export default {
       var bk = document.getElementById("background");
       
       // bk.style.transform = "scale(" + (100 + backgroundSize * 5) / 100 + ")";
-      bk.style.transform = "scale(" + (1 + Math.pow((this.offsetTop / maxScrollTop ), 2))  + ")";
+      background.style.transform = "scale(" + (1 + Math.pow((this.offsetTop / maxScrollTop ), 2))  + ")";
       console.log(this.offsetTop);
       console.log(trailer_container.scrollHeight);
 
       first.style.opacity =
-      (100 - (this.offsetTop + window.innerHeight - first.offsetHeight)) / 100
+      (150 - (this.offsetTop + window.innerHeight - first.offsetHeight)) / 100
     },
   },
 };
 </script>
 
 <style>
-.trailer_container {
-  /* background: #2e231b; */
-  /* overflow: scroll; */
+
+/* .trailer_container {
+  background: #2e231b;
+  overflow: scroll;
   overflow-x: hidden;
   height: 100vh;
-}
-.trailer_container::-webkit-scrollbar {
+  width:  100vw;
+} */
+/* .trailer_container::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .background {
   position: sticky;
   /* margin-top: -100%; */
+  opacity: 30%;
   top: 0%;
+  z-index: 10;
 }
 .foreground {
   position: sticky;
-  top: 100%;
+  top: 0%;
   z-index: 100;
 }
 .section {
@@ -96,11 +121,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 200;
+  z-index: 300;
 }
 .logo {
   height: 50vh;
 }
+
 .section2_container {
   display: flex;
   flex-direction: column;
