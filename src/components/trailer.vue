@@ -24,7 +24,8 @@
       />
     </div>
 
-    <div class="section section-2" ref="second" style="margin-bottom: -70px">
+    <div class="section section-2" ref="second" >
+      <!-- style="margin-bottom: -70px" -->
       <div class="section2_container">
         <p>Swallow the Black liquid, tell me what you see.</p>
         <p>
@@ -46,12 +47,17 @@ export default {
   methods: {
     onScroll(e) {
       this.offsetTop = e.target.scrollTop;
-      console.log(this.offsetTop);
-      const maxBackgroundSize = 150;
-      const backgroundSize = this.offsetTop / (maxBackgroundSize - 100);
+      
+      var trailer_container = document.getElementById("scroll-target");
+      const maxScrollTop = trailer_container.scrollHeight - window.innerHeight;
+      // const maxBackgroundSize = 150;
+      // const backgroundSize = this.offsetTop / (maxBackgroundSize - 100);
       var bk = document.getElementById("background");
-      console.log(backgroundSize);
-      bk.style.transform = "scale(" + (100 + backgroundSize * 5) / 100 + ")";
+      
+      // bk.style.transform = "scale(" + (100 + backgroundSize * 5) / 100 + ")";
+      bk.style.transform = "scale(" + (1 + Math.pow((this.offsetTop / maxScrollTop ), 2))  + ")";
+      console.log(this.offsetTop);
+      console.log(trailer_container.scrollHeight);
 
       first.style.opacity =
       (100 - (this.offsetTop + window.innerHeight - first.offsetHeight)) / 100
@@ -63,17 +69,17 @@ export default {
 <style>
 .trailer_container {
   /* background: #2e231b; */
-  overflow: scroll;
+  /* overflow: scroll; */
   overflow-x: hidden;
-  max-height: 90vh;
+  height: 100vh;
 }
-/* .trailer_container::-webkit-scrollbar {
+.trailer_container::-webkit-scrollbar {
   display: none;
-} */
+}
 
 .background {
   position: sticky;
-  margin-top: -100%;
+  /* margin-top: -100%; */
   top: 0%;
 }
 .foreground {
@@ -83,8 +89,7 @@ export default {
 }
 .section {
   background-image: linear-gradient(to bottom, #1e140d 70%, #9c8c83 250%);
-  height: 90vh;
-  opacity: 0.9;
+  height: 100vh;
   /* margin-top: -50%; */
   position: sticky;
   color: #f2ca95;
