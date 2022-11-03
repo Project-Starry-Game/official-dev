@@ -31,7 +31,7 @@
 // @ is an alias to /src
 // import carousel from "@/components/Home/carousel.vue";
 // import card from "@/components/Home/card.vue";
-import trailer from "@/components/scrollEventListener.vue";
+import trailer from "@/components/trailer.vue";
 import navbar from "@/components/navbar.vue";
 import outline from "@/components/outline.vue";
 // import lobby from "@/components/Home/lobby.vue";

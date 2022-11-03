@@ -5,7 +5,7 @@
     id="scroll-target"
   >
     <!-- style="overflow: scroll; max-height: 95vh" -->
-    <div class="section section-1" ref="first">
+    <div class="section section-1" id="first" ref="first">
       <v-img class="logo" ref="logo" src="@/assets/logo_shadow.png" />
     </div>
 
@@ -50,8 +50,11 @@ export default {
       const maxBackgroundSize = 150;
       const backgroundSize = this.offsetTop / (maxBackgroundSize - 100);
       var bk = document.getElementById("background");
-      console.log(bk);
+      console.log(backgroundSize);
       bk.style.transform = "scale(" + (100 + backgroundSize * 5) / 100 + ")";
+
+      first.style.opacity =
+      (100 - (this.offsetTop + window.innerHeight - first.offsetHeight)) / 100
     },
   },
 };
