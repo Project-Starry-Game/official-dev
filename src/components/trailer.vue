@@ -4,9 +4,9 @@
     fluid
     id="scroll-target"
   >
-    <!-- <div class="section section-1" id="first" ref="first">
+    <div class="section section-1" id="first" ref="first">
       <v-img class="logo" ref="logo" src="@/assets/logo_shadow.png" />
-    </div> -->
+    </div>
     <div class="img_container" v-scroll:#scroll-target="onScroll">
     
       <v-img
@@ -22,6 +22,7 @@
         src="@/assets/building.png"
       />
     </div>
+
 
 
     <div class="section section-2" ref="second" >
@@ -81,7 +82,7 @@ export default {
       console.log(trailer_container.scrollHeight);
 
       first.style.opacity =
-      (150 - (this.offsetTop + window.innerHeight - first.offsetHeight)) / 100
+      (300 - (this.offsetTop + window.innerHeight - first.offsetHeight)) / 100
     },
   },
 };
@@ -89,38 +90,44 @@ export default {
 
 <style>
 
-/* .trailer_container {
+.trailer_container {
   background: #2e231b;
   overflow: scroll;
   overflow-x: hidden;
   height: 100vh;
   width:  100vw;
-} */
+}
 /* .trailer_container::-webkit-scrollbar {
   display: none;
 } */
-
+.img_container{
+  z-index: 10;
+  top: 0%;
+}
 .background {
   position: sticky;
-  /* margin-top: -100%; */
+  
   opacity: 30%;
   top: 0%;
-  z-index: 10;
+  
 }
 .foreground {
   position: sticky;
   top: 0%;
-  z-index: 100;
+  
 }
 .section {
   background-image: linear-gradient(to bottom, #1e140d 70%, #9c8c83 250%);
   height: 100vh;
+
+  
   /* margin-top: -50%; */
-  position: sticky;
+  
   color: #f2ca95;
   display: flex;
   align-items: center;
   justify-content: center;
+  
   z-index: 300;
 }
 .logo {
