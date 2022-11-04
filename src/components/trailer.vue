@@ -1,5 +1,5 @@
 <template>
-  <canvas
+  <v-container
     class="ma-0 pa-0 trailer_container overflow-y-auto"
     fluid
     id="scroll-target"
@@ -24,7 +24,7 @@
     </div>
 
 
-    <!-- <div class="section section-2" ref="second" >
+    <div class="section section-2" ref="second" >
   
       <div class="section2_container">
         <p>Swallow the Black liquid, tell me what you see.</p>
@@ -33,37 +33,37 @@
           empty bottle in your hand.
         </p>
       </div>
-    </div> -->
-  </canvas>
+    </div>
+  </v-container>
 </template>
 
 <script>
+import { ref, onMounted, onUnmounted } from 'vue'
 export default {
   name: "Home",
   data: () => ({
     offsetTop: 0,
   }),
   components: {},
-  setup() {
-     const canvas = document.getElementById("scroll-target");
-    onMounted(() => {
-        
+  // setup() {
+  //   const canvas = document.getElementById("scroll-target");
+  //   context = canvas.getContext('2d');  
+
+  //   onMounted(() => {
+      
+  //     background_img = new Image();
+  //     background_img.src = "assets/building.png";
+  //     canvas.height=500
+  //     canvas.width=400
+  //     context.drawImage(background_img, 100, 100);
+
+  //   })
+  //   return{
+  //     canvas,
+  //   }
 
 
-        context = canvas.getContext('2d');  
-        background_img = new Image();
-        background_img.src = "assets/building.png";
-        canvas.height=500
-        canvas.width=400
-        context.drawImage(background_img, 100, 100);
-
-      })
-      return{
-        canvas,
-      }
-
-
-  },
+  // },
   
   methods: {
     onScroll(e) {
