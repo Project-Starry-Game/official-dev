@@ -2,10 +2,10 @@
   <div class="home">
     <!-- <linstener/> -->
       <trailer />
-      <div class="body">
+      <!-- <div class="body">
         <navbar/>
         <outline />
-      </div>
+      </div> -->
     <!-- <carousel />
     <div class="container">
       <div class="row p-2">
