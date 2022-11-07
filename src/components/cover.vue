@@ -5,11 +5,11 @@
     id="scroll-target"> 
 
     <div class="box box2" v-scroll:#scroll-target="onScroll">
-        <v-img class="background" ref="background" src="@/assets/building.png" />
+        <v-img class="background" id="background" ref="background" src="@/assets/building.png" />
         <v-img class="foreground" ref="foreground" src="@/assets/character.png" />
     </div>
     <div class="section">
-        <v-img class="section-1" id="first" ref="first" src="@/assets/logo_shadow.png" />
+        <!-- <v-img class="section-1" id="first" ref="first" src="@/assets/logo_shadow.png" /> -->
         <div class="section-2" id="second" ref="second">
             <p>Swallow the Black liquid, tell me what you see.</p>
             <p>
@@ -35,6 +35,7 @@ export default {
         var bk = document.getElementById("background");
         this.offsetTop = e.target.scrollTop;
         
+
         console.log(e.target.scrollHeight)
         console.log(window.innerHeight)
         console.log(this.offsetTop)
@@ -47,6 +48,7 @@ export default {
         bk.value.style.transform = "scale(" + (1 + Math.pow((this.offsetTop / e.target.scrollHeight ), 2))  + ")";
         console.log(first.style.opacity)
         console.log(second.style.opacity)
+
         }
       
   },
@@ -57,14 +59,16 @@ export default {
 <style>
 .ad_container{
     position: relative;
-    max-height: 100vh;
+    /* max-height: 100vh; */
     overflow: scroll;
     overflow-x: hidden;    
 }
 .section{
     background-image: linear-gradient(to bottom, #2E231B 70%, #9c8c83 180%);
+
+
     position: absolute;
-    top: 0%;
+    /* top: 0%; */
     width: 100vw;
     min-height: 100vh;
     
@@ -74,6 +78,7 @@ export default {
 .section-1{
     width: 100vw;
     align-content: center;
+
     opacity: 100%;
     height: 50%;
     z-index: 500;
@@ -89,7 +94,7 @@ export default {
 }
 
 .box2{
-    background: #b97e4f;
+    /* background: #b97e4f; */
     position: absolute;
     top: 0%;
 }
