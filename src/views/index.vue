@@ -3,8 +3,12 @@
     <!-- <linstener/> -->
       <trailer />
       <div class="body">
-        <navbar/>
-        <outline />
+        <navbar>
+        </navbar>
+        <outline>
+          <furniture class="furniture_items">
+
+          </furniture>
       </div>
     <!-- <carousel />
     <div class="container">
@@ -36,7 +40,7 @@ import navbar from "@/components/navbar.vue";
 import outline from "@/components/outline.vue";
 // import lobby from "@/components/Home/lobby.vue";
 import linstener from "@/components/scrollEventListener.vue"
-
+import furniture from "@/components/oufurniture.vue";
 export default {
   name: "Home",
   data() {
@@ -63,6 +67,11 @@ export default {
           title: "Title B",
           subtitle: "Subbb B",
           content: "This is my content BBB",
+        },
+      ],
+      furnitureDatas: [
+        {
+            img:123
         },
       ],
     };
