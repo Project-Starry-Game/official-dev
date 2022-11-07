@@ -6,9 +6,7 @@
         <navbar>
         </navbar>
         <outline>
-          <furniture class="furniture_items">
-
-          </furniture>
+        </outline>
       </div>
     <!-- <carousel />
     <div class="container">
@@ -40,7 +38,7 @@ import navbar from "@/components/navbar.vue";
 import outline from "@/components/outline.vue";
 // import lobby from "@/components/Home/lobby.vue";
 import linstener from "@/components/scrollEventListener.vue"
-import furniture from "@/components/oufurniture.vue";
+
 export default {
   name: "Home",
   data() {
@@ -84,6 +82,7 @@ export default {
     outline,
     // lobby,
     linstener,
+    
   },
 };
 
