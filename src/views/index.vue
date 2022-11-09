@@ -6,13 +6,11 @@
         <navbar />
         <outline />
         <carousel :slides="this.carouselDatas" />
-        <furniture class="furniture_items" :imgs="this.furnitureDatas" />
-        
+        <furniture class="furniture_items" :imgs="this.furnitureDatas" /> 
         <!-- <card/> -->
       </div>
   </div>    
 </template>
-
 
 <script>
 // @ is an alias to /src
