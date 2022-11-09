@@ -3,13 +3,12 @@
     class="ad_container ma-0 pa-0 overflow-y-auto"
     fluid
     id="scroll-target"> 
-
     <div class="box box2" v-scroll:#scroll-target="onScroll">
         <v-img class="background" id="background" ref="background" src="@/assets/building.png" />
         <v-img class="foreground" ref="foreground" src="@/assets/character.png" />
     </div>
-    <div class="section">
-        <!-- <v-img class="section-1" id="first" ref="first" src="@/assets/logo_shadow.png" /> -->
+    <div class="text_section">
+        <v-img class="section-1" id="first" ref="first" src="@/assets/logo_shadow.png" />
         <div class="section-2" id="second" ref="second">
             <p>Swallow the Black liquid, tell me what you see.</p>
             <p>
@@ -31,27 +30,20 @@ export default {
     components: {},
     methods: {
         onScroll(e) {
-        var ad_container = document.getElementById("scroll-target");
         var bk = document.getElementById("background");
         this.offsetTop = e.target.scrollTop;
-        
-
-        console.log(e.target.scrollHeight)
-        console.log(window.innerHeight)
-        console.log(this.offsetTop)
-
+      
         first.style.opacity =
         1- (this.offsetTop /(e.target.scrollHeight - window.innerHeight))
 
         second.style.opacity =
         (this.offsetTop /(e.target.scrollHeight - window.innerHeight))
-        bk.value.style.transform = "scale(" + (1 + Math.pow((this.offsetTop / e.target.scrollHeight ), 2))  + ")";
-        console.log(first.style.opacity)
-        console.log(second.style.opacity)
-
+        
+        bk.style.transform = "scale(" + (1 + Math.pow((e.target.scrollTop /window.innerHeight ), 2))  + ")";
+        console.log(this.offsetTop / e.target.scrollHeight)
         }
       
-  },
+    },
 }
 
 </script>
@@ -59,30 +51,31 @@ export default {
 <style>
 .ad_container{
     position: relative;
-    /* max-height: 100vh; */
+    height: 100vh;
     overflow: scroll;
     overflow-x: hidden;    
 }
-.section{
-    background-image: linear-gradient(to bottom, #2E231B 70%, #9c8c83 180%);
-
-
+.text_section{
+    display: flex;
     position: absolute;
-    /* top: 0%; */
+    justify-content: center; 
+    align-items: center;
+    
+    top: 0%;
     width: 100vw;
     min-height: 100vh;
-    
+    /* opacity: 10%; */
     z-index: 300;
 }
 
 .section-1{
-    width: 100vw;
-    align-content: center;
-
-    opacity: 100%;
-    height: 50%;
+    background-image: linear-gradient(to bottom, #3b2210 70%, #9c8c83 180%);
+    width: 50vw;
+    height: 50vh;
     z-index: 500;
+    opacity: 100%;
 }
+
 .section-2{
     width: 100vw;
     position:absolute;
@@ -101,6 +94,5 @@ export default {
 .background{
     width: 100vw;
 }
-
 
 </style>
