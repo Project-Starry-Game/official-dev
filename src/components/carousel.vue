@@ -6,6 +6,7 @@
       show-arrows-on-hover
       height="100%"
       :show-arrows="false"
+      class="c_carousel"
     >
       <template v-slot:prev="{ on, attrs }">
         <v-btn icon v-bind="attrs" v-on="on" color="transparent" elevation="0">
@@ -49,5 +50,9 @@ export default {
 <style>
 .carousel_block {
   height: 100vh;
+}
+.c_carousel {
+  position: relative;
+  top: -10%;
 }
 </style>

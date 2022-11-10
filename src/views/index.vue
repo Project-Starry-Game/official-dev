@@ -9,7 +9,7 @@
         :slides="this.carouselDatas"
         style="background: #acfcd9"
       />
-      <!-- <furniture class="furniture_items" :imgs="this.furnitureDatas" /> -->
+      <furniture class="furniture_items" :imgs="this.furnitureDatas" />
     </div>
   </div>
 </template>
@@ -26,10 +26,10 @@ import trailer from "@/components/cover.vue";
 import navbar from "@/components/navbar.vue";
 import gameIntro from "@/components/gameIntro.vue";
 import cumstomCarousel from "@/components/carousel.vue";
+import furniture from "@/components/furniture.vue";
 // import outline from "@/components/outline.vue";
 // import lobby from "@/components/Home/lobby.vue";
 // import linstener from "@/components/scrollEventListener.vue"
-// import furniture from "@/components/furniture.vue";
 
 export default {
   name: "Home",
@@ -136,6 +136,7 @@ export default {
     gameIntro,
     navbar,
     cumstomCarousel,
+    furniture,
   },
 };
 </script>
