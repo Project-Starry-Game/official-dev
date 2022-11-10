@@ -1,14 +1,9 @@
 <template>
   <div class="gameIntroBK">
     <v-container class="gameIntro" fluid>
-      <h1 class="flex text-center" style="position: relative; top: 2vh">
+      <h1 class="flex text-center" style="position: relative; top: 3vh">
         Soul of Butterflies series
-        <v-card-subtitle
-          class="pa-5"
-          style="position: relative; margin-bottom: -100px"
-        >
-          Genres: Puzzle
-        </v-card-subtitle>
+        <v-card-subtitle class="pa-5 ma-5"> Genres: Puzzle </v-card-subtitle>
       </h1>
       <v-row class="pa-1 ma-1 gameIntroRow">
         <v-col xl="4" lg="4" md="12" xs="12" sm="12">
@@ -41,7 +36,18 @@
           </p>
           <div style="padding: 2vw" class="hidden-lg-and-up"></div>
         </v-col>
-        <v-col xl="8" lg="8" md="12" xs="12" sm="12"> </v-col>
+        <v-col xl="8" lg="8" md="12" xs="12" sm="12">
+          <iframe
+            class="iframe_trailer"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/pHPQFf3oQlg"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </v-col>
       </v-row>
     </v-container>
   </div>
@@ -74,7 +80,8 @@ export default {
 }
 .iframe_trailer {
   display: block;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 .intro_text_block {
   margin: auto;

@@ -4,8 +4,11 @@
     <!-- <trailer /> -->
     <div class="body">
       <navbar :subs="this.navbarDatas" />
-      <gameIntro />
-      <!-- <carousel :slides="this.carouselDatas" /> -->
+      <gameIntro style="background: #fc6471" />
+      <cumstomCarousel
+        :slides="this.carouselDatas"
+        style="background: #acfcd9"
+      />
       <!-- <furniture class="furniture_items" :imgs="this.furnitureDatas" /> -->
     </div>
   </div>
@@ -22,7 +25,7 @@ import trailer from "@/components/cover.vue";
 >>>>>>> 0334cc2 (Setting game intro block)
 import navbar from "@/components/navbar.vue";
 import gameIntro from "@/components/gameIntro.vue";
-// import carousel from "@/components/carousel.vue";
+import cumstomCarousel from "@/components/carousel.vue";
 // import outline from "@/components/outline.vue";
 // import lobby from "@/components/Home/lobby.vue";
 // import linstener from "@/components/scrollEventListener.vue"
@@ -41,6 +44,7 @@ export default {
       carouselDatas: [
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
           src: require('@/assets/11.jpg'),
           color: "#232323"
         },
@@ -53,14 +57,24 @@ export default {
 =======
           src: require("@/assets/Carpet_TeddyHead.png"),
           color: "#232323",
+=======
+          src: require("@/assets/Poster/Poster1.jpg"),
+          color: "transparent",
+>>>>>>> 12b7ae1 (Setting carousel block)
         },
         {
-          src: require("@/assets/character.png"),
+          src: require("@/assets/Poster/Poster2.jpg"),
+          color: "transparent",
         },
         {
+<<<<<<< HEAD
           src: require("@/assets/Carpet_TeddyHead.png"),
           color: "#efef54",
 >>>>>>> 0334cc2 (Setting game intro block)
+=======
+          src: require("@/assets/Poster/Poster3.jpg"),
+          color: "transparent",
+>>>>>>> 12b7ae1 (Setting carousel block)
         },
       ],
       cardDatas: [
@@ -121,6 +135,7 @@ export default {
   components: {
     gameIntro,
     navbar,
+    cumstomCarousel,
   },
 };
 </script>
