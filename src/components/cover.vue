@@ -3,7 +3,7 @@
     class="ad_container ma-0 pa-0 overflow-y-auto"
     fluid
     id="scroll-target"> 
-    <div class="box box2" v-scroll:#scroll-target="onScroll">
+    <div class="box box" v-scroll:#scroll-target="onScroll">
         <v-img class="background" id="background" ref="background" src="@/assets/building.png" />
         <v-img class="foreground" ref="foreground" src="@/assets/character.png" />
     </div>
@@ -39,8 +39,9 @@ export default {
         second.style.opacity =
         (this.offsetTop /(e.target.scrollHeight - window.innerHeight))
         
-        bk.style.transform = "scale(" + (1 + Math.pow((e.target.scrollTop /window.innerHeight ), 2))  + ")";
-        console.log(this.offsetTop / e.target.scrollHeight)
+        bk.style.transform = "scale(" + (1 + (e.target.scrollTop /window.innerHeight ) )  + ")";
+        console.log(e.target.scrollTop )
+        console.log(bk.style.transform )
         }
       
     },
@@ -52,7 +53,7 @@ export default {
 .ad_container{
     position: relative;
     height: 100vh;
-    overflow: scroll;
+    /* overflow: scroll; */
     overflow-x: hidden;    
 }
 .text_section{
@@ -74,6 +75,7 @@ export default {
     height: 50vh;
     z-index: 500;
     opacity: 100%;
+    
 }
 
 .section-2{
@@ -86,13 +88,15 @@ export default {
     opacity: 0%;
 }
 
-.box2{
+.box{
     /* background: #b97e4f; */
     position: absolute;
+    height:130vh;
+    width: 100vw;
     top: 0%;
 }
 .background{
-    width: 100vw;
+    min-width: 100vw;
 }
 
 </style>

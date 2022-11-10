@@ -1,16 +1,21 @@
 <template>
   <v-card
-    color="grey lighten-4"
-    class="bar"
-    flat
-    height="200px"
-    tile
+    color="grey lighten-4"   
+    class="bar" 
   >
-    <v-toolbar dense>
+    <v-toolbar  
+        dense
+        flat
+        tile
+    >
       <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
 
-      <v-toolbar-title>Title</v-toolbar-title>
-      <v-img class="bar_logo" ref="logo" src="@/assets/logo_shadow.png" />
+      <v-toolbar-title>
+        <v-img 
+        align-self-start
+        height= "40px"
+        class="bar_logo" ref="logo" src="@/assets/LOGO_ONLY_BLACK.png" />
+      </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -30,7 +35,10 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+    name: "Home",
+    props: ["subs"],
+  }
 
 </script>
 
@@ -38,7 +46,16 @@
 
 <style>
 .bar{
+    background: lightblue;
     position: sticky;
+    top:0;
+    border-radius:0;
+    z-index: 10000;
+}
+.bar_logo{
+    display: flex;
+    text-align:left;
+
 }
 
 </style>

@@ -3,10 +3,17 @@
     class="flex-nowrap"
     id="row_img"
   >
+
     <v-img 
+      class="furniture_img p-7"
       v-for="(img, index) in this.imgs" 
-      :key="index" :src="img.src" :width="img.width" :align="align">
+      :key="index" :src="img.src" :width="img.width" :align="align"
+      height="300px">
     </v-img>
+  
+
+ 
+ 
   </v-row>
 </template>
 
@@ -23,5 +30,9 @@ export default {
 </script>
  
 <style>
+.furniture_img{
+  background-color: aquamarine;
 
+  padding: 30%;
+}
 </style>

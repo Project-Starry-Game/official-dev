@@ -3,11 +3,12 @@
     <!-- <linstener/> -->
       <trailer />
       <div class="body">
-        <navbar />
-        <outline />
+        <navbar :subs="this.navbarDatas"/>
+        
         <carousel :slides="this.carouselDatas" />
         <furniture class="furniture_items" :imgs="this.furnitureDatas" /> 
-        <!-- <card/> -->
+        <outline />
+        <card/>
       </div>
   </div>    
 </template>
@@ -16,7 +17,7 @@
 // @ is an alias to /src
 import carousel from "@/components/carousel.vue";
 // import card from "@/components/card.vue";
-import trailer from "@/components/cover.vue"; 
+import trailer from "@/components/canvas.vue"; 
 import navbar from "@/components/navbar.vue";
 import outline from "@/components/outline.vue";
 // import lobby from "@/components/Home/lobby.vue";
@@ -27,6 +28,12 @@ export default {
   name: "Home",
   data() {
     return {
+      navbarDatas:[
+        {
+          icon:"mdi-heart",
+          name:"a",
+        },
+      ],
       carouselDatas: [
         // "https://miro.medium.com/max/1400/1*goSuHxAHqRR8alv_h_3nCw.png",
         // "https://miro.medium.com/max/1400/1*goSuHxAHqRR8alv_h_3nCw.png",
@@ -65,23 +72,26 @@ export default {
       ],
       furnitureDatas: [
         {
-          src: require('@/assets/Carpet_TeddyHead.png'),
-          width: "20%"        
+          src: require('@/assets/glasscan_broken.png'),
+          width: "20%",
+          color:"#20e833"
         },
         {
-          src: require('@/assets/Carpet_TeddyBody.png'),
+          src: require('@/assets/View_Newspaper1.png'),
+          width: "20%",
+          color:"#efef54"
+             
+        },
+        {
+          src: require('@/assets/View_Newspaper2.png'),
           width: "20%"   
         },
         {
-          src: require('@/assets/Carpet_TeddyHead.png'),
+          src: require('@/assets/View_Newspaper3.png'),
           width: "20%"   
         },
         {
-          src: require('@/assets/Carpet_TeddyBody.png'),
-          width: "20%"   
-        },
-        {
-          src: require('@/assets/Carpet_TeddyHead.png'),
+          src: require('@/assets/suggestion box.png'),
           width: "20%"   
         },
         {

@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <canvas id="canvas"> </canvas>
-  </div>
+  <body>
+    <canvas class="ad_container" id="canvas"> </canvas>
+  </body>
 </template>
 
 <script>
@@ -22,7 +22,7 @@ export default {
       const background_img = new Image();
       background_img.src = require("@/assets/building.png");
       background_img.onload = function () {
-        context.drawImage(background_img, -1920 / 5, -1925 / 5, 1920, 1925);
+        context.drawImage(background_img, 0, 0, 1920, 1925);
       };
     });
     return {};
@@ -60,6 +60,19 @@ export default {
 /* .trailer_container::-webkit-scrollbar {
   display: none;
 } */
+body{
+  height: 200vh;
+}
+canvas {
+  /* width: 100%;
+  height: 100%; */
+  position: fixed;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%,-50%);
+  max-height: 100vh;
+
+}
 
 .background {
   position: sticky;
@@ -95,9 +108,5 @@ export default {
   justify-content: center;
 }
 
-canvas {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
+
 </style>
