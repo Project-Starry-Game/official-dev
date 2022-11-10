@@ -1,46 +1,46 @@
 <template>
   <div class="home">
     <!-- <linstener/> -->
-      <trailer />
-      <div class="body">
-        <navbar :subs="this.navbarDatas"/>
-        
-        <carousel :slides="this.carouselDatas" />
-        <furniture class="furniture_items" :imgs="this.furnitureDatas" /> 
-        <outline />
-        <card/>
-      </div>
-  </div>    
+    <!-- <trailer /> -->
+    <div class="body">
+      <navbar :subs="this.navbarDatas" />
+      <gameIntro />
+      <!-- <carousel :slides="this.carouselDatas" /> -->
+      <!-- <furniture class="furniture_items" :imgs="this.furnitureDatas" /> -->
+    </div>
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
+<<<<<<< HEAD
 import carousel from "@/components/carousel.vue";
 // import card from "@/components/card.vue";
 import trailer from "@/components/cover.vue"; 
+=======
+// import trailer from "@/components/canvas.vue";
+>>>>>>> 0334cc2 (Setting game intro block)
 import navbar from "@/components/navbar.vue";
-import outline from "@/components/outline.vue";
+import gameIntro from "@/components/gameIntro.vue";
+// import carousel from "@/components/carousel.vue";
+// import outline from "@/components/outline.vue";
 // import lobby from "@/components/Home/lobby.vue";
 // import linstener from "@/components/scrollEventListener.vue"
-import furniture from "@/components/furniture.vue"
+// import furniture from "@/components/furniture.vue";
 
 export default {
   name: "Home",
   data() {
     return {
-      navbarDatas:[
+      navbarDatas: [
         {
-          icon:"mdi-heart",
-          name:"a",
+          icon: "mdi-heart",
+          name: "a",
         },
       ],
       carouselDatas: [
-        // "https://miro.medium.com/max/1400/1*goSuHxAHqRR8alv_h_3nCw.png",
-        // "https://miro.medium.com/max/1400/1*goSuHxAHqRR8alv_h_3nCw.png",
-        // "https://miro.medium.com/max/1400/1*goSuHxAHqRR8alv_h_3nCw.png",
-        // "https://miro.medium.com/max/1400/1*goSuHxAHqRR8alv_h_3nCw.png",
-        // "https://miro.medium.com/max/1400/1*goSuHxAHqRR8alv_h_3nCw.png",
         {
+<<<<<<< HEAD
           src: require('@/assets/11.jpg'),
           color: "#232323"
         },
@@ -50,8 +50,18 @@ export default {
         {
           src: require('@/assets/13.jpg'),
           color: "#efef54"
+=======
+          src: require("@/assets/Carpet_TeddyHead.png"),
+          color: "#232323",
         },
-    
+        {
+          src: require("@/assets/character.png"),
+        },
+        {
+          src: require("@/assets/Carpet_TeddyHead.png"),
+          color: "#efef54",
+>>>>>>> 0334cc2 (Setting game intro block)
+        },
       ],
       cardDatas: [
         {
@@ -72,62 +82,47 @@ export default {
       ],
       furnitureDatas: [
         {
-          src: require('@/assets/glasscan_broken.png'),
+          src: require("@/assets/glasscan_broken.png"),
           width: "20%",
-          color:"#20e833"
+          color: "#20e833",
         },
         {
-          src: require('@/assets/View_Newspaper1.png'),
+          src: require("@/assets/View_Newspaper1.png"),
           width: "20%",
-          color:"#efef54"
-             
+          color: "#efef54",
         },
         {
-          src: require('@/assets/View_Newspaper2.png'),
-          width: "20%"   
+          src: require("@/assets/View_Newspaper2.png"),
+          width: "20%",
         },
         {
-          src: require('@/assets/View_Newspaper3.png'),
-          width: "20%"   
+          src: require("@/assets/View_Newspaper3.png"),
+          width: "20%",
         },
         {
-          src: require('@/assets/suggestion box.png'),
-          width: "20%"   
+          src: require("@/assets/suggestion box.png"),
+          width: "20%",
         },
         {
-          src: require('@/assets/Carpet_TeddyBody.png'),
-          width: "20%"   
+          src: require("@/assets/Carpet_TeddyBody.png"),
+          width: "20%",
         },
         {
-          src: require('@/assets/Carpet_TeddyHead.png'),
-          width: "20%"   
+          src: require("@/assets/Carpet_TeddyHead.png"),
+          width: "20%",
         },
         {
-          src: require('@/assets/Carpet_TeddyBody.png'),
-          width: "20%"   
+          src: require("@/assets/Carpet_TeddyBody.png"),
+          width: "20%",
         },
       ],
-
     };
   },
   components: {
-    carousel,
-    // card,
-    trailer,
+    gameIntro,
     navbar,
-    outline,
-    // lobby,
-    // linstener,
-    furniture,
-    
   },
 };
-
-
-
-
 </script>
 
-<style>
-
-</style>
+<style></style>
