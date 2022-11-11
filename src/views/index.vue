@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <!-- <linstener/> -->
-    <!-- <trailer /> -->
+    <trailer />
     <div class="body">
       <navbar :subs="this.navbarDatas" />
       <gameIntro style="background: #fc6471" />
@@ -17,12 +16,16 @@
 <script>
 // @ is an alias to /src
 <<<<<<< HEAD
+<<<<<<< HEAD
 import carousel from "@/components/carousel.vue";
 // import card from "@/components/card.vue";
 import trailer from "@/components/cover.vue"; 
 =======
 // import trailer from "@/components/canvas.vue";
 >>>>>>> 0334cc2 (Setting game intro block)
+=======
+import trailer from "@/components/canvas.vue";
+>>>>>>> 44d889d (Setup index componetns excluding trailer)
 import navbar from "@/components/navbar.vue";
 import gameIntro from "@/components/gameIntro.vue";
 import cumstomCarousel from "@/components/carousel.vue";
@@ -97,42 +100,51 @@ export default {
       furnitureDatas: [
         {
           src: require("@/assets/glasscan_broken.png"),
-          width: "20%",
+          width: "50%",
+          height: "50%",
           color: "#20e833",
         },
         {
           src: require("@/assets/View_Newspaper1.png"),
-          width: "20%",
+          width: "50vw",
+          height: "50vh",
           color: "#efef54",
         },
         {
           src: require("@/assets/View_Newspaper2.png"),
-          width: "20%",
+          width: "110px",
+          height: "60px",
         },
         {
           src: require("@/assets/View_Newspaper3.png"),
-          width: "20%",
+          width: "110px",
+          height: "60px",
         },
         {
           src: require("@/assets/suggestion box.png"),
-          width: "20%",
+          width: "110px",
+          height: "60px",
         },
         {
           src: require("@/assets/Carpet_TeddyBody.png"),
-          width: "20%",
+          width: "110px",
+          height: "60px",
         },
         {
           src: require("@/assets/Carpet_TeddyHead.png"),
-          width: "20%",
+          width: "110px",
+          height: "60px",
         },
         {
           src: require("@/assets/Carpet_TeddyBody.png"),
-          width: "20%",
+          width: "110px",
+          height: "60px",
         },
       ],
     };
   },
   components: {
+    trailer,
     gameIntro,
     navbar,
     cumstomCarousel,
