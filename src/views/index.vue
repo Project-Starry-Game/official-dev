@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import trailer from "@/components/canvas.vue";
+import trailer from "@/components/cover.vue";
 import navbar from "@/components/navbar.vue";
 import gameIntro from "@/components/gameIntro.vue";
 import cumstomCarousel from "@/components/carousel.vue";
@@ -42,10 +42,7 @@ export default {
           src: require("@/assets/Poster/Poster2.jpg"),
           color: "transparent",
         },
-        {
-          src: require("@/assets/Carpet_TeddyHead.png"),
-          color: "#efef54",
-        },
+      
         {
           src: require("@/assets/Poster/Poster3.jpg"),
           color: "transparent",
