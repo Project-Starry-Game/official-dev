@@ -33,7 +33,7 @@ export default {
     name: "Home",
     props: ["slides"],
     mounted() {
-    console.log(this.slides);
+    // console.log(this.slides);
 
   },
 

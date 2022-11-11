@@ -1,6 +1,6 @@
 <template>
-  <body>
-    <canvas class="ad_container" id="canvas"> </canvas>
+  <body class="ad_container" id="container">
+    <canvas  id="canvas"> </canvas>
   </body>
 </template>
 
@@ -14,15 +14,19 @@ export default {
   components: {},
   setup() {
     onMounted(() => {
+   
       const canvas = document.getElementById("canvas");
       const context = canvas.getContext("2d");
-      context.canvas.width = window.innerWidth;
-      context.canvas.height = window.innerHeight;
+
+
+      canvas.width = 1920;
+      canvas.height = 1925;
+
 
       const background_img = new Image();
       background_img.src = require("@/assets/building.png");
       background_img.onload = function () {
-        context.drawImage(background_img, 0, 0, 1920, 1925);
+      context.drawImage(background_img, 0, 0);
       };
     });
     return {};
@@ -50,33 +54,32 @@ export default {
 </script>
 
 <style>
-/* .trailer_container {
+.trailer_container {
   background: #2e231b;
   overflow: scroll;
   overflow-x: hidden;
   height: 100vh;
   width:  100vw;
-} */
+}
 /* .trailer_container::-webkit-scrollbar {
   display: none;
 } */
-body{
-  height: 200vh;
-}
-canvas {
-  /* width: 100%;
+
+
+/* canvas {
+  width: 100%;
   height: 100%; */
-  position: fixed;
+  /* position: fixed;
   left: 50%;
   right: 50%;
   transform: translate(-50%,-50%);
   max-height: 100vh;
 
-}
-
+} */
+/* 
 .background {
   position: sticky;
-  /* margin-top: -100%; */
+
   opacity: 30%;
   top: 0%;
   z-index: 10;
@@ -89,7 +92,6 @@ canvas {
 .section {
   background-image: linear-gradient(to bottom, #1e140d 70%, #9c8c83 250%);
   height: 100vh;
-  /* margin-top: -50%; */
   position: sticky;
   color: #f2ca95;
   display: flex;
@@ -106,7 +108,7 @@ canvas {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
+} */
 
 
 </style>
