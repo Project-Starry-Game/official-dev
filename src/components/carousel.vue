@@ -21,7 +21,12 @@
       <v-carousel-item v-for="(slide, i) in slides" :key="i">
         <v-sheet :color="slide.color" height="100vh">
           <v-row class="fill-height" align="center" justify="center">
-            <v-img max-width="800" :src="slide.src" sizes="50" />
+            <v-img
+              max-width="800"
+              class="carousel_img"
+              :src="slide.src"
+              sizes="50"
+            />
           </v-row>
         </v-sheet>
       </v-carousel-item>
@@ -58,5 +63,9 @@ export default {
 .c_carousel {
   position: relative;
   top: -10%;
+}
+.carousel_img {
+  position: relative;
+  top: 10vh;
 }
 </style>
