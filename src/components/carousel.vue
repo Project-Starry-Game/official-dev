@@ -36,23 +36,9 @@
 
 <script>
 export default {
-<<<<<<< HEAD
-    name: "Home",
-    props: ["slides"],
-    mounted() {
-    // console.log(this.slides);
-
-=======
   name: "Home",
   props: ["slides"],
-<<<<<<< HEAD
-  mounted() {
-    console.log(this.slides);
->>>>>>> 0334cc2 (Setting game intro block)
-  },
-=======
   mounted() {},
->>>>>>> be79fa1 (Remove used console)
 };
 </script>
 

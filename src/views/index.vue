@@ -14,18 +14,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
-<<<<<<< HEAD
-<<<<<<< HEAD
-import carousel from "@/components/carousel.vue";
-// import card from "@/components/card.vue";
-import trailer from "@/components/cover.vue"; 
-=======
-// import trailer from "@/components/canvas.vue";
->>>>>>> 0334cc2 (Setting game intro block)
-=======
 import trailer from "@/components/canvas.vue";
->>>>>>> 44d889d (Setup index componetns excluding trailer)
 import navbar from "@/components/navbar.vue";
 import gameIntro from "@/components/gameIntro.vue";
 import cumstomCarousel from "@/components/carousel.vue";
@@ -46,38 +35,20 @@ export default {
       ],
       carouselDatas: [
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-          src: require('@/assets/11.jpg'),
-          color: "#232323"
-        },
-        {
-          src: require('@/assets/12.jpg'),
-        },
-        {
-          src: require('@/assets/13.jpg'),
-          color: "#efef54"
-=======
-          src: require("@/assets/Carpet_TeddyHead.png"),
-          color: "#232323",
-=======
           src: require("@/assets/Poster/Poster1.jpg"),
           color: "transparent",
->>>>>>> 12b7ae1 (Setting carousel block)
         },
         {
           src: require("@/assets/Poster/Poster2.jpg"),
           color: "transparent",
         },
         {
-<<<<<<< HEAD
           src: require("@/assets/Carpet_TeddyHead.png"),
           color: "#efef54",
->>>>>>> 0334cc2 (Setting game intro block)
-=======
+        },
+        {
           src: require("@/assets/Poster/Poster3.jpg"),
           color: "transparent",
->>>>>>> 12b7ae1 (Setting carousel block)
         },
       ],
       cardDatas: [

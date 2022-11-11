@@ -1,31 +1,4 @@
 <template>
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <v-row 
-    class="flex-nowrap"
-    id="row_img"
-  > 
-      <v-img 
-        class="furniture_img p-7"
-        v-for="(img, index) in this.imgs" 
-        :key="index" :src="img.src" :width="img.width" :align="align"
-        height="300px">
-      </v-img>
-=======
-  <v-row class="flex-nowrap" id="row_img">
-    <v-img
-      class="furniture_img p-7"
-      v-for="(img, index) in this.imgs"
-      :key="index"
-      :src="img.src"
-      :width="img.width"
-      :align="align"
-      height="300px"
-    >
-    </v-img>
->>>>>>> be79fa1 (Remove used console)
-  </v-row>
-=======
   <div class="furniture_img">
     <div class="slider">
       <div class="slide-track">
@@ -50,7 +23,6 @@
       </div>
     </div>
   </div>
->>>>>>> 44d889d (Setup index componetns excluding trailer)
 </template>
 
 <script>
@@ -67,18 +39,8 @@ export default {
 </script>
 
 <style>
-<<<<<<< HEAD
-.box{
-  background-color: rgb(127, 115, 151);
-}
-.furniture_img{
-=======
 .furniture_img {
->>>>>>> be79fa1 (Remove used console)
   background-color: aquamarine;
-<<<<<<< HEAD
-  /* padding: 30%; */
-=======
   width: 100vw;
   min-height: 100vh;
   display: grid;
@@ -155,6 +117,5 @@ export default {
   right: 0%;
   top: 0;
   transform: rotate(180deg);
->>>>>>> 44d889d (Setup index componetns excluding trailer)
 }
 </style>
