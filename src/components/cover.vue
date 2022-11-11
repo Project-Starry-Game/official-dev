@@ -54,6 +54,9 @@ export default {
         first.style.opacity =
         1- (this.offsetTop /(e.target.scrollHeight - window.innerHeight))
 
+        section_1.style.opacity =
+        1- (this.offsetTop /(e.target.scrollHeight - window.innerHeight)*2)
+
 
 
         // second.style.opacity =
@@ -101,7 +104,6 @@ export default {
     height: 100vh;
 }
 .section-1{
-    
     width: 30vw;
     height: 30vh;
     z-index: 500;
@@ -114,12 +116,14 @@ export default {
 
 .section-2{
     width: 100vw;
+    height: 100vh;
     position:sticky;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     opacity: 100%;
+    z-index: 200;
    
 }
 
