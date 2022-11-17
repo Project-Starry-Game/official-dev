@@ -558,6 +558,11 @@ vite@^3.0.9:
   optionalDependencies:
     fsevents "~2.3.2"
 
+vue-aos@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/vue-aos/-/vue-aos-3.1.0.tgz#17a9187c3e3e4d1735fd40f31c9a8b0e443dc6e1"
+  integrity sha512-FzuN8p/4ewJoPDjq3/6IykOdXQtGVWXP+bcOzBWxVcQnawE2VjZLS8TdHqpd80PVVvs1qCTvjkfn5mug5xCQ4Q==
+
 vue-router@4:
   version "4.1.6"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.1.6.tgz#b70303737e12b4814578d21d68d21618469375a1"

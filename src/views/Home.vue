@@ -2,6 +2,8 @@
   <v-app>
     <homeNavbar :subs="navbarDatas" />
     <gameIntro />
+    <div v-vue-aos="{ animationClass: 'fadeIn animated' }">asf</div>
+
     <cumstomCarousel :slides="this.carouselDatas" />
     <slidebar :imgs="slidebarDatas" />
     <itchPage />
