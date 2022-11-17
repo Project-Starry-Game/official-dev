@@ -19,7 +19,7 @@ import newspaper from "@/assets/View_Newspaper1.png";
 
 <script>
 import homeNavbar from "@/components/Home/navbar.vue";
-import gameIntro from "@/components/Home/gameIntro.vue";
+import gameIntro from "@/components/Home/test.vue";
 import cumstomCarousel from "@/components/Home/cumstomCarousel.vue";
 import slidebar from "@/components/Home/slidebar.vue";
 import itchPage from "@/components/Home/itchPage.vue";
