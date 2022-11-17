@@ -14,6 +14,8 @@ import { createApp } from "vue";
 import { registerPlugins } from "@/plugins";
 import vuetify from "./plugins/vuetify";
 
+import { useImage } from "@/apis/global";
+
 import router from "@/router";
 import store from "@/store";
 
