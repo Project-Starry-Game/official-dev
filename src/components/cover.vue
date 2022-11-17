@@ -9,15 +9,15 @@
     </div>
     <v-row class="text_section">
         <div class="img_section" id="first">
-            <v-img class="section-1" id="section-1" ref="first" src="@/assets/logo_shadow.png" />
+            <!-- <v-img class="section-1" id="section-1" ref="first" src="@/assets/logo_shadow.png" /> -->
         </div>
         
         <div class="section-2" id="second" ref="second">
-            <p>Swallow the Black liquid, tell me what you see.</p>
+            <!-- <p>Swallow the Black liquid, tell me what you see.</p>
             <p>
             A beautiful world with silence? A broken coffin ?Or even just that
             empty bottle in your hand.
-            </p>
+            </p> -->
         </div>
     </v-row>
 </v-container>
@@ -79,7 +79,7 @@ export default {
     position: relative;
     height: 100vh;
     /* overflow: scroll; */
-    overflow-x: hidden;    
+    overflow-x: hidden;
 }
 .ad_container::-webkit-scrollbar {
   display: none;
@@ -89,7 +89,7 @@ export default {
     display: flex;
     position: absolute;
     justify-content: center; 
-    align-items: center;
+    /* align-items: center; */
     
     top: 0%;
     width: 100vw;
@@ -107,9 +107,9 @@ export default {
     height: 30vh;
     z-index: 500;
     opacity: 100%;
-    top: 45%;
+    /* top: 45%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); */
     
 }
 

@@ -126,7 +126,7 @@ export default {
   color: #f2ca95;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
   
   z-index: 300;
 }

@@ -1,145 +1,107 @@
 <template>
-  <div class="root">
-    <!-- <div class="section section-1" id="first" ref="first">
-      <v-img class="logo" ref="logo" src="@/assets/logo_shadow.png" />
-       
-    </div> -->
-    <v-img class="background" ref="background" src="@/assets/building.png" />
-    <v-img
-      class="foreground" ref="foreground" src="@/assets/character.png" />
+  <v-container 
+    class="ma-0 pa-0 ad_container overflow-y-auto"
+    fluid 
+    id="scroll-target"
+    v-scroll:#scroll-target="onScroll"
+  >
+    <div class="background">
 
-    <!-- <div class="section section-2" ref="second" >
-      <div class="section2_container">
-        <p>Swallow the Black liquid, tell me what you see.</p>
-        <p>
-          A beautiful world with silence? A broken coffin ?Or even just that
-          empty bottle in your hand.
-        </p>
+      <v-img class="background" id="background" ref="background" src="@/assets/bgwithcc.png" />
+
+        
+    </div>
+    <div class="img_container">
+      
+      <div class="img_logo">
+        <v-img class="logo" id="logo" ref="first" src="@/assets/logo_shadow.png" />
       </div>
-    </div> -->
-  </div>
+      
+      
+    </div>
+    <div class="text_section" id="text_section">
+      <p>Swallow the Black liquid, tell me what you see.</p>
+      <p>
+        A beautiful world with silence? A broken coffin ?Or even just that
+        empty bottle in your hand.
+      </p>
+    </div>
+  </v-container >
+
 </template>
 
 
 <script>
-import { ref, onMounted, onUnmounted } from 'vue'
+
 export default {
-  setup() {
-    const foreground = ref(null)
-    const background = ref(null)
-    const first = ref(null)
-    const second = ref(null)
+  name: "Home",
+    data: () => ({
+        offsetTop: 0,   
+    }),
+    components: {},
+     mounted() { 
+    
 
-    onMounted(() => {
-      document.addEventListener('scroll', handleScroll)
-    })
+    },
+    methods: {
+      onScroll(e) {
+      var bk = document.getElementById("background");
+      var logo = document.getElementById("logo");
+      var text_section = document.getElementById("text_section");
+      this.offsetTop = e.target.scrollTop;
 
-    onUnmounted(() => {
-      document.removeEventListener('scroll', handleScroll)
-    })
+      logo.style.opacity =
+      1- (this.offsetTop /(e.target.scrollHeight - window.innerHeight))
 
-  const handleScroll = (evt) => {
-    const scrollY = window.scrollY
-    // decreases as user scrolls
-    first.value.style.opacity =
-      (100 - (scrollY + window.innerHeight - first.value.offsetHeight)) / 100
-    // increases as user scrolls
-    second.value.style.opacity =
-      (scrollY + window.innerHeight - second.value.offsetTop) / 100
+      text_section.style.opacity =
+        (this.offsetTop /(e.target.scrollHeight - window.innerHeight)*2)
+      }
+    },
 
-    const maxBackgroundSize = 120
-    const backgroundSize = scrollY / (maxBackgroundSize - 100) // increases as user scrolls
-
-    // zoom the background at a slower rate
-    background.value.style.transform =
-      'scale(' + (100 + backgroundSize * 0.4) / 100 + ')'
-    foreground.value.style.transform =
-      'scale(' + (100 + backgroundSize) / 100 + ')'
-  }
-
-
-
-
-    return {
-      foreground,
-      background,
-      first,
-      second,
-    }
-  },
 }
 </script>
 
-
-<style>
-.root{
-  background: #2e231b;
-  overflow: scroll;
-  overflow-x: hidden;
-  height: 300vh;
-  width:  90vw;
-
-}
-
-.foreground {
-  /* Fill background */
-  /* min-height: 100%;
-  min-width: 1024px; */
-  position: sticky;
-  /* Scale proportionately */
-  /* width: 100%;
-  height: auto; */
-}
-
-.background {
-  /* Positioning */
-  /* position: sticky; */
-  object-fit:cover;  
-  min-width:100%;
-  min-height: 100%;
-  top: 0;
-  left: 0;
-}
-.section {
-  min-height: 100vh;
+<style >
+/* div{
+  border: 3px solid black;
+  padding: 30px;
+  height: 300px;
+} */
+.ad_container{
   position: relative;
+  /* overflow: scroll; */
+  overflow-x: hidden;
+  max-height: 100vh;
 }
-/* .section > div {
-  position: fixed;
-  color: white;
-  centers this div
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-} */
+.img_container{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  background-color: rgb(0, 0, 0,0.5);
+  z-index: 10; 
 
-.section-1 {
-  margin-bottom: 500px; /* determines the gap between our two sections */
-  font-size: 4em;
 }
-.logo {
-  height: 50vh;
+.img_logo{
+  /* transform: scale(0.5); */
+  position: relative;
+  top: 30px;
+  /* background-color: rgba(255, 129, 129, 0.6); */
+  width: 30%;
 }
-
-.section-2 {
-  opacity: 0; /* defaults to 0 because it's not visible */
+.text_section{
+  background-color: rgb(243, 132, 213);
+  width: 100vw;
+  /* position: sticky; */
+  bottom: 0px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0%;
 }
-
-/* .section-2 div {
-  background-color: rgba(255, 255, 255, 0.7);
-  color: black;
-  text-align: center;
-  padding: 50px;
-  max-width: 300px;
-} */
-
-.section-2 h2 {
-  font-size: 2em;
-  margin-bottom: 40px;
-}
-
-.section-2 p {
-  line-height: 150%;
-}
-
 </style>
+

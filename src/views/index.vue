@@ -4,19 +4,19 @@
     <div class="body">
       <navbar :subs="this.navbarDatas" />
       <gameIntro style="background: #fc6471" />
-      <cumstomCarousel
+      <!-- <cumstomCarousel
         :slides="this.carouselDatas"
         style="background: #acfcd9"
       />
-      <furniture class="furniture_items" :imgs="this.furnitureDatas" />
+      <furniture class="furniture_items" :imgs="this.furnitureDatas" /> -->
     </div>
   </div>
 </template>
 
 <script>
-import trailer from "@/components/cover.vue";
+import trailer from "@/components/trailer_example.vue";
 import navbar from "@/components/navbar.vue";
-import gameIntro from "@/components/gameIntro.vue";
+import gameIntro from "@/components/test.vue";
 import cumstomCarousel from "@/components/carousel.vue";
 import furniture from "@/components/furniture.vue";
 // import outline from "@/components/outline.vue";
@@ -67,24 +67,24 @@ export default {
       ],
       furnitureDatas: [
         {
-          src: require("@/assets/glasscan_broken.png"),
+          src: require("@/assets/Lobby_Cabinet.png"),
           width: "50%",
           height: "50%",
           color: "#20e833",
         },
         {
-          src: require("@/assets/View_Newspaper1.png"),
+          src: require("@/assets/Lobby_Carpet.png"),
           width: "50vw",
           height: "50vh",
           color: "#efef54",
         },
         {
-          src: require("@/assets/View_Newspaper2.png"),
+          src: require("@/assets/Lobby_Counter.png"),
           width: "110px",
           height: "60px",
         },
         {
-          src: require("@/assets/View_Newspaper3.png"),
+          src: require("@/assets/Lobby_NewspaperShelf.png"),
           width: "110px",
           height: "60px",
         },
