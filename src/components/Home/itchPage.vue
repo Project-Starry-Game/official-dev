@@ -1,7 +1,7 @@
 <template>
   <section class="itchPage">
-    <desktop class="hidden-sm-and-down" />
-    <phone class="hidden-md-and-up" />
+    <desktop class="hidden-xs" />
+    <phone class="hidden-sm-and-up" />
   </section>
 </template>
 

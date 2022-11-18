@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid no-gutter>
+  <v-container fluid no-gutter class="itchPagePhone">
     <v-row justify="center" align="center">
       <div
         class="d-flex d-flex flex-column justify-center"
@@ -10,24 +10,24 @@
         <div class="divBlock_yellow_phone">
           <h3 class="text-white pa-2">DEMO</h3>
         </div>
-        <iframe
-          frameborder="0"
-          src="https://itch.io/embed/1033029?border_width=5"
-          width="216"
-          height="175"
-          style="margin: auto"
-          ><a
-            href="https://project-starry.itch.io/soul-of-butterflies-incubation"
-            >Soul of Butterflies : Incubation by Project Starry</a
-          ></iframe
+        <v-img :src="appIcon" width="250"> </v-img>
+
+        <v-btn
+          color="#EB5254"
+          href="https://project-starry.itch.io/soul-of-butterflies-incubation"
+          elevation="0"
+          width="250"
+          class="itch_btn_phone"
         >
-        <span class="pa-2 text-grey">
-          If you like this game, you could also
-        </span>
+          <v-img width="20%" class="pa-2" :src="itchImg"> </v-img>
+          <span class="text-white pa-2"> Get it on itch </span>
+        </v-btn>
         <v-btn
           color="#EB5254"
           href="https://www.patreon.com/bePatron?u=56283261"
           elevation="0"
+          width="250"
+          class="itch_btn_phone"
         >
           <v-img width="10%" class="pa-2" :src="patreonImg"> </v-img>
           <span class="text-white pa-2"> Become a Patron! </span>
@@ -38,7 +38,9 @@
 </template>
 
 <script setup>
-import patreonImg from "@/assets/Digital-Patreon-Logo_Black.png";
+import patreonImg from "@/assets/Digital-Patreon-Logo_White.png";
+import itchImg from "@/assets/itch.svg";
+import appIcon from "@/assets/icon.png";
 </script>
 
 <script>
@@ -50,19 +52,17 @@ export default {
 </script>
 
 <style>
-.itchPage {
-  display: flex;
-  justify-content: space-evenly;
-  padding-top: 80px;
-  height: 500px;
-  overflow: hidden;
+.itchPagePhone {
+  /* background-color: #4c80bb; */
 }
 .divBlock_yellow_phone {
   background-color: #f49d1a;
-  width: 150px;
+  width: 250px;
   position: relative;
-  top: 20px;
-  left: -10px;
+  top: -10px;
   z-index: 1;
+}
+.itch_btn_phone {
+  margin-top: 10px;
 }
 </style>
