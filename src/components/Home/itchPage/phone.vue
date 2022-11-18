@@ -52,9 +52,6 @@ export default {
 </script>
 
 <style>
-.itchPagePhone {
-  /* background-color: #4c80bb; */
-}
 .divBlock_yellow_phone {
   background-color: #f49d1a;
   width: 250px;
