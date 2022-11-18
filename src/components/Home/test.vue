@@ -1,38 +1,69 @@
 <template>
-  <v-row class="bor box">
-
-
-
-
-      <v-col class="bor box1 " cols="12" md="6" 
-         >box1
-        <v-row class="bor box1-1">text</v-row>
-        <v-row class=" bor box1-2">
-            <v-col class="bor box1-3">
-                <p class="bor"> release date</p>
-                <v-row class="bor">
-                    <v-btn class="ma-2" outlined color="indigo"
+  <v-row class="box pa-5" >
+        <v-col class="bor  box1 " cols="12" md="6" 
+         >
+         <h1 class="pa-3">
+            Soul of Butterflies series
+            <v-card-subtitle class="pa-3"> Genres: Puzzle </v-card-subtitle>
+        </h1>
+        <v-row class="bor  box1-1">
+            <v-col>
+                <p class="intro_text_block">
+                After the mysterious death of her parents, he has been taking care
+                of her sickly younger sister Naila. Anders struggled to bear the
+                huge cost of support and medical care.
+                </p>
+            <br />
+            <p class="intro_text_block">
+                And one day, I received an invitation for recruitment from a
+                mysterious hotel located in Happy Town, which is on the edge of
+                Yinqiao Forest. In order to save my sister who contracted a strange
+                disease, Accept and unexpectedly discover a series of huge and
+                horrifying conspiracies and secrets.
+            </p>
+            <br />
+            </v-col>
+        </v-row>
+        <v-row class=" bor  box1-2">
+            <v-col class="  box1-3">
+                <p > Platform</p>
+                <v-row class="pa-2">
+                    <v-btn class="ma-1" variant="outlined" color="indigo" size="small"
                     >
                         steam
                     </v-btn>
-                    <v-btn class="ma-2" outlined color="indigo"
+                    <v-btn class="ma-1" variant="outlined" color="indigo" size="small"
                     >
                         steam
                     </v-btn>
-                    <!-- <v-btn class="ma-2" outlined color="indigo"
+                    <v-btn class="ma-1" variant="outlined" color="indigo" size="small"
                     >
                         steam
-                    </v-btn> -->
+                    </v-btn>
                 </v-row>
             </v-col>
           <div class=" link"></div>
-          <v-col class="bor box1-3" >
-            <p class="bor re"> release date</p>
-            <h3 class="bor"> comming soon</h3>
+          <v-col class="pl-5  box1-3" >
+            <p > release date</p>
+            <h3> comming soon</h3>
           </v-col>
         </v-row>
       </v-col>
-      <v-col class="bor box1" cols="12" md="6" >you</v-col>
+      <v-col class="bor box1 ibox" cols="12" md="6">
+        <iframe
+            class="iframe_trailer"
+            width="640px"
+            height="310px"
+            
+
+            
+            src="https://www.youtube.com/embed/qIbzwb8vzNI"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+      </v-col>
     </v-row>
 </template>
 
@@ -44,36 +75,38 @@ export default {
 
 <style>
 .bor{
-    border: 3px solid brown;
-    margin: 5px;
-    /* padding: 10px; */
+    /* border: 3px solid brown; */
+    padding: 20px;
 }
 .box{
-
-  height: 100vh;
+    background-color: beige;
+  /* padding-top: 5%; */
   
 }
-.box1-1{
-    
-    height: 60%;
+
+
+.ibox{
+    display: flex;
+    align-self: center;
+    justify-content: center;
 }
 .box1-2{
     display: flex;
+    background-color: #ccc;
     /* justify-content: center; */ 
 
-    height: 25%;
+    /* height: 25%; */
 
 }
-.box1-3{
-    display: flex;
-    flex-direction: column;
 
-    background-color: #ccc;
-    
-}
 .link{
-    border-right: 5px solid black ;
+    border-right: 3px solid black ;
     /* line-height:120px; */
 }
+.iframe_trailer{
+    /* display: flex; */
+    /* margin-top: 5%; */
 
+ 
+}
 </style>
