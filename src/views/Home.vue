@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <trailer/>
+    <trailer />
     <homeNavbar :subs="navbarDatas" />
     <gameIntro />
     <cumstomCarousel :slides="this.carouselDatas" />
@@ -27,7 +27,14 @@ import slidebar from "@/components/Home/slidebar.vue";
 import itchPage from "@/components/Home/itchPage.vue";
 // import HelloWorld from "@/components/HelloWorld.vue";
 export default {
-  components: {trailer, homeNavbar, gameIntro, cumstomCarousel, slidebar, itchPage },
+  components: {
+    trailer,
+    homeNavbar,
+    gameIntro,
+    cumstomCarousel,
+    slidebar,
+    itchPage,
+  },
   mounted() {
     AOS.init();
   },

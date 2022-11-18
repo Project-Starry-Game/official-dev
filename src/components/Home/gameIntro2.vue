@@ -101,13 +101,4 @@ export default {
   border-right: 3px solid black;
   /* line-height:120px; */
 }
-<<<<<<< HEAD:src/components/Home/gameIntro2.vue
-
-
 </style>
-=======
-.disable-events {
-  pointer-events: none;
-}
-</style>
->>>>>>> 1517874 (Save):src/components/Home/test.vue
