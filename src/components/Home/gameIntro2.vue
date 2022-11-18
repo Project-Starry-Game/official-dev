@@ -103,10 +103,6 @@ export default {
     border-right: 3px solid black ;
     /* line-height:120px; */
 }
-.iframe_trailer{
-    /* display: flex; */
-    /* margin-top: 5%; */
 
- 
-}
+
 </style>

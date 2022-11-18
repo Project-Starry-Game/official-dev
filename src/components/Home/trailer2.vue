@@ -7,12 +7,12 @@
   >
     <div class="background">
 
-      <v-img class="background" id="background" ref="background" src="@/assets/bgwithcc.png" />   
+      <v-img class="background" id="background" ref="background" :src="bg_builder" />   
     </div>
     <div class="img_container" id="logo_box">
       
       <div class="img_logo">
-        <v-img class="logo" id="logo" ref="first" src="@/assets/logo_shadow.png" />
+        <v-img class="logo" id="logo" ref="first" :src="butterflylogo" />
       </div>
       
       
@@ -27,6 +27,12 @@
   </v-container >
 
 </template>
+
+<script setup>
+import bg_builder from "@/assets/Poster/bgwithcc.png";
+import butterflylogo from "@/assets/Poster/logo_shadow.png";
+</script>
+
 
 
 <script>
@@ -72,7 +78,7 @@ export default {
   position: relative;
   /* overflow: scroll; */
   overflow-x: hidden;
-  max-height: 100vh;
+  -height: 100vh;
 }
 .img_container{
   display: flex;

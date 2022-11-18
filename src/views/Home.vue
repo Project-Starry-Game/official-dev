@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <trailer/>
     <homeNavbar :subs="navbarDatas" />
     <gameIntro />
     <cumstomCarousel :slides="this.carouselDatas" />
@@ -18,14 +19,15 @@ import newspaper from "@/assets/View_Newspaper1.png";
 </script>
 
 <script>
+import trailer from "@/components/Home/trailer2.vue";
 import homeNavbar from "@/components/Home/navbar.vue";
-import gameIntro from "@/components/Home/test.vue";
+import gameIntro from "@/components/Home/gameIntro2.vue";
 import cumstomCarousel from "@/components/Home/cumstomCarousel.vue";
 import slidebar from "@/components/Home/slidebar.vue";
 import itchPage from "@/components/Home/itchPage.vue";
 // import HelloWorld from "@/components/HelloWorld.vue";
 export default {
-  components: { homeNavbar, gameIntro, cumstomCarousel, slidebar, itchPage },
+  components: {trailer, homeNavbar, gameIntro, cumstomCarousel, slidebar, itchPage },
   mounted() {
     AOS.init();
   },
