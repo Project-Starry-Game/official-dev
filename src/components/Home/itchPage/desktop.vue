@@ -24,7 +24,7 @@
         data-aos-offset="100px"
         style="position: relative; top: 10px"
       >
-        <span class="pa-2 text-grey">
+        <span class="pa-2 text-grey" style="font-size: 10px">
           If you like this game, you could also
         </span>
         <v-btn
@@ -41,7 +41,7 @@
 </template>
 
 <script setup>
-import patreonImg from "@/assets/Digital-Patreon-Logo_Black.png";
+import patreonImg from "@/assets/Digital-Patreon-Logo_White.png";
 </script>
 
 <script>
@@ -63,7 +63,7 @@ export default {
   background-color: #f49d1a;
   width: 150px;
   position: relative;
-  left: -50px;
+  left: -20px;
   top: 20px;
   z-index: 1;
 }
