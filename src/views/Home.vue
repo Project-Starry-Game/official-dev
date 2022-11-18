@@ -1,12 +1,14 @@
 <template>
   <v-app>
     <trailer />
-    <homeNavbar :subs="navbarDatas" />
-    <gameIntro />
-    <cumstomCarousel :slides="this.carouselDatas" />
-    <!-- <slidebar :imgs="slidebarDatas" /> -->
-    <itchPage />
-    <!-- <HelloWorld /> -->
+    <div class="body">
+      <homeNavbar :subs="navbarDatas" />
+      <gameIntro />
+      <cumstomCarousel :slides="this.carouselDatas" />
+      <!-- <slidebar :imgs="slidebarDatas" /> -->
+      <itchPage />
+      <!-- <HelloWorld /> -->
+    </div>
   </v-app>
 </template>
 

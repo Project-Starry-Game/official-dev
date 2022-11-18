@@ -3,7 +3,7 @@
     <v-container
       fluid
       id="scroll-target"
-      class="overflow-y-auto ma-0 pa-0"
+      class="overflow-y-auto ma-0 pa-0 trailer"
       v-scroll:#scroll-target="onScroll"
     >
       <div class="background">
@@ -74,6 +74,9 @@ export default {
 </script>
 
 <style>
+.trailer {
+  overflow: hidden;
+}
 .ad_container {
   position: relative;
   /* overflow: scroll; */

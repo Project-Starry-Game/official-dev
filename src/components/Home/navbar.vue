@@ -38,7 +38,7 @@ export default {
   position: sticky;
   top: 0;
   border-radius: 0;
-  z-index: 10000;
+  z-index: 100;
 }
 .bar_logo {
   display: flex;
