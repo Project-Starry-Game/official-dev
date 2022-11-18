@@ -14,14 +14,11 @@ import { createApp } from "vue";
 import { registerPlugins } from "@/plugins";
 import vuetify from "./plugins/vuetify";
 
-import { useImage } from "@/apis/global";
-
 import router from "@/router";
 import store from "@/store";
-import VueAos from "vue-aos";
 
 const app = createApp(App);
 
 registerPlugins(app);
 
-app.use(router).use(store).use(vuetify).use(VueAos).mount("#app");
+app.use(router).use(store).use(vuetify).mount("#app");

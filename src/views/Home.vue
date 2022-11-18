@@ -2,10 +2,8 @@
   <v-app>
     <homeNavbar :subs="navbarDatas" />
     <gameIntro />
-    <div v-vue-aos="{ animationClass: 'fadeIn animated' }">asf</div>
-
     <cumstomCarousel :slides="this.carouselDatas" />
-    <slidebar :imgs="slidebarDatas" />
+    <!-- <slidebar :imgs="slidebarDatas" /> -->
     <itchPage />
     <!-- <HelloWorld /> -->
   </v-app>
@@ -28,6 +26,9 @@ import itchPage from "@/components/Home/itchPage.vue";
 // import HelloWorld from "@/components/HelloWorld.vue";
 export default {
   components: { homeNavbar, gameIntro, cumstomCarousel, slidebar, itchPage },
+  mounted() {
+    AOS.init();
+  },
   data() {
     return {
       navbarDatas: [
@@ -100,3 +101,10 @@ export default {
   },
 };
 </script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+</style>
