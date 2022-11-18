@@ -28,4 +28,11 @@ export default {
   margin: 0;
   padding: 0;
 }
-</style>
+
+
+.itchPage {
+  display: flex;
+  justify-content: space-evenly;
+padding: 80px;
+  /* height:800px; */
+}</style>

@@ -53,12 +53,7 @@ export default {
 </script>
 
 <style>
-.itchPage {
-  display: flex;
-  justify-content: space-evenly;
-  padding-top: 80px;
-  height: 500px;
-}
+
 .divBlock_yellow {
   background-color: #f49d1a;
   width: 150px;
