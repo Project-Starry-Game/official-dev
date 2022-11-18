@@ -1,12 +1,14 @@
 <template>
   <v-app>
     <trailer />
-    <homeNavbar :subs="navbarDatas" />
-    <gameIntro />
-    <cumstomCarousel :slides="this.carouselDatas" />
-    <!-- <slidebar :imgs="slidebarDatas" /> -->
-    <itchPage />
-    <!-- <HelloWorld /> -->
+    <div class="body">
+      <homeNavbar :subs="navbarDatas" />
+      <gameIntro />
+      <cumstomCarousel :slides="this.carouselDatas" />
+      <!-- <slidebar :imgs="slidebarDatas" /> -->
+      <itchPage />
+      <!-- <HelloWorld /> -->
+    </div>
   </v-app>
 </template>
 
@@ -19,7 +21,7 @@ import newspaper from "@/assets/View_Newspaper1.png";
 </script>
 
 <script>
-import trailer from "@/components/Home/trailer2.vue";
+import trailer from "@/components/Home/trailer.vue";
 import homeNavbar from "@/components/Home/navbar.vue";
 import gameIntro from "@/components/Home/gameIntro2.vue";
 import cumstomCarousel from "@/components/Home/cumstomCarousel.vue";
