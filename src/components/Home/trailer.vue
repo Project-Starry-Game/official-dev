@@ -30,20 +30,19 @@
       </div>
 
       <!-- test -->
-      <div style="background-color: black">
-        <div
-          class="text_section"
-          id="text_section"
-          data-aos="fade-in"
-          data-aos-duration="1000"
-        >
-          <p>Swallow the Black liquid, tell me what you see.</p>
-          <p>
-            A beautiful world with silence? A broken coffin ?Or even just that
-            empty bottle in your hand.
-          </p>
-        </div>
+      <div
+        class="text_section"
+        id="text_section"
+        data-aos="fade-in"
+        data-aos-duration="1000"
+      >
+        <p>Swallow the Black liquid, tell me what you see.</p>
+        <p>
+          A beautiful world with silence? A broken coffin ?Or even just that
+          empty bottle in your hand.
+        </p>
       </div>
+      
 
     </v-container>
   </div>
@@ -121,7 +120,7 @@ import butterflylogo from "@/assets/logo_shadow.png";
   width: 30%;
 }
 .text_section {
-  /* background-color: rgb(0, 0, 0); */
+  background-color:#000;
   color: rgb(255, 255, 255);
   width: 100vw;
   height: 100vh;
