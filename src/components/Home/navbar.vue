@@ -35,7 +35,7 @@ export default {
 <style>
 .bar {
   /* background: lightblue; */
-  position: relative;
+  position: sticky;
   top: 0;
   border-radius: 0;
   z-index: 100;
