@@ -1,41 +1,39 @@
 <template>
-  <div>
-    <div>
-      <div class="divBlock_yellow">
-        <h3 class="text-white pa-2">DEMO</h3>
-      </div>
-      <div class="d-flex justify-center">
-        <iframe
-          frameborder="0"
-          src="https://itch.io/embed/1033029?linkback=true&amp;border_width=0"
-          width="550"
-          height="165"
-          data-aos="zoom-in-down"
-          data-aos-offset="200px"
-          ><a
-            href="https://project-starry.itch.io/soul-of-butterflies-incubation"
-            >Soul of Butterflies : Incubation by Project Starry</a
-          ></iframe
-        >
-      </div>
-      <div
-        class="d-flex justify-end"
-        data-aos="zoom-in-up"
-        data-aos-offset="100px"
-        style="position: relative; top: 10px"
+  <div class="itch_desktop">
+    <div class="divBlock_yellow">
+      <h3 class="text-white pa-2">DEMO</h3>
+    </div>
+    <div class="d-flex justify-center">
+      <iframe
+        frameborder="0"
+        src="https://itch.io/embed/1033029?linkback=true&amp;border_width=0"
+        width="550"
+        height="165"
+        data-aos="zoom-in-down"
+        data-aos-offset="200px"
+        ><a href="https://project-starry.itch.io/soul-of-butterflies-incubation"
+          >Soul of Butterflies : Incubation by Project Starry</a
+        ></iframe
       >
-        <span class="pa-2 text-grey" style="font-size: 10px">
-          If you like this game, you could also
-        </span>
-        <v-btn
-          color="#EB5254"
-          href="https://www.patreon.com/bePatron?u=56283261"
-          elevation="0"
-        >
-          <v-img width="10%" class="pa-2" :src="patreonImg"> </v-img>
-          <span class="text-white pa-2"> Become a Patron! </span>
-        </v-btn>
-      </div>
+    </div>
+    <div
+      class="d-flex justify-end"
+      data-aos="zoom-in-up"
+      data-aos-offset="100px"
+      style="position: relative; top: 10px"
+    >
+      <span class="pa-2 text-grey" style="font-size: 10px">
+        If you like this game, you could also
+      </span>
+      <v-spacer />
+      <v-btn
+        color="#EB5254"
+        href="https://www.patreon.com/bePatron?u=56283261"
+        elevation="0"
+      >
+        <v-img width="10%" class="pa-2" :src="patreonImg"> </v-img>
+        <span class="text-white pa-2"> Become a Patron! </span>
+      </v-btn>
     </div>
   </div>
 </template>
@@ -53,7 +51,10 @@ export default {
 </script>
 
 <style>
-
+.itch_desktop {
+  position: relative;
+  top: -5vh;
+}
 .divBlock_yellow {
   background-color: #f49d1a;
   width: 150px;

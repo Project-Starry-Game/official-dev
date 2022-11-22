@@ -40,24 +40,12 @@
       </v-col>
     </div>
   </v-container> -->
+  <v-card class="mx-auto" max-width="450" elevation="0">
+    <!-- <v-img :src="appIcon" height="300px"></v-img> -->
 
- 
-  <v-card
-    class="mx-auto"
-    max-width="450"
-  >
-    <v-img
-      :src="appIcon"
-      height="300px"
-    ></v-img>
+    <v-card-title> DEMO </v-card-title>
 
-    <v-card-title>
-      DEMO
-    </v-card-title>
-
-    <v-card-subtitle>
-      View it on itch.io
-    </v-card-subtitle>
+    <v-card-subtitle> View it on itch.io </v-card-subtitle>
 
     <v-card-actions>
       <!-- <v-btn
@@ -74,29 +62,24 @@
         color="#EB5254"
         href="https://project-starry.itch.io/soul-of-butterflies-incubation"
         elevation="0"
-      
         class="itch_btn_phone borderrr ma-3"
-        >
+      >
         <v-img width="20%" class="pa-2" :src="itchImg"> </v-img>
-        <span class=" pa-1"> Get it on itch </span>
+        <span class="pa-1"> Get it on itch </span>
       </v-btn>
-      <v-btn 
+      <v-btn
         size="small"
         color="#EB5254"
         href="https://www.patreon.com/bePatron?u=56283261"
         elevation="0"
         class="borderrr ma-4"
-      > 
-                  <!-- <v-img width="10%" class="pa-2" :src="patreonImg"> </v-img> -->
-        <span class="pa-2" style="font-size:1px"> Become a Patron! </span>
+      >
+        <!-- <v-img width="10%" class="pa-2" :src="patreonImg"> </v-img> -->
+        <span class="pa-2" style="font-size: 1px"> Become a Patron! </span>
       </v-btn>
     </v-card-actions>
-
- 
   </v-card>
 </template>
-
-
 
 <script setup>
 import patreonImg from "@/assets/Digital-Patreon-Logo_White.png";
@@ -124,9 +107,7 @@ export default {
   margin-top: 10px;
 } */
 
-
 /* .borderrr{
   border: 3px solid #f49d1a;
 } */
-
 </style>
