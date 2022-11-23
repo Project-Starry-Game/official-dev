@@ -17,11 +17,10 @@
 <script lang="ts">
 import lobbyImage from "@/assets/lobby/mainLobby.png";
 import lightImage from "@/assets/lobby/light.png";
-import light1 from "@/assets/lobby/Lobby_LightSpot01.png";
+import light1 from "@/assets/icon.png";
 import light2 from "@/assets/lobby/Lobby_LightSpot02.png";
 import light3 from "@/assets/lobby/Lobby_LightSpot03.png";
 import { defineComponent, onMounted, nextTick } from "vue";
-import func from "vue-temp/vue-editor-bridge";
 export default defineComponent({
   name: "my",
   props: {},
@@ -47,11 +46,12 @@ export default defineComponent({
           // width: number = canvas.offsetWidth,
           requestAnimFrameDotEffect = (function () {
             return function (callback: any) {
-              setTimeout(callback, 1000 / 6);
+              setTimeout(callback, 100 / 6);
             };
           })();
 
         let opacity = 1;
+        let elements: any = [];
 
         drawBK();
         drawLight();
@@ -90,82 +90,40 @@ export default defineComponent({
         };
         loop();
 
-        let elements: any = [];
-        for (let i = 0; i < 50; i++) {
-          let ele = {
-            opacity: 0.1,
-            x: rnd(0, canvasBK.width),
-            y: rnd(0, canvasBK.height),
-            fadeRate: Math.random() * 0.1,
-            img: new Image(),
-            spirte: rndLightSprite(),
-          };
-          console.log(ele.fadeRate);
+        // let elemetns: any = [];
+        // for (let i = 0; i < 5; i++) {
+        //   let ele = {
+        //     opacity: 1,
+        //     x: rnd(0, canvasBK.width),
+        //     y: rnd(0, canvasBK.height),
+        //     fadeRate: rndFloat(0, 1),
+        //     img: null,
+        //     spirte: rnd(0, 2),
+        //   };
+        //   elemetns.push(ele);
+        // }
 
-          ele.img.onload = function () {
-            ctxDot.save();
-            ctxDot.globalAlpha = 1;
-            ctxDot.drawImage(ele.img, ele.x, ele.y);
-            ctxDot.restore();
-          };
-          ele.img.src = ele.spirte;
-
-          elements.push(ele);
-        }
-        elements.forEach((e: any) => {
-          e.img = new Image();
-          e.img.onload = function () {
-            ctxDot.save();
-            ctxDot.globalAlpha = 1;
-            ctxDot.drawImage(e.img, e.x, e.y);
-            ctxDot.restore();
-          };
-          e.img.src = e.spirte;
-        });
-        console.log(elements);
-
-        const FRAMERATE_DOT = 1000;
+        const FRAMERATE_DOT = 40;
         let timeDot = new Date().getTime();
         let lastTimeDot = new Date().getTime();
-
         const loopDot = function () {
           timeDot = new Date().getTime();
+
           if (timeDot - lastTimeDot < FRAMERATE_DOT) {
             requestAnimFrameDotEffect(loopDot);
             return;
           }
-          return;
-
-          let _width = window.screen.width;
-          let _height = (_width * 1080) / 1920;
-          canvasDot.width = _width;
-          canvasDot.height = _height;
-          elements.forEach((e: any) => {
-            e.img = new Image();
-            e.img.onload = function () {
-              ctxDot.save();
-              ctxDot.globalAlpha = e.opacity;
-              ctxDot.drawImage(e.img, e.x, e.y);
-              ctxDot.restore();
-            };
-            e.img.src = e.spirte;
-
-            e.opacity -= e.fadeRate;
-            if (e.opacity <= 0) {
-              e.x = rnd(0, canvasDot.width);
-              e.y = rnd(0, canvasDot.height);
-              e.opacity = 0.5;
-              e.spirte = rndLightSprite();
-            }
-          });
-
-          lastTimeDot = timeDot;
+          drawDots();
+          lastTimeDot = lastTimeDot;
           requestAnimFrameDotEffect(loopDot);
         };
         loopDot();
 
         function rnd(min: any, max: any) {
           return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        function rndFloat(min: any, max: any) {
+          return Math.random() * (max - min + 1) + min;
         }
 
         function rndLightSprite() {
@@ -188,6 +146,7 @@ export default defineComponent({
             ctxBK.restore();
           };
           backgoundImage.src = lobbyImage;
+          drawDots();
         }
 
         function drawLight() {
@@ -203,6 +162,32 @@ export default defineComponent({
             ctx.restore();
           };
           lightMask.src = lightImage;
+          drawDots();
+        }
+        function drawDots() {
+          if (elements.length < 10) {
+            for (let i = 0; i < 10; i++) {
+              let ele = {
+                opacity: 1,
+                x: rnd(0, canvasBK.width),
+                y: rnd(0, canvasBK.height),
+                fadeRate: Math.random() * 0.1,
+                img: new Image(),
+                spirte: light1,
+              };
+              let test = new Image();
+              test.onload = function () {
+                let _width = window.screen.width;
+                let _height = (_width * 1080) / 1920;
+                canvasDot.width = _width;
+                canvasDot.height = _height;
+                ctxDot.drawImage(test, ele.x, ele.y, 20, 20);
+              };
+              test.src = light1;
+              elements.push(ele);
+            }
+          } else {
+          }
         }
       });
     };
