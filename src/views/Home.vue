@@ -2,7 +2,6 @@
   <v-app>
     <trailer />
     <div class="body">
-
       <lobby />
       <homeNavbar :subs="navbarDatas" />
       <v-row justify="center">
@@ -122,12 +121,11 @@ export default {
   padding: 0;
 }
 
-.body{
+.body {
   position: relative;
 }
 
-.homenavbar{
+.homenavbar {
   position: sticky;
-
 }
 </style>
