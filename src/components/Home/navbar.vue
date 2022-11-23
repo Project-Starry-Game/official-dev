@@ -1,10 +1,11 @@
 <template>
   <v-card class="bar" elevation="0">
     <v-toolbar
+      color="#ccc"
       dense
       flat
       tile
-      class="bar pa-0 ma-0"
+      class="pa-0 ma-0 toolbar"
       elevation="0"
     >
       <img class="bar_logo" ref="logo" :src="logoUrl" height="50" />
@@ -36,11 +37,17 @@ export default {
 <style>
 .bar {
   background: rgb(84, 213, 151);
+
   position: sticky;
   top: 0;
   border-radius: 0;
   z-index: 1000;
 }
+.toolbar {
+  position: sticky;
+  top: 0%;
+}
+
 .bar_logo {
   display: flex;
   text-align: left;

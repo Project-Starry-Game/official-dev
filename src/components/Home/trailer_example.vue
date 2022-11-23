@@ -1,37 +1,46 @@
 <template>
-  <v-container
-    class="ma-0 pa-0 ad_container overflow-y-auto"
-    fluid
-    id="scroll-target"
-    v-scroll:#scroll-target="onScroll"
-  >
-    <div class="background">
-      <v-img
-        class="background"
-        id="background"
-        ref="background"
-        src="@/assets/bgwithcc.png"
-      />
-    </div>
-    <div class="img_container" id="logo_box">
-      <div class="img_logo">
+  <div>
+    <v-container
+      fluid
+      id="scroll-target"
+      class="overflow-y-auto ma-0 pa-0 trailer"
+      v-scroll:#scroll-target="onScroll"
+    >
+      <div class="background">
         <v-img
-          class="logo"
-          id="logo"
-          ref="first"
-          src="@/assets/logo_shadow.png"
+          class="background"
+          id="background"
+          ref="background"
+          :src="bg_builder"
         />
       </div>
-    </div>
-    <div class="text_section" id="text_section">
-      <p>Swallow the Black liquid, tell me what you see.</p>
-      <p>
-        A beautiful world with silence? A broken coffin ?Or even just that empty
-        bottle in your hand.
-      </p>
-    </div>
-  </v-container>
+      <div class="img_container" id="logo_box">
+        <div class="img_logo">
+          <v-img class="logo" id="logo" ref="first" :src="butterflylogo" />
+        </div>
+      </div>
+      <div style="background-color: black">
+        <div
+          class="text_section"
+          id="text_section"
+          data-aos="fade-in"
+          data-aos-duration="1000"
+        >
+          <p>Swallow the Black liquid, tell me what you see.</p>
+          <p>
+            A beautiful world with silence? A broken coffin ?Or even just that
+            empty bottle in your hand.
+          </p>
+        </div>
+      </div>
+    </v-container>
+  </div>
 </template>
+
+<script setup>
+import bg_builder from "@/assets/bgwithcc.png";
+import butterflylogo from "@/assets/logo_shadow.png";
+</script>
 
 <script>
 export default {
@@ -40,7 +49,9 @@ export default {
     offsetTop: 0,
   }),
   components: {},
-  mounted() {},
+  mounted() {
+    console.log(123);
+  },
   methods: {
     onScroll(e) {
       var bk = document.getElementById("background");
@@ -49,7 +60,7 @@ export default {
       var text_section = document.getElementById("text_section");
       this.offsetTop = e.target.scrollTop;
 
-      console.log(logo.style.transform);
+      console.log(1);
       logo_box.style.opacity =
         1 - this.offsetTop / (e.target.scrollHeight - window.innerHeight);
       logo.style.transform =
@@ -57,19 +68,17 @@ export default {
         this.offsetTop / (e.target.scrollHeight - window.innerHeight) +
         ")";
 
-      text_section.style.opacity =
-        (this.offsetTop / (e.target.scrollHeight - window.innerHeight)) * 2;
+      // text_section.style.opacity =
+      //   (this.offsetTop / (e.target.scrollHeight - window.innerHeight)) * 2;
     },
   },
 };
 </script>
 
 <style>
-/* div{
-  border: 3px solid black;
-  padding: 30px;
-  height: 300px;
-} */
+.trailer {
+  overflow: hidden;
+}
 .ad_container {
   position: relative;
   /* overflow: scroll; */
@@ -98,11 +107,13 @@ export default {
   width: 30%;
 }
 .text_section {
-  background-color: rgb(243, 132, 213);
+  /* background-color: rgb(0, 0, 0); */
+  color: rgb(255, 255, 255);
   width: 100vw;
-  /* position: sticky; */
-  bottom: 0px;
-  z-index: 100;
+  height: 100vh;
+  position: absolute;
+  top: 100%;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;

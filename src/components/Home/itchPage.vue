@@ -29,10 +29,11 @@ export default {
   padding: 0;
 }
 
-
 .itchPage {
   display: flex;
   justify-content: space-evenly;
-padding: 80px;
-  /* height:800px; */
-}</style>
+  padding: 80px;
+  /* position: relative;
+  top: -6vh; */
+}
+</style>

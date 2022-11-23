@@ -1,10 +1,17 @@
 <template>
     <v-container
-      class="overflow-y-auto ma-0 pa-0 trailer"
       fluid
       id="scroll-target"
       v-scroll:#scroll-target="onScroll"
+      class="ad_container overflow-y-auto pa-0 ma-0"
     >
+    <v-row
+      justify="center"
+      align="center"
+    >
+        <v-subheader class="sub pa-5">Offset Top  {{ offsetTop }} </v-subheader>
+    </v-row>
+  
       <div class="background">
         <v-img
           class="background"
@@ -13,25 +20,29 @@
           :src="bg_builder"
         />
       </div>
-      <div class="img_container" id="logo_box">
-        <div class="img_logo">
+
+      <!-- logo -->
+       <div class="img_container" id="logo_box">
+        <div class="img_logo" id="img_logo" >
           <v-img class="logo" id="logo" ref="first" :src="butterflylogo" />
         </div>
       </div>
-      <div style="background-color: black">
-        <div
-          class="text_section"
-          id="text_section"
-          data-aos="fade-in"
-          data-aos-duration="1000"
-        >
-          <p>Swallow the Black liquid, tell me what you see.</p>
-          <p>
-            A beautiful world with silence? A broken coffin ?Or even just that
-            empty bottle in your hand.
-          </p>
-        </div>
+
+      <!-- test -->
+      <div
+        class="text_section"
+        id="text_section"
+        data-aos="fade-in"
+        data-aos-duration="1000"
+      >
+        <p>Swallow the Black liquid, tell me what you see.</p>
+        <p>
+          A beautiful world with silence? A broken coffin ?Or even just that
+          empty bottle in your hand.
+        </p>
       </div>
+      
+
     </v-container>
 </template>
 
@@ -41,33 +52,43 @@ import butterflylogo from "@/assets/logo_shadow.png";
 </script>
 
 <script>
-export default {
-  name: "Home",
-  data: () => ({
-    offsetTop: 0,
-  }),
-  components: {},
-  mounted() {},
-  methods: {
-    onScroll(e) {
+  export default {
+    data: () => ({
+      offsetTop: 0,
+    }),
+
+    methods: {
+      onScroll (e) {
       var bk = document.getElementById("background");
       var logo_box = document.getElementById("logo_box");
-      var logo = document.getElementById("logo");
+      var img_logo = document.getElementById("img_logo");
       var text_section = document.getElementById("text_section");
-      this.offsetTop = e.target.scrollTop;
+
 
       console.log(e);
+
+      this.offsetTop = e.target.scrollTop
+      console.log( text_section.style.opacity )
+
       logo_box.style.opacity =
         1 - this.offsetTop / (e.target.scrollHeight - window.innerHeight);
-      logo.style.transform =
+
+      img_logo.style.transform =
         "scale(" +
-        this.offsetTop / (e.target.scrollHeight - window.innerHeight) +
+        1 - this.offsetTop / (e.target.scrollHeight - window.innerHeight) +
         ")";
-      // text_section.style.opacity =
-      //   (this.offsetTop / (e.target.scrollHeight - window.innerHeight)) * 2;
+
+      text_section.style.opacity =
+        (this.offsetTop / (e.target.scrollHeight - window.innerHeight));
+        
+    
+      // img_logo.style.transform =
+      //   "scale(" +
+      //   1 - this.offsetTop / (e.target.scrollHeight - window.innerHeight) +
+      //   ")";
+      },
     },
-  },
-};
+  }
 </script>
 
 <style>
@@ -78,7 +99,7 @@ export default {
   position: relative;
   /* overflow: scroll; */
   overflow-x: hidden;
-  max-height: 100vh;
+  max-height: 90vh;
 }
 .img_container {
   display: flex;
@@ -102,18 +123,23 @@ export default {
   width: 30%;
 }
 .text_section {
-  background-color: rgb(0, 0, 0);
-  color: white;
+  background-color:#000;
+  opacity: 0%;
+  color: rgb(255, 255, 255);
   width: 100vw;
-  height: 100vh;
-  display: flex;
+  height: 80vh;
   position: sticky;
-  /* bottom: 0px; */
-  z-index: 100;
+  bottom: 100%;
+  z-index: 1000;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 0%;
+}
+
+.sub{
+  
+  z-index: 1000;
 }
 </style>

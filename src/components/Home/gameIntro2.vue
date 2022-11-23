@@ -80,8 +80,9 @@ export default {
   padding: 20px;
 }
 .box {
-  background-color: beige;
+  background-color: #fff;
   /* padding-top: 5%; */
+  height: 100vh;
 }
 
 .ibox {

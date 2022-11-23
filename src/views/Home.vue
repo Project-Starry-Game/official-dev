@@ -2,11 +2,14 @@
   <v-app>
     <trailer />
     <div class="body">
-      <homeNavbar class="homenavbar" :subs="this.navbarDatas" />
-      <gameIntro />
-      <cumstomCarousel :slides="this.carouselDatas" />
+
+      <lobby />
+      <homeNavbar :subs="navbarDatas" />
+      <v-row justify="center">
+        <gameIntro />
+        <itchPage />
+      </v-row>
       <!-- <slidebar :imgs="slidebarDatas" /> -->
-      <itchPage />
       <!-- <HelloWorld /> -->
     </div>
   </v-app>
@@ -24,7 +27,7 @@ import newspaper from "@/assets/View_Newspaper1.png";
 import trailer from "@/components/Home/trailer.vue";
 import homeNavbar from "@/components/Home/navbar.vue";
 import gameIntro from "@/components/Home/gameIntro2.vue";
-import cumstomCarousel from "@/components/Home/cumstomCarousel.vue";
+import lobby from "@/components/Home/lobby.vue";
 import slidebar from "@/components/Home/slidebar.vue";
 import itchPage from "@/components/Home/itchPage.vue";
 // import HelloWorld from "@/components/HelloWorld.vue";
@@ -33,7 +36,7 @@ export default {
     trailer,
     homeNavbar,
     gameIntro,
-    cumstomCarousel,
+    lobby,
     slidebar,
     itchPage,
   },
