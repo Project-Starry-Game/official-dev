@@ -2,7 +2,7 @@
   <v-app>
     <trailer />
     <div class="body">
-      <homeNavbar :subs="navbarDatas" />
+      <homeNavbar class="homenavbar" :subs="this.navbarDatas" />
       <gameIntro />
       <cumstomCarousel :slides="this.carouselDatas" />
       <!-- <slidebar :imgs="slidebarDatas" /> -->
@@ -117,5 +117,14 @@ export default {
 * {
   margin: 0;
   padding: 0;
+}
+
+.body{
+  position: relative;
+}
+
+.homenavbar{
+  position: sticky;
+
 }
 </style>

@@ -1,9 +1,8 @@
 <template>
-  <div>
     <v-container
+      class="overflow-y-auto ma-0 pa-0 trailer"
       fluid
       id="scroll-target"
-      class="overflow-y-auto ma-0 pa-0 trailer"
       v-scroll:#scroll-target="onScroll"
     >
       <div class="background">
@@ -34,7 +33,6 @@
         </div>
       </div>
     </v-container>
-  </div>
 </template>
 
 <script setup>
@@ -58,16 +56,15 @@ export default {
       var text_section = document.getElementById("text_section");
       this.offsetTop = e.target.scrollTop;
 
-      console.log(logo.style.transform);
+      console.log(e);
       logo_box.style.opacity =
         1 - this.offsetTop / (e.target.scrollHeight - window.innerHeight);
       logo.style.transform =
         "scale(" +
         this.offsetTop / (e.target.scrollHeight - window.innerHeight) +
         ")";
-
-      text_section.style.opacity =
-        (this.offsetTop / (e.target.scrollHeight - window.innerHeight)) * 2;
+      // text_section.style.opacity =
+      //   (this.offsetTop / (e.target.scrollHeight - window.innerHeight)) * 2;
     },
   },
 };
@@ -105,17 +102,18 @@ export default {
   width: 30%;
 }
 .text_section {
-  /* background-color: rgb(, 0, 0); */
+  background-color: rgb(0, 0, 0);
   color: white;
   width: 100vw;
   height: 100vh;
-  /* position: sticky; */
-  bottom: 0px;
+  display: flex;
+  position: sticky;
+  /* bottom: 0px; */
   z-index: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 100%;
+  opacity: 0%;
 }
 </style>
