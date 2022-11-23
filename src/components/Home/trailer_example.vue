@@ -54,7 +54,6 @@ export default {
   },
   methods: {
     onScroll(e) {
-      console.log("pwjfpowjqfp");
       var bk = document.getElementById("background");
       var logo_box = document.getElementById("logo_box");
       var logo = document.getElementById("logo");
@@ -113,7 +112,7 @@ export default {
   width: 100vw;
   height: 100vh;
   position: absolute;
-  top: 0%;
+  top: 100%;
   z-index: 1000;
   display: flex;
   flex-direction: column;

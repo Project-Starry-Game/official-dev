@@ -64,9 +64,10 @@ import butterflylogo from "@/assets/logo_shadow.png";
       var bk = document.getElementById("background");
       var logo_box = document.getElementById("logo_box");
       var img_logo = document.getElementById("img_logo");
+      var text_section = document.getElementById("text_section");
 
       this.offsetTop = e.target.scrollTop
-      console.log( 11 )
+      console.log( text_section.style.opacity )
 
       logo_box.style.opacity =
         1 - this.offsetTop / (e.target.scrollHeight - window.innerHeight);
@@ -75,15 +76,16 @@ import butterflylogo from "@/assets/logo_shadow.png";
         "scale(" +
         1 - this.offsetTop / (e.target.scrollHeight - window.innerHeight) +
         ")";
+
+      text_section.style.opacity =
+        (this.offsetTop / (e.target.scrollHeight - window.innerHeight));
+        
     
       // img_logo.style.transform =
       //   "scale(" +
       //   1 - this.offsetTop / (e.target.scrollHeight - window.innerHeight) +
       //   ")";
-
       },
-
-
     },
   }
 </script>
@@ -121,17 +123,18 @@ import butterflylogo from "@/assets/logo_shadow.png";
 }
 .text_section {
   background-color:#000;
+  opacity: 0%;
   color: rgb(255, 255, 255);
   width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0%;
+  height: 80vh;
+  position: sticky;
+  bottom: 100%;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 0%;
+  
 }
 
 .sub{
