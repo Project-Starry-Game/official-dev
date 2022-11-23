@@ -6,14 +6,21 @@
       id="scroll-target"
       class="ad_container overflow-y-auto pa-0 ma-0"
     >
-    <v-row
+    <!-- <v-row
       justify="center"
       align="center"
     >
         <v-subheader class="sub pa-5">Offset Top  {{ offsetTop }} </v-subheader>
-    </v-row>
+    </v-row> -->
+
+    <!-- logo -->
+       <div class="img_container" id="logo_box">
+        <div class="img_logo" id="img_logo" >
+          <v-img class="logo" id="logo" ref="first" :src="butterflylogo" />
+        </div>
+      </div>
     <!-- building_img -->
-      <div class="background">
+      <div class="background_box">
         <v-img
           class="background"
           id="background"
@@ -22,26 +29,20 @@
         />
       </div>
 
-    <!-- logo -->
-       <div class="img_container" id="logo_box">
-        <div class="img_logo" id="img_logo" >
-          <v-img class="logo" id="logo" ref="first" :src="butterflylogo" />
-        </div>
-      </div>
-    <!-- test -->
-      <div
-        class="text_section"
-        id="text_section"
-        data-aos="fade-in"
-        data-aos-duration="1000"
-      >
-        <p>Swallow the Black liquid, tell me what you see.</p>
-        <p>
-          A beautiful world with silence? A broken coffin ?Or even just that
-          empty bottle in your hand.
-        </p>
 
-      </div>
+    <!-- text -->
+    <div
+      class="text_section"
+      id="text_section"
+    >
+      <p>Swallow the Black liquid, tell me what you see.</p>
+      <p>
+        A beautiful world with silence? A broken coffin ?Or even just that
+        empty bottle in your hand.
+      </p>
+
+    </div>
+      
     </v-container>
   </div>
 </template>
@@ -62,12 +63,16 @@ export default {
       var bk = document.getElementById("background");
       var logo_box = document.getElementById("logo_box");
       var img_logo = document.getElementById("img_logo");
+      var text_section = document.getElementById("text_section");
 
       this.offsetTop = e.target.scrollTop;
-      console.log(11);
+      console.log((this.offsetTop / (e.target.scrollHeight - window.innerHeight)));
 
       logo_box.style.opacity =
-        1 - this.offsetTop / (e.target.scrollHeight - window.innerHeight);
+        1 - this.offsetTop / (e.target.scrollHeight - window.innerHeight)*1.5;
+
+      text_section.style.opacity =
+        (this.offsetTop / (e.target.scrollHeight - window.innerHeight))-0.5; 
 
       img_logo.style.transform =
         "scale(" +
@@ -89,46 +94,62 @@ export default {
   overflow: hidden;
 }
 .ad_container {
+  /* border: 2px solid rgb(144, 6, 6) ; */
   position: relative;
-  top: 0px;
+  top: 0%;
   /* overflow: scroll; */
   overflow-x: hidden;
-  max-height: 90vh;
+  max-height: 100vh;
 }
 .img_container {
   display: flex;
   justify-content: center;
-  position: absolute;
+  position: sticky;
+  top: 10%; /* 移到上面 */
   width: 100vw;
-  height: 100vh;
-  top: 0px; /* 移到上面 */
-  background-image: linear-gradient(
+  /* height: 100vh; */
+
+  /* background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 1) 33%,
     rgba(46, 35, 27, 0) 100%
-  );
-  z-index: 10;
+  ); */
+  z-index: 100;
 }
 .img_logo {
   /* transform: scale(0.5); */
   position: relative;
-  top: 20%;
+  /* top: 10%; */
   /* background-color: rgba(255, 129, 129, 0.6); */
   width: 30%;
 }
-.text_section {
-  /* background-color: rgb(0, 0, 0); */
-  color: rgb(255, 255, 255);
+
+.background_box{
+  /* border: 2px solid rgb(144, 6, 6) ; */
   width: 100vw;
-  height: 80vh;
-  position: sticky;
-  bottom: 50%;
-  z-index: 1000;
+  height: auto;
+  position: absolute;
+  top: 0%;
+  z-index: 10;
+}
+
+.text_section {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 43%,
+    rgba(46, 35, 27, 0) 100%
+  );
+  color: rgb(254, 255, 249);
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  position: sticky;
+  top: 0%;
+  z-index: 1000;
+  opacity: 0%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 0%;
 }
 
 .sub {

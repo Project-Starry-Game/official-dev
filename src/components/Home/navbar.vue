@@ -36,22 +36,21 @@ export default {
 
 <style>
 .bar {
-  background: rgb(84, 213, 151);
-
+  /* background: lightblue; */
   position: sticky;
   top: 0;
   border-radius: 0;
-  z-index: 1000;
+  z-index: 10000;
 }
 .toolbar {
   position: sticky;
   top: 0%;
 }
 
-.bar_logo {
+/* .bar_logo {
   display: flex;
   text-align: left;
   position: relative;
   left: 1vw;
-}
+} */
 </style>

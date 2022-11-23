@@ -2,14 +2,15 @@
   <v-app>
     <trailer />
     <div class="body">
-      <lobby />
       <homeNavbar :subs="navbarDatas" />
+      <!-- <lobby /> -->
       <v-row justify="center">
         <gameIntro />
         <itchPage />
       </v-row>
-      <!-- <slidebar :imgs="slidebarDatas" /> -->
-      <!-- <HelloWorld /> -->
+      <!-- <slidebar :imgs="slidebarDatas" />
+      <HelloWorld /> -->
+  
     </div>
   </v-app>
 </template>
@@ -121,11 +122,8 @@ export default {
   padding: 0;
 }
 
-.body {
+.body{
   position: relative;
 }
 
-.homenavbar {
-  position: sticky;
-}
 </style>
