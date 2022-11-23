@@ -6,10 +6,20 @@
       id="scroll-target"
       class="ad_container overflow-y-auto pa-0 ma-0"
     >
+<<<<<<< HEAD
       <v-row justify="center" align="center">
         <v-subheader class="sub pa-5">Offset Top {{ offsetTop }} </v-subheader>
       </v-row>
 
+=======
+    <v-row
+      justify="center"
+      align="center"
+    >
+        <v-subheader class="sub pa-5">Offset Top  {{ offsetTop }} </v-subheader>
+    </v-row>
+    <!-- building_img -->
+>>>>>>> fb169b9 (get the photo)
       <div class="background">
         <v-img
           class="background"
@@ -19,13 +29,20 @@
         />
       </div>
 
+<<<<<<< HEAD
       <!-- logo -->
       <div class="img_container" id="logo_box">
         <div class="img_logo" id="img_logo">
+=======
+    <!-- logo -->
+       <div class="img_container" id="logo_box">
+        <div class="img_logo" id="img_logo" >
+>>>>>>> fb169b9 (get the photo)
           <v-img class="logo" id="logo" ref="first" :src="butterflylogo" />
         </div>
       </div>
 
+<<<<<<< HEAD
       <!-- test -->
       <div style="background-color: black">
         <div
@@ -40,6 +57,20 @@
             empty bottle in your hand.
           </p>
         </div>
+=======
+    <!-- test -->
+      <div
+        class="text_section"
+        id="text_section"
+        data-aos="fade-in"
+        data-aos-duration="1000"
+      >
+        <p>Swallow the Black liquid, tell me what you see.</p>
+        <p>
+          A beautiful world with silence? A broken coffin ?Or even just that
+          empty bottle in your hand.
+        </p>
+>>>>>>> fb169b9 (get the photo)
       </div>
     </v-container>
   </div>
@@ -89,6 +120,7 @@ export default {
 }
 .ad_container {
   position: relative;
+  top: 0px;
   /* overflow: scroll; */
   overflow-x: hidden;
   max-height: 90vh;
@@ -118,9 +150,15 @@ export default {
   /* background-color: rgb(0, 0, 0); */
   color: rgb(255, 255, 255);
   width: 100vw;
+<<<<<<< HEAD
   height: 100vh;
   position: absolute;
   top: 0%;
+=======
+  height: 80vh;
+  position: sticky;
+  bottom: 50%;
+>>>>>>> fb169b9 (get the photo)
   z-index: 1000;
   display: flex;
   flex-direction: column;
