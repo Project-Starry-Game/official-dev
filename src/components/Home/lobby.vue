@@ -6,6 +6,7 @@
 
 <script lang="ts">
 import lobbyImage from "@/assets/lobby/mainLobby.png";
+import lightImage from "@/assets/lobby/light.png";
 import { defineComponent, onMounted, nextTick } from "vue";
 export default defineComponent({
   name: "my",
@@ -23,35 +24,21 @@ export default defineComponent({
               setTimeout(callback, 100 / 6);
             };
           })();
+
         let backgoundImage = new Image();
-
         backgoundImage.onload = function () {
-          let scale = Math.min(
-            width / backgoundImage.width,
-            height / backgoundImage.height
-          );
-          let w = backgoundImage.width * scale;
-          let h = backgoundImage.height * scale;
-
-          var left = width / 2 - w / 2;
-          var top =
-            height / 2 - backgoundImage.height / 2 > 0
-              ? height / 2 - backgoundImage.height / 2
-              : 0;
-          console.log(top);
-
-          ctx.drawImage(backgoundImage, 0, 0, 1920, 1080);
-          canvas.width = width;
-          canvas.height = height;
-          ctx.drawImage(
-            backgoundImage,
-            0,
-            top,
-            backgoundImage.width,
-            backgoundImage.height
-          );
+          ctx.drawImage(backgoundImage, 0, 0, 820, 461.25);
         };
         backgoundImage.src = lobbyImage;
+
+        // let lightMask = new Image();
+        // lightMask.onload = function () {
+        //   ctx.drawImage(lightMask, 0, 0, lightImage.width, lightImage.height);
+        // };
+        // lightMask.src = lightImage;
+
+        console.log(window.screen.height);
+
         const loop = function () {
           // ctx.clearRect(0, 0, width, height);
           // ctx.drawImage(backgoundImage, 0, 0, 1920, 1080);
@@ -61,8 +48,14 @@ export default defineComponent({
         //   return Math.floor(Math.random() * (max - min) + min);
         // };
         loop();
+        // function aspect(srcWidth, srcHeight, maxWidth, maxHeight) {
+        //   var ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
+
+        //   return { width: srcWidth * ratio, height: srcHeight * ratio };
+        // }
       });
     };
+
     onMounted(() => {
       oninitCanvas();
     });

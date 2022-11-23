@@ -1,17 +1,15 @@
 <template>
+  <div>
     <v-container
       fluid
-      id="scroll-target"
       v-scroll:#scroll-target="onScroll"
+      id="scroll-target"
       class="ad_container overflow-y-auto pa-0 ma-0"
     >
-    <v-row
-      justify="center"
-      align="center"
-    >
-        <v-subheader class="sub pa-5">Offset Top  {{ offsetTop }} </v-subheader>
-    </v-row>
-  
+      <v-row justify="center" align="center">
+        <v-subheader class="sub pa-5">Offset Top {{ offsetTop }} </v-subheader>
+      </v-row>
+
       <div class="background">
         <v-img
           class="background"
@@ -22,28 +20,29 @@
       </div>
 
       <!-- logo -->
-       <div class="img_container" id="logo_box">
-        <div class="img_logo" id="img_logo" >
+      <div class="img_container" id="logo_box">
+        <div class="img_logo" id="img_logo">
           <v-img class="logo" id="logo" ref="first" :src="butterflylogo" />
         </div>
       </div>
 
       <!-- test -->
-      <div
-        class="text_section"
-        id="text_section"
-        data-aos="fade-in"
-        data-aos-duration="1000"
-      >
-        <p>Swallow the Black liquid, tell me what you see.</p>
-        <p>
-          A beautiful world with silence? A broken coffin ?Or even just that
-          empty bottle in your hand.
-        </p>
+      <div style="background-color: black">
+        <div
+          class="text_section"
+          id="text_section"
+          data-aos="fade-in"
+          data-aos-duration="1000"
+        >
+          <p>Swallow the Black liquid, tell me what you see.</p>
+          <p>
+            A beautiful world with silence? A broken coffin ?Or even just that
+            empty bottle in your hand.
+          </p>
+        </div>
       </div>
-      
-
     </v-container>
+  </div>
 </template>
 
 <script setup>
@@ -52,43 +51,36 @@ import butterflylogo from "@/assets/logo_shadow.png";
 </script>
 
 <script>
-  export default {
-    data: () => ({
-      offsetTop: 0,
-    }),
+export default {
+  data: () => ({
+    offsetTop: 0,
+  }),
 
-    methods: {
-      onScroll (e) {
+  methods: {
+    onScroll(e) {
       var bk = document.getElementById("background");
       var logo_box = document.getElementById("logo_box");
       var img_logo = document.getElementById("img_logo");
-      var text_section = document.getElementById("text_section");
 
-
-      console.log(e);
-
-      this.offsetTop = e.target.scrollTop
-      console.log( text_section.style.opacity )
+      this.offsetTop = e.target.scrollTop;
+      console.log(11);
 
       logo_box.style.opacity =
         1 - this.offsetTop / (e.target.scrollHeight - window.innerHeight);
 
       img_logo.style.transform =
         "scale(" +
-        1 - this.offsetTop / (e.target.scrollHeight - window.innerHeight) +
+        1 -
+        this.offsetTop / (e.target.scrollHeight - window.innerHeight) +
         ")";
 
-      text_section.style.opacity =
-        (this.offsetTop / (e.target.scrollHeight - window.innerHeight));
-        
-    
       // img_logo.style.transform =
       //   "scale(" +
       //   1 - this.offsetTop / (e.target.scrollHeight - window.innerHeight) +
       //   ")";
-      },
     },
-  }
+  },
+};
 </script>
 
 <style>
@@ -123,23 +115,21 @@ import butterflylogo from "@/assets/logo_shadow.png";
   width: 30%;
 }
 .text_section {
-  background-color:#000;
-  opacity: 0%;
+  /* background-color: rgb(0, 0, 0); */
   color: rgb(255, 255, 255);
   width: 100vw;
-  height: 80vh;
-  position: sticky;
-  bottom: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0%;
   z-index: 1000;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  opacity: 0%;
 }
 
-.sub{
-  
+.sub {
   z-index: 1000;
 }
 </style>
