@@ -21,6 +21,7 @@ import light1 from "@/assets/lobby/Lobby_LightSpot01.png";
 import light2 from "@/assets/lobby/Lobby_LightSpot02.png";
 import light3 from "@/assets/lobby/Lobby_LightSpot03.png";
 import { defineComponent, onMounted, nextTick } from "vue";
+import func from "vue-temp/vue-editor-bridge";
 export default defineComponent({
   name: "my",
   props: {},
@@ -174,22 +175,26 @@ export default defineComponent({
           return rnd(0, h / 2);
         }
 
+        function rndSize() {
+          return rnd(10, 30);
+        }
+
         function drawDots() {
           ctxDot.clearRect(0, 0, canvasDot.width, canvasDot.height);
           elements.forEach((element: any) => {
             if (element.fadingOut) element.opacity -= element.fadeRate;
             else element.opacity += element.fadeRate * 2;
+
             element.x -= 0.7;
             element.y += 0.5;
 
-            let w = window.screen.width;
-            let h = window.screen.height;
-            if (element.opacity <= 0.1) {
+            if (element.opacity <= 0.05) {
               element.fadingOut = false;
               element.x = rndAreaX();
               element.y = rndAreaY();
-              element.fadeRate = Math.random() * 0.01;
+              element.fadeRate = Math.random() * 0.02;
               element.spirte = rndLightSprite();
+              element.size = rndSize();
             } else if (element.opacity > 0.3) {
               element.fadingOut = true;
             }
@@ -210,12 +215,12 @@ export default defineComponent({
           let w = window.screen.width;
           let h = window.screen.height;
           if (elements.length < 1) {
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 30; i++) {
               let ele = {
                 opacity: 0.3,
                 x: rndAreaX,
                 y: rndAreaY,
-                size: rnd(15, 30),
+                size: rndSize(),
                 fadeRate: Math.random() * 0.01,
                 img: new Image(),
                 spirte: rndLightSprite(),
