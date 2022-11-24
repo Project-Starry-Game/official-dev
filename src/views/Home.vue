@@ -1,16 +1,15 @@
 <template>
   <v-app>
     <trailer />
+    <lobby />
     <div class="body">
-      <!-- <homeNavbar :subs="navbarDatas" /> -->
-      <!-- <lobby /> -->
+      <homeNavbar :subs="navbarDatas" />
       <v-row justify="center">
         <gameIntro />
         <itchPage />
       </v-row>
       <!-- <slidebar :imgs="slidebarDatas" />
       <HelloWorld /> -->
-  
     </div>
   </v-app>
 </template>
@@ -122,8 +121,7 @@ export default {
   padding: 0;
 }
 
-.body{
+.body {
   position: relative;
 }
-
 </style>

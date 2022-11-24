@@ -1,7 +1,7 @@
 <template>
   <v-card class="bar" elevation="0">
     <v-toolbar
-      color="#ccc"
+      color="transparent"
       dense
       flat
       tile
