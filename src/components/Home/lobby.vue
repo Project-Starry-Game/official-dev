@@ -158,18 +158,36 @@ export default defineComponent({
           });
         }
 
+        function rndAreaX() {
+          let w = window.screen.width;
+          let n = 0;
+          n = rnd(0, 1);
+          if (n == 0) {
+            return rnd(w / 2, w);
+          } else {
+            return rnd(240, w / 2);
+          }
+        }
+
+        function rndAreaY() {
+          let h = window.screen.height;
+          return rnd(0, h / 2);
+        }
+
         function drawDots() {
           ctxDot.clearRect(0, 0, canvasDot.width, canvasDot.height);
           elements.forEach((element: any) => {
             if (element.fadingOut) element.opacity -= element.fadeRate;
             else element.opacity += element.fadeRate * 2;
-            element.x -= 0.5;
+            element.x -= 0.7;
             element.y += 0.5;
 
-            if (element.opacity <= 0.01) {
+            let w = window.screen.width;
+            let h = window.screen.height;
+            if (element.opacity <= 0.1) {
               element.fadingOut = false;
-              element.x = rnd(0, 1920);
-              element.y = rnd(0, 1080);
+              element.x = rndAreaX();
+              element.y = rndAreaY();
               element.fadeRate = Math.random() * 0.01;
               element.spirte = rndLightSprite();
             } else if (element.opacity > 0.3) {
@@ -177,19 +195,27 @@ export default defineComponent({
             }
             ctxDot.save();
             ctxDot.globalAlpha = element.opacity;
-            ctxDot.drawImage(element.img, element.x, element.y);
+            ctxDot.drawImage(
+              element.img,
+              element.x,
+              element.y,
+              element.size,
+              element.size
+            );
             ctxDot.restore();
           });
         }
 
         function loaddrawDots() {
+          let w = window.screen.width;
+          let h = window.screen.height;
           if (elements.length < 1) {
             for (let i = 0; i < 50; i++) {
               let ele = {
                 opacity: 0.3,
-                x: rnd(0, 1920),
-                y: rnd(0, 1080),
-                size: rnd(20, 30),
+                x: rndAreaX,
+                y: rndAreaY,
+                size: rnd(15, 30),
                 fadeRate: Math.random() * 0.01,
                 img: new Image(),
                 spirte: rndLightSprite(),
