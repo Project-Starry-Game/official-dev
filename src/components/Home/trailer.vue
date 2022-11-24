@@ -14,7 +14,8 @@
     </v-row> -->
 
     <!-- logo -->
-       <div class="img_container" id="logo_box">
+  
+      <div class="img_container" id="logo_box">
         <div class="img_logo" id="img_logo" >
           <v-img class="logo" id="logo" ref="first" :src="butterflylogo" />
         </div>
@@ -64,15 +65,24 @@ export default {
       var logo_box = document.getElementById("logo_box");
       var img_logo = document.getElementById("img_logo");
       var text_section = document.getElementById("text_section");
+      var halfposition = (e.target.scrollHeight - window.innerHeight) * 0.5
 
       this.offsetTop = e.target.scrollTop;
-      console.log((this.offsetTop / (e.target.scrollHeight - window.innerHeight)));
+      console.log(this.offsetTop);
+      console.log(halfposition);
+      console.log(text_section.style.opacity)
 
       logo_box.style.opacity =
         1 - this.offsetTop / (e.target.scrollHeight - window.innerHeight)*1.5;
 
-      text_section.style.opacity =
-        (this.offsetTop / (e.target.scrollHeight - window.innerHeight))-0.5; 
+      if (this.offsetTop < halfposition){
+        text_section.style.opacity = 0
+      } else{
+          text_section.style.opacity =
+            ((this.offsetTop - halfposition )/ (e.target.scrollHeight - window.innerHeight - halfposition)); 
+      }
+
+      
 
       img_logo.style.transform =
         "scale(" +
@@ -100,6 +110,11 @@ export default {
   /* overflow: scroll; */
   overflow-x: hidden;
   max-height: 100vh;
+}
+.rect{
+  min-width: 100vw;
+  height: 80vh;
+
 }
 .img_container {
   display: flex;

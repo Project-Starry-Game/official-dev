@@ -1,9 +1,11 @@
 <template>
   <v-app>
     <trailer />
+
     <lobby />
     <div class="body">
       <homeNavbar :subs="navbarDatas" />
+
       <v-row justify="center">
         <gameIntro />
         <itchPage />
@@ -121,7 +123,12 @@ export default {
   padding: 0;
 }
 
-.body {
+
+html{
+    scroll-behavior: smooth;
+}
+
+.body{
   position: relative;
 }
 </style>
