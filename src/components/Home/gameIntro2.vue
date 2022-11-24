@@ -23,10 +23,10 @@
           <br />
         </v-col>
       </v-row>
-      <v-row class="bor box1-2">
+      <v-row class="bor box1-2 ma-2">
         <v-col class="box1-3">
           <p>Platform</p>
-          <v-row class="pa-2">
+          <v-row class="pa-2 mt-1">
             <v-btn
               class="ma-1"
               variant="outlined"
@@ -42,7 +42,7 @@
         <div class="link"></div>
         <v-col class="pl-5 box1-3">
           <p>release date</p>
-          <h3>comming soon</h3>
+          <h2 class="mt-1">comming soon</h2>
         </v-col>
       </v-row>
     </v-col>
@@ -82,7 +82,7 @@ export default {
 .box {
   background-color: #fff;
   /* padding-top: 5%; */
-  height: 100vh;
+  height: auto;
 }
 
 .ibox {
@@ -93,6 +93,7 @@ export default {
 .box1-2 {
   display: flex;
   background-color: #ccc;
+  border-radius: 1rem;
   /* justify-content: center; */
 
   /* height: 25%; */

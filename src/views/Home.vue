@@ -2,7 +2,7 @@
   <v-app>
     <trailer />
     <div class="body">
-      <homeNavbar :subs="navbarDatas" />
+      <!-- <homeNavbar :subs="navbarDatas" /> -->
       <!-- <lobby /> -->
       <v-row justify="center">
         <gameIntro />
