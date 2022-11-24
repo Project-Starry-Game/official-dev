@@ -159,54 +159,58 @@ export default defineComponent({
         }
 
         function drawDots() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          elements.forEach((element: Object) => {
-            element.opacity -= element.fadeRate;
-            if (element.opacity <= 0.1) {
-              console.log("fff");
-              element.opacity = 0.3;
+          ctxDot.clearRect(0, 0, canvasDot.width, canvasDot.height);
+          elements.forEach((element: any) => {
+            if (element.fadingOut) element.opacity -= element.fadeRate;
+            else element.opacity += element.fadeRate * 2;
+            element.x -= 0.5;
+            element.y += 0.5;
+
+            if (element.opacity <= 0.01) {
+              element.fadingOut = false;
               element.x = rnd(0, 1920);
               element.y = rnd(0, 1080);
               element.fadeRate = Math.random() * 0.01;
               element.spirte = rndLightSprite();
+            } else if (element.opacity > 0.3) {
+              element.fadingOut = true;
             }
             ctxDot.save();
             ctxDot.globalAlpha = element.opacity;
-            ctxDot.drawImage(element.img, 0, 0);
+            ctxDot.drawImage(element.img, element.x, element.y);
             ctxDot.restore();
           });
         }
 
         function loaddrawDots() {
-          if (elements.length < 10) {
+          if (elements.length < 1) {
             for (let i = 0; i < 50; i++) {
               let ele = {
                 opacity: 0.3,
                 x: rnd(0, 1920),
                 y: rnd(0, 1080),
-                size: rnd(15, 50),
+                size: rnd(20, 30),
                 fadeRate: Math.random() * 0.01,
                 img: new Image(),
                 spirte: rndLightSprite(),
+                fadingOut: true,
               };
-
               elements.push(ele);
             }
           }
 
           // ctxDot.clearRect(0, 0, canvasDot.width, canvasDot.height);
-          elements.forEach((element: Object) => {
+          elements.forEach((element: any) => {
             let _width = window.screen.width;
             let _height = (_width * 1080) / 1920;
             canvasDot.width = _width;
             canvasDot.height = _height;
 
-            let img = new Image();
-            img.onload = function () {
+            element.img.onload = function () {
               ctxDot.save();
               ctxDot.globalAlpha = element.opacity;
               ctxDot.drawImage(
-                img,
+                element.img,
                 element.x,
                 element.y,
                 element.size,
@@ -214,8 +218,8 @@ export default defineComponent({
               );
               ctxDot.restore();
             };
-            img.src = light1;
-            element.img = img;
+            element.img.src = element.spirte;
+            // element.img = img;
           });
         }
       });
