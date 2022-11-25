@@ -1,16 +1,10 @@
 <template>
-  <div id="canvas_block" class="canvas_block">
-    <canvas id="lobbyCanvasBK" class="lobbyCanvasBK"> </canvas>
-    <canvas
-      id="lobbyCanvasDot"
-      class="lobbyCanvasDot"
-      style="position: absolute; top: 0; left: 0"
-    ></canvas>
-    <canvas
-      id="lobbyCanvas"
-      class="lobbyCanvas"
-      style="position: absolute; top: 0; left: 0"
-    ></canvas>
+  <div id="canvas_block" style="relative">
+    <div style="position: relative; margin-bottom: -10px">
+      <canvas id="lobbyCanvasBK" class="lobbyCanvasBK"></canvas>
+      <canvas id="lobbyCanvasDot" class="overlayCanvas"></canvas>
+      <canvas id="lobbyCanvas" class="overlayCanvas"></canvas>
+    </div>
   </div>
 </template>
 
@@ -21,7 +15,6 @@ import light1 from "@/assets/lobby/Lobby_LightSpot01.png";
 import light2 from "@/assets/lobby/Lobby_LightSpot02.png";
 import light3 from "@/assets/lobby/Lobby_LightSpot03.png";
 import { defineComponent, onMounted, nextTick } from "vue";
-import func from "vue-temp/vue-editor-bridge";
 export default defineComponent({
   name: "my",
   props: {},
@@ -66,7 +59,6 @@ export default defineComponent({
         let time = new Date().getTime();
         let lastTime = new Date().getTime();
         let isDescending = true;
-        // document.getElementById("canvas_block")!.style.height = canvasBK.height;
         const loop = function () {
           time = new Date().getTime();
 
@@ -265,20 +257,13 @@ export default defineComponent({
 <style>
 .lobby_block {
   position: relative;
-  overflow: auto;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  background-color: black;
-  overflow: scroll;
 }
 .canvas_block {
   margin-bottom: -10px;
 }
-#canvas {
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: auto;
-  margin-right: auto;
+.overlayCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 </style>
