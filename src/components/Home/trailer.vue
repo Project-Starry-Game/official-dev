@@ -17,8 +17,7 @@
   
       <div class="img_container" id="logo_box">
         <div class="img_logo" id="img_logo" >
-          <v-img class="logo" id="logo" ref="first" :src="butterflylogo" />
-          
+          <v-img class="logo" id="logo" ref="first" :src="butterflylogo" />   
         </div>
       </div>
     <!-- building_img -->
@@ -29,9 +28,12 @@
           ref="background"
           :src="bg_builder"
         />
-        
+     
+        <div class="scrolldown_box">
+          <a class="scroll-btn" id="scroll-btn" href="#goDowntoLobby"> </a>
+          <div class="scrolldown_text">Scroll Down</div>
+        </div>  
       </div>
-
 
     <!-- text -->
     <div
@@ -46,9 +48,7 @@
 
     </div>
   
-      <div class="scrolldown_box">
-          <a class="scroll-btn" href="#goDowntoLobby"></a>
-        </div>
+
     </v-container>
   </div>
 </template>
@@ -83,8 +83,8 @@ export default {
       if (this.offsetTop < halfposition){
         text_section.style.opacity = 0
       } else{
-          text_section.style.opacity =
-            ((this.offsetTop - halfposition )/ (e.target.scrollHeight - window.innerHeight - halfposition)); 
+        text_section.style.opacity =
+          ((this.offsetTop - halfposition )/ (e.target.scrollHeight - window.innerHeight - halfposition)); 
       }
 
       
@@ -151,6 +151,7 @@ export default {
   position: absolute;
   top: 0%;
   z-index: 10;
+
 }
 
 .text_section {
@@ -161,7 +162,7 @@ export default {
   );
   color: rgb(254, 255, 249);
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   position: sticky;
   top: 0%;
@@ -170,6 +171,8 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  align-self: center;
+  justify-self: center;
 }
 
 .sub {
@@ -177,19 +180,46 @@ export default {
 }
 .scrolldown_box{
   position: absolute;
-  /* bottom: 1%; */
+  bottom: 1%;
   width: 100vw;
-  height: auto;
-  background-color: rgb(157, 157, 157);
+  height: 6vh;
+  /* background-color: rgb(157, 157, 157); */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   z-index: 10000;
 }
+/* .box{
+  position: relative;
+  height: auto;
+  width: 2rem;
+  border: 3px solid rgb(238, 85, 85);
 
-.scroll-btn{
+} */
+a#scroll-btn{
+  
   height: 1rem;
   width: 1rem;
-  background-color: aquamarine;
+  background-color: rgb(255, 255, 255);
   border-radius: 50%;
+  animation: move-down 2s infinite;
+  margin-top: -1rem;
+}
+@keyframes move-down {
+50%{
+  opacity: 0.;
+}
+100%{
+  transform: translateY(1.5rem);
+  opacity: 0;
+
+}
+}
+
+
+.scrolldown_text{
+  font-size: 1rem;
+  color: #fff;
 }
 </style>
