@@ -18,6 +18,7 @@
       <div class="img_container" id="logo_box">
         <div class="img_logo" id="img_logo" >
           <v-img class="logo" id="logo" ref="first" :src="butterflylogo" />
+          
         </div>
       </div>
     <!-- building_img -->
@@ -28,6 +29,7 @@
           ref="background"
           :src="bg_builder"
         />
+        
       </div>
 
 
@@ -43,7 +45,10 @@
       </p>
 
     </div>
-      
+  
+      <div class="scrolldown_box">
+          <a class="scroll-btn" href="#goDowntoLobby"></a>
+        </div>
     </v-container>
   </div>
 </template>
@@ -169,5 +174,22 @@ export default {
 
 .sub {
   z-index: 1000;
+}
+.scrolldown_box{
+  position: absolute;
+  /* bottom: 1%; */
+  width: 100vw;
+  height: auto;
+  background-color: rgb(157, 157, 157);
+  display: flex;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.scroll-btn{
+  height: 1rem;
+  width: 1rem;
+  background-color: aquamarine;
+  border-radius: 50%;
 }
 </style>

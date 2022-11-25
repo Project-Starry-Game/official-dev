@@ -77,7 +77,6 @@ div{
   height: 300px;
 }
 
-
 .box{
   height: 200vh;
 }

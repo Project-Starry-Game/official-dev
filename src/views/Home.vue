@@ -1,15 +1,14 @@
 <template>
   <v-app>
     <trailer />
-
-    <lobby />
+    <lobby id="goDowntoLobby"/>
     <div class="body">
       <homeNavbar :subs="navbarDatas" />
 
-      <v-row justify="center">
+      <!-- <v-row justify="center">
         <gameIntro />
         <itchPage />
-      </v-row>
+      </v-row> -->
       <!-- <slidebar :imgs="slidebarDatas" />
       <HelloWorld /> -->
     </div>
@@ -129,6 +128,7 @@ html{
 }
 
 .body{
+
   position: relative;
 }
 </style>
