@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
     "roboto-fontface": "*",
     "vue": "^3.2.38",
+    "vue-router": "4",
     "vuetify": "^3.0.0",
     "webfontloader": "^1.0.0"
   },
