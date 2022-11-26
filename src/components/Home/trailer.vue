@@ -13,7 +13,9 @@
     <div class="background_box">
       <v-img :src="bg_builder" />
       <div class="scrolldown_box">
-        <a class="scroll-btn" id="scroll-btn" href="#goDowntoLobby"> </a>
+        <v-btn @click="scrollToNextSection()" color="transparent" elevation="0">
+          <a class="scroll-btn" id="scroll-btn"></a>
+        </v-btn>
         <div class="scrolldown_text">Scroll Down</div>
       </div>
     </div>
@@ -28,6 +30,7 @@
 </template>
 
 <script setup lang="ts">
+import $ from "jquery";
 import bg_builder from "../../assets/bgwithcc.png";
 import butterflylogo from "../../assets/logo_shadow.png";
 </script>
@@ -36,9 +39,7 @@ import butterflylogo from "../../assets/logo_shadow.png";
 export default {
   setup() {},
 
-  mounted() {
-    console.log("mounted");
-  },
+  mounted() {},
 
   data: () => ({
     offsetTop: 0,
@@ -53,9 +54,9 @@ export default {
       var halfposition = (e.target.scrollHeight - window.innerHeight) * 0.5;
 
       this.offsetTop = e.target.scrollTop;
-      console.log(this.offsetTop);
-      console.log(halfposition);
-      console.log(text_section.style.opacity);
+      // console.log(this.offsetTop);
+      // console.log(halfposition);
+      // console.log(text_section.style.opacity);
 
       logo_box.style.opacity =
         1 -
@@ -74,6 +75,14 @@ export default {
         1 -
         this.offsetTop / (e.target.scrollHeight - window.innerHeight) +
         ")";
+    },
+    scrollToNextSection() {
+      $("html, body").animate(
+        { scrollTop: $("#goDowntoLobby").position().top },
+        100
+      );
+
+      // document.getElementById("goDowntoLobby").scrollIntoView();
     },
   },
 };

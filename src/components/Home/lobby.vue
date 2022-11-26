@@ -55,10 +55,10 @@ export default defineComponent({
         let elements: any = [];
 
         drawBK().then((e) => {
-          console.log(e);
+          // console.log(e);
         });
         drawLight().then((e) => {
-          console.log(e);
+          // console.log(e);
         });
 
         loaddrawDots();
