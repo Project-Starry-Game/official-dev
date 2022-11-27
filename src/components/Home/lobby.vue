@@ -164,11 +164,11 @@ export default defineComponent({
         function rndAreaX() {
           let w = window.screen.width;
           let n = 0;
-          n = rnd(0, 1);
+          n = rnd(0, 4);
           if (n == 0) {
-            return rnd(w / 2, w);
-          } else {
             return rnd(240, w / 2);
+          } else {
+            return rnd(w / 2, w);
           }
         }
 
@@ -178,7 +178,8 @@ export default defineComponent({
         }
 
         function rndSize() {
-          return rnd(10, 30);
+          let w = window.screen.width / 100;
+          return rnd(w, w + 5);
         }
 
         function drawDots() {

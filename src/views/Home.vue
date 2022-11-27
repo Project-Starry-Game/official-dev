@@ -8,8 +8,10 @@
       style="height: 100vh"
     >
       <lobby id="goDowntoLobby" />
-      <gameIntro />
-      <itchPage />
+      <v-parallax src="src/assets/background.png" height="100%">
+        <gameIntro />
+        <itchPage />
+      </v-parallax>
     </v-container>
   </v-app>
 </template>

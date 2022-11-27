@@ -1,5 +1,5 @@
 <template>
-  <v-row class="box pa-5">
+  <v-row class="box pa-5 text-primary">
     <v-col class="bor box1" cols="12" md="6">
       <h1 class="pa-3">
         Soul of Butterflies series
@@ -41,7 +41,7 @@
         </v-col>
         <div class="link"></div>
         <v-col class="pl-5 box1-3">
-          <p>release date</p>
+          <p>Release date</p>
           <h2 class="mt-1">comming soon</h2>
         </v-col>
       </v-row>
@@ -78,7 +78,7 @@ export default {
   padding: 20px;
 }
 .box {
-  background-color: #fff;
+  /* background-color: #15463b; */
   /* padding-top: 5%; */
   height: auto;
 }
@@ -98,7 +98,7 @@ export default {
 }
 
 .link {
-  border-right: 3px solid black;
+  border-right: 3px solid #fff;
   /* line-height:120px; */
 }
 </style>

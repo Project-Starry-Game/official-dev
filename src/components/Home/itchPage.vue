@@ -30,6 +30,7 @@ export default {
 }
 
 .itchPage {
+  /* background-color: #15463b; */
   display: flex;
   justify-content: space-evenly;
   padding: 80px;
