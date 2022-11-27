@@ -78,7 +78,7 @@ export default {
   padding: 20px;
 }
 .box {
-  /* background-color: #15463b; */
+  background-color: #000;
   /* padding-top: 5%; */
   height: auto;
 }

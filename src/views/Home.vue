@@ -8,10 +8,8 @@
       style="height: 100vh"
     >
       <lobby id="goDowntoLobby" />
-      <v-parallax src="src/assets/background.png" height="100%">
-        <gameIntro />
-        <itchPage />
-      </v-parallax>
+      <gameIntro />
+      <itchPage />
     </v-container>
   </v-app>
 </template>
@@ -21,6 +19,8 @@ import trailer from "@/components/Home/trailer.vue";
 import lobby from "@/components/Home/lobby.vue";
 import gameIntro from "@/components/Home/gameIntro.vue";
 import itchPage from "@/components/Home/itchPage.vue";
+
+import bk from "../assets/background.png";
 </script>
 
 <script lang="ts">
@@ -31,6 +31,7 @@ export default {
     },
   },
   mounted() {
+    AOS.init();
     window.onresize = this.reportWindowSize;
   },
 };

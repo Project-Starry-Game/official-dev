@@ -6,11 +6,9 @@
     <div class="d-flex justify-center">
       <iframe
         frameborder="0"
-        src="https://itch.io/embed/1033029?bg_color=15463b&amp;fg_color=eeeeee&amp;link_color=fa5c5c&amp;border_color=363636"
+        src="https://itch.io/embed/1033029?linkback=true&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=ffb119&amp;border_color=ffffff"
         width="552"
         height="167"
-        data-aos="zoom-in-down"
-        data-aos-offset="200px"
         ><a href="https://project-starry.itch.io/soul-of-butterflies-incubation"
           >Soul of Butterflies : Incubation by Project Starry</a
         ></iframe
