@@ -2,7 +2,7 @@
   <v-app class="home">
     <trailer />
     <v-container
-      class="overflow-y-auto ma-0 pa-0 scroll_view"
+      class="overflow-y-auto overflow-x-hidden ma-0 pa-0 scroll_view"
       fluid
       id="scroll-target"
       style="height: 100vh"
@@ -43,13 +43,15 @@ export default {
 html,
 body {
   overflow-y: hidden;
+  overflow-x: hidden;
   height: 100%;
+  width: 100vw;
   scroll-behavior: smooth;
 }
 
 .home {
   height: auto;
-  overflow: hidden;
+  width: auto;
 }
 
 @keyframes smoothscroll1 {

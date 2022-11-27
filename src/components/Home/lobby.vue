@@ -130,6 +130,7 @@ export default defineComponent({
             backgoundImage.onload = function () {
               let _width = window.screen.width;
               let _height = (_width * 1080) / 1920;
+              console.log(_width, _height);
               canvasBK.width = _width;
               canvasBK.height = _height;
               ctxBK.save();
