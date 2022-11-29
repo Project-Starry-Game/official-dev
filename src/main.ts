@@ -17,9 +17,6 @@ import router from "./router";
 
 const app = createApp(App);
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 registerPlugins(app);
 
 app.use(router).mount("#app");

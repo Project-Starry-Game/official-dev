@@ -10,6 +10,7 @@
       <lobby id="goDowntoLobby" />
       <gameIntro />
       <itchPage />
+      <homenavbar />
     </v-container>
   </v-app>
 </template>
@@ -19,8 +20,10 @@ import trailer from "@/components/Home/trailer.vue";
 import lobby from "@/components/Home/lobby.vue";
 import gameIntro from "@/components/Home/gameIntro.vue";
 import itchPage from "@/components/Home/itchPage.vue";
+import homenavbar from "@/components/Home/navbar2col.vue";
 
-import bk from "../assets/background.png";
+import bk from "@/assets/background.png";
+
 </script>
 
 <script lang="ts">
@@ -31,7 +34,7 @@ export default {
     },
   },
   mounted() {
-    AOS.init();
+    // AOS.init();
     window.onresize = this.reportWindowSize;
   },
 };
