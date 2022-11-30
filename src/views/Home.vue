@@ -48,13 +48,13 @@ export default {
           {
             scrollTop: $("#" + v).offset().top,
           },
-          0
+          100
         );
       }
       // document.getElementById("trailer_pos")!.scrollIntoView();
       setTimeout(() => {
         body.classList.remove("fading");
-      }, 2000);
+      }, 1500);
     },
   },
   mounted() {
@@ -109,10 +109,10 @@ html:focus-within {
 }
 
 .fading {
-  -moz-animation: fadeInAnimation ease 2s; /* Firefox */
-  -webkit-animation: fadeInAnimation ease 2s; /* Safari and Chrome */
-  -o-animation: fadeInAnimation ease 2s; /* Opera */
-  animation: fadeInAnimation ease 2s;
+  -moz-animation: fadeInAnimation ease 1.5s; /* Firefox */
+  -webkit-animation: fadeInAnimation ease 1s; /* Safari and Chrome */
+  -o-animation: fadeInAnimation ease 1.5s; /* Opera */
+  animation: fadeInAnimation ease 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-play-state: running;
