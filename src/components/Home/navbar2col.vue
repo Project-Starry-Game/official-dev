@@ -1,57 +1,58 @@
 <template>
+  <div class="navbar">
+    <v-btn
+      id=""
+      @click="onEmit()"
+      v-for="(item, index) in nav"
+      :key="index"
+      elevation="0"
+      color="transparent"
+    >
+      <span class="text-white">
+        {{ item.name }}
+      </span>
+    </v-btn>
 
-    <div class="navbar">
-        <a  
-            id=""
-            href=""
-            v-for="(item, index) in nav"
-            :key="index"
-            >
-            {{ item.name }}
-        </a>
-
-        <!-- <a 
+    <!-- <a 
             :width="dot.width"
             :height="dot.height"
             href="">
         </a> -->
-    </div>
-
-
-    
+  </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-        nav: [{ name: "trailer" }, { name: "iOS" }, { name: "Android" }],
-        };
-    }
-
-}
+  data() {
+    return {
+      nav: [{ name: "trailer" }, { name: "iOS" }, { name: "Android" }],
+    };
+  },
+  methods: {
+    onEmit(name) {
+      this.$emit("on-change", name);
+    },
+  },
+};
 </script>
 
 <style>
+.navbar {
+  border: 1px solid red;
+  position: fixed;
+  top: 30%;
+  right: 3rem;
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 50vh;
 
-.navbar{
-    border: 1px solid red;
-    position: fixed;
-    top: 30%;
-    right: 3rem;
-    display: flex;
-    flex-direction: column;
-    width: 100px;
-    height: 50vh;
-
-    justify-content: space-around;
-    align-content: center;
-
- 
+  justify-content: space-around;
+  align-content: center;
 }
-a{
-    color: rgb(234, 223, 210);
-    text-decoration:none;
-    font-weight: bolder;
+a {
+  color: rgb(234, 223, 210);
+  text-decoration: none;
+  font-weight: bolder;
 }
 </style>

@@ -1,19 +1,20 @@
 <template>
   <v-app class="home">
-    <trailer />
+    <div id="trailer_pos">
+      <trailer @on-change="onPageChanged" />
+    </div>
     <v-container
       class="overflow-y-auto overflow-x-hidden ma-0 pa-0 scroll_view"
       fluid
       id="scroll-target"
-      style="height: 100vh"
+      style="height: 100vh; position: relative"
     >
-      
       <lobby id="goDowntoLobby" />
-      
+
       <gameIntro />
       <!-- <itchPage /> -->
-      <homenavbar />
-      <homebg />
+      <homenavbar @on-change="onPageChanged" />
+      <!-- <homebg /> -->
     </v-container>
   </v-app>
 </template>
@@ -28,6 +29,7 @@ import homebg from "@/components/Home/homeBG.vue";
 
 import bk from "@/assets/background.png";
 
+import $ from "jquery";
 </script>
 
 <script lang="ts">
@@ -36,10 +38,29 @@ export default {
     reportWindowSize() {
       location.reload();
     },
+    onPageChanged(v: any) {
+      console.log(123);
+      let body = document.body;
+
+      body.classList.add("fading");
+      if (v != null) {
+        $(document.body).animate(
+          {
+            scrollTop: $("#" + v).offset().top,
+          },
+          0
+        );
+      }
+      // document.getElementById("trailer_pos")!.scrollIntoView();
+      setTimeout(() => {
+        body.classList.remove("fading");
+      }, 2000);
+    },
   },
   mounted() {
     // AOS.init();
     window.onresize = this.reportWindowSize;
+    this.onPageChanged(null);
   },
 };
 </script>
@@ -85,5 +106,39 @@ html {
 html:focus-within {
   animation-name: smoothscroll2;
   scroll-behavior: smooth;
+}
+
+.fading {
+  -moz-animation: fadeInAnimation ease 2s; /* Firefox */
+  -webkit-animation: fadeInAnimation ease 2s; /* Safari and Chrome */
+  -o-animation: fadeInAnimation ease 2s; /* Opera */
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 </style>

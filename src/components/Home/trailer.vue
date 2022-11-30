@@ -30,7 +30,6 @@
 </template>
 
 <script setup lang="ts">
-import $ from "jquery";
 import bg_builder from "../../assets/bgwithcc.png";
 import butterflylogo from "../../assets/logo_shadow.png";
 </script>
@@ -77,12 +76,7 @@ export default {
         ")";
     },
     scrollToNextSection() {
-      $("html, body").animate(
-        { scrollTop: $("#goDowntoLobby").position().top },
-        100
-      );
-
-      // document.getElementById("goDowntoLobby").scrollIntoView();
+      this.$emit("on-change", "goDowntoLobby");
     },
   },
 };
