@@ -1,6 +1,5 @@
 <template>
   <v-app class="home">
-    <trailer />
     <v-container
       class="overflow-y-auto overflow-x-hidden ma-0 pa-0 scroll_view"
       fluid
@@ -15,6 +14,7 @@
       <homenavbar />
       <homebg />
     </v-container>
+    <trailer />
   </v-app>
 </template>
 
