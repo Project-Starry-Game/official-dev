@@ -7,10 +7,13 @@
       id="scroll-target"
       style="height: 100vh"
     >
+      
       <lobby id="goDowntoLobby" />
+      
       <gameIntro />
-      <itchPage />
+      <!-- <itchPage /> -->
       <homenavbar />
+      <homebg />
     </v-container>
   </v-app>
 </template>
@@ -21,6 +24,7 @@ import lobby from "@/components/Home/lobby.vue";
 import gameIntro from "@/components/Home/gameIntro.vue";
 import itchPage from "@/components/Home/itchPage.vue";
 import homenavbar from "@/components/Home/navbar2col.vue";
+import homebg from "@/components/Home/homeBG.vue";
 
 import bk from "@/assets/background.png";
 

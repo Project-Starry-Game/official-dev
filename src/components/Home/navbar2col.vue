@@ -9,6 +9,12 @@
             >
             {{ item.name }}
         </a>
+
+        <!-- <a 
+            :width="dot.width"
+            :height="dot.height"
+            href="">
+        </a> -->
     </div>
 
 
@@ -29,12 +35,13 @@ export default {
 <style>
 
 .navbar{
+    border: 1px solid red;
     position: fixed;
     top: 30%;
     right: 3rem;
     display: flex;
     flex-direction: column;
-    width: 3vw;
+    width: 100px;
     height: 50vh;
 
     justify-content: space-around;

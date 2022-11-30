@@ -23,7 +23,7 @@ export default defineComponent({
   props: {},
   setup() {
     onMounted(() => {
-      console.log("onMounted");
+      // console.log("onMounted");
     });
   },
 
@@ -130,7 +130,7 @@ export default defineComponent({
             backgoundImage.onload = function () {
               let _width = window.screen.width;
               let _height = (_width * 1080) / 1920;
-              console.log(_width, _height);
+              // console.log(_width, _height);
               canvasBK.width = _width;
               canvasBK.height = _height;
               ctxBK.save();
@@ -261,7 +261,7 @@ export default defineComponent({
   },
 
   mounted() {
-    console.log("mouted lobby");
+    // console.log("mouted lobby");
     this.oninitCanvas();
   },
 });
