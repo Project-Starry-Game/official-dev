@@ -38,18 +38,23 @@ export default {
     reportWindowSize() {
       location.reload();
     },
-    onPageChanged(v: any) {
-      console.log(123);
+    onPageChanged(ele: any) {
       let body = document.body;
+      console.log(ele);
 
       body.classList.add("fading");
-      if (v != null) {
-        $(document.body).animate(
-          {
-            scrollTop: $("#" + v).offset().top,
-          },
-          100
-        );
+      if (ele != null) {
+        let id = ele.id;
+        let fade = ele.fade;
+
+        if (fade == true) {
+          $(document.body).animate(
+            {
+              scrollTop: $("#" + id).offset().top,
+            },
+            100
+          );
+        }
       }
       // document.getElementById("trailer_pos")!.scrollIntoView();
       setTimeout(() => {

@@ -2,7 +2,7 @@
   <div class="navbar">
     <v-btn
       id=""
-      @click="onEmit(item.id)"
+      @click="onEmit(item)"
       v-for="(item, index) in nav"
       :key="index"
       elevation="0"
@@ -26,15 +26,15 @@ export default {
   data() {
     return {
       nav: [
-        { name: "trailer", id: "trailer_pos" },
-        { name: "iOS", id: "" },
-        { name: "Android", id: "" },
+        { name: "trailer", id: "trailer_pos", fade: true },
+        { name: "iOS", id: "", fade: true },
+        { name: "Android", id: "", fade: true },
       ],
     };
   },
   methods: {
-    onEmit(id) {
-      this.$emit("on-change", id);
+    onEmit(ele) {
+      this.$emit("on-change", ele);
     },
   },
 };

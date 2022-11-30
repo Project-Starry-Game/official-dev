@@ -76,7 +76,7 @@ export default {
         ")";
     },
     scrollToNextSection() {
-      this.$emit("on-change", "goDowntoLobby");
+      this.$emit("on-change", { id: "goDowntoLobby", fade: true });
     },
   },
 };
