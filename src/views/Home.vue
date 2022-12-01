@@ -61,6 +61,8 @@ export default {
             body.classList.remove("fadingShort");
           }, 500);
 
+          console.log(123);
+
           let offset = document.getElementById(id).getBoundingClientRect();
           document.getElementById("scroll-target-page").scrollTop = offset.top;
         }
