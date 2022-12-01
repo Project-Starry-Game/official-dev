@@ -2,11 +2,9 @@
   <div class="eyes">
     
     <div class="eye">
-      <div class="eyeball">
-        <v-img :src="eyeball" />
-      </div>
-      <v-img :src="eye" />
-      <!-- <div class="eyeball" /> -->
+        <v-img class="eyeball" :src="eyeball" />
+        <v-img :src="eye" />
+        <!-- <div class="eyeball" /> -->
    
     </div>
 
