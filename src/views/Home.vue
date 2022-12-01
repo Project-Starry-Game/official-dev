@@ -10,11 +10,10 @@
       style="height: 100vh; position: relative"
       :value="scrollTar"
     >
-      <lobby id="goDowntoLobby" />
-      <gameIntro id="gameIntro_pos" />
-      <!-- <itchPage /> -->
-      <homenavbar @on-change="onPageChanged" />
+      <homenavbar @on-change="onPageChanged" /><lobby id="goDowntoLobby" />
       <homebg />
+      <gameIntro id="gameIntro_pos" />
+      <itchPage />
     </v-container>
   </v-app>
 </template>
@@ -28,7 +27,6 @@ import homenavbar from "@/components/Home/navbar2col.vue";
 import homebg from "@/components/Home/homeBG.vue";
 
 import bk from "@/assets/background.png";
-
 import $ from "jquery";
 </script>
 
@@ -48,6 +46,10 @@ export default {
       if (ele != null) {
         let id = ele.id;
         let fade = ele.fade;
+        switch(id){
+            case "trailer_pos":
+              break;
+        }
         if (fade == true) {
           if (this.ableToTransisit == false) return;
           this.ableToTransisit = false;

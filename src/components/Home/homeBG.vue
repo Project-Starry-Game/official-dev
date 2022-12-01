@@ -2,10 +2,22 @@
   <div class="eyes">
     
     <div class="eye">
+      <div class="eyeball">
+        <v-img :src="eyeball" />
+      </div>
+      <v-img :src="eye" />
+      <!-- <div class="eyeball" /> -->
+   
+    </div>
+
+    <div class="eye">
         <v-img class="eyeball" :src="eyeball" />
         <v-img :src="eye" />
-        <!-- <div class="eyeball" /> -->
-   
+    </div>
+
+    <div class="eye">
+        <v-img class="eyeball" :src="eyeball" />
+        <v-img :src="eye" />
     </div>
 
     <div class="eye">
@@ -38,7 +50,7 @@ export default {
         this.mousePosY = e.clientY * 100 / window.innerHeight + "%";
         console.log(this.mousePosX, this.mousePosY);
 
-        for(var i=0;i<2;i++){
+        for(var i=0;i<4;i++){
             eyeball[i].style.left = this.mousePosX;
             eyeball[i].style.top = this.mousePosY;
             eyeball[i].style.transform = "translate(-"+this.mousePosX+",-"+this.mousePosY+")";
@@ -59,11 +71,15 @@ export default {
 } */
 
 eyes{
-  position: relative;
+  
+  position: sticky;
+  width: 100vw;
+  height: 100vh;
   top: 50%;
   transform: translateY(-50%);
-  width: 100%;
+  justify-content: center;
   text-align: center;
+  background-color: rgb(42, 42, 33);
 }
 .eye{
   width: 7rem;
