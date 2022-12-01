@@ -1,6 +1,5 @@
 <template>
   <div class="navbar">
-    
     <v-btn
       id=""
       @click="onEmit(item)"
@@ -13,9 +12,9 @@
         <v-img :src="eyeball" />
       </div>
 
-      <span>
+      <!-- <span>
         {{ item.name }}
-      </span>
+      </span> -->
 
       <!-- <span class="text-white">
         {{ item.name }}
@@ -40,7 +39,7 @@ export default {
   data() {
     return {
       nav: [
-        { name: "1", src:"eyeball", id: "trailer_pos", fade: true },
+        { name: "Trailer", src: "eyeball", id: "trailer_pos", fade: true },
         { name: "Lobby", id: "goDowntoLobby", fade: false },
         { name: "Intro", id: "gameIntro_pos", fade: false },
       ],
@@ -75,7 +74,7 @@ a {
   font-weight: bolder;
 }
 
-.eye_open{
+.eye_open {
   width: 100px;
   height: 100px;
   border: 1px solid rosybrown;

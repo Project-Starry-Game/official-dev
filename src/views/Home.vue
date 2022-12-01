@@ -32,12 +32,12 @@ import $ from "jquery";
 
 <script lang="ts">
 export default {
+  data() {
+    return {
+      ableToTransisit: true,
+    };
+  },
   methods: {
-    data() {
-      return {
-        scrollTar: null,
-      };
-    },
     reportWindowSize() {
       location.reload();
     },
@@ -46,35 +46,53 @@ export default {
       if (ele != null) {
         let id = ele.id;
         let fade = ele.fade;
-        switch(id){
-            case "trailer_pos":
-              
-              break;
+        switch (id) {
+          case "trailer_pos":
+            break;
         }
         if (fade == true) {
+          if (this.ableToTransisit == false) return;
+          this.ableToTransisit = false;
           body.classList.add("fading");
           setTimeout(() => {
             body.classList.remove("fading");
-          }, 1500);
+            this.ableToTransisit = true;
+          }, 2000);
 
-          document.getElementById(ele.id)!.scrollIntoView();
+          let offset = document.getElementById(id).getBoundingClientRect();
+          $("html, body").animate(
+            {
+              scrollTop: offset.top,
+            },
+            500
+          );
         } else {
+          if (this.ableToTransisit == false) return;
+          this.ableToTransisit = false;
+
           body.classList.add("fadingShort");
           setTimeout(() => {
             body.classList.remove("fadingShort");
+            this.ableToTransisit = true;
           }, 500);
-
-          console.log(123);
 
           let offset = document.getElementById(id).getBoundingClientRect();
           document.getElementById("scroll-target-page").scrollTop = offset.top;
         }
+      } else {
+        if (this.ableToTransisit == false) return;
+        this.ableToTransisit = false;
+        body.classList.add("fadingLong");
+        setTimeout(() => {
+          body.classList.remove("fadingLong");
+          this.ableToTransisit = true;
+        }, 5000);
       }
     },
   },
   mounted() {
     window.onresize = this.reportWindowSize;
-    this.onPageChanged(null);
+    this.onPageChanged();
   },
 };
 </script>
@@ -91,7 +109,7 @@ body {
   overflow-x: hidden;
   height: 100%;
   width: 100vw;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 .home {
@@ -99,34 +117,21 @@ body {
   width: auto;
 }
 
-@keyframes smoothscroll1 {
-  from,
-  to {
-    scroll-behavior: smooth;
-  }
-}
-
-@keyframes smoothscroll2 {
-  from,
-  to {
-    scroll-behavior: smooth;
-  }
-}
-
-html {
-  animation: smoothscroll1 0.01s;
-}
-
-html:focus-within {
-  animation-name: smoothscroll2;
-  scroll-behavior: smooth;
+.fadingLong {
+  -moz-animation: fadeInAnimation ease 5s; /* Firefox */
+  -webkit-animation: fadeInAnimation ease 5s; /* Safari and Chrome */
+  -o-animation: fadeInAnimation ease 5s; /* Opera */
+  animation: fadeInAnimation ease 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
 }
 
 .fading {
-  -moz-animation: fadeInAnimation ease 1.5s; /* Firefox */
-  -webkit-animation: fadeInAnimation ease 1.5s; /* Safari and Chrome */
-  -o-animation: fadeInAnimation ease 1.5s; /* Opera */
-  animation: fadeInAnimation ease 1.5s;
+  -moz-animation: fadeInAnimation ease 2s; /* Firefox */
+  -webkit-animation: fadeInAnimation ease 2s; /* Safari and Chrome */
+  -o-animation: fadeInAnimation ease 2s; /* Opera */
+  animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-play-state: running;
