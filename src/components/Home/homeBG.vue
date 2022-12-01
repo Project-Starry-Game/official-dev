@@ -4,11 +4,13 @@
     <div class="eye">
         <v-img class="eyeball" :src="eyeball" />
         <v-img :src="eye" />
-        <!-- <div class="eyeball"></div> -->
+        <!-- <div class="eyeball" /> -->
+   
     </div>
 
     <div class="eye">
-        <div class="eyeball"></div>
+        <v-img class="eyeball" :src="eyeball" />
+        <v-img :src="eye" />
     </div>
   </div>
 </template>
@@ -34,12 +36,12 @@ export default {
         var eyeball = document.getElementsByClassName("eyeball");
         this.mousePosX = e.clientX * 100 / window.innerWidth + "%";
         this.mousePosY = e.clientY * 100 / window.innerHeight + "%";
-        console.log(this.mousePosX, this.mousePosY)
+        console.log(this.mousePosX, this.mousePosY);
 
         for(var i=0;i<2;i++){
             eyeball[i].style.left = this.mousePosX;
             eyeball[i].style.top = this.mousePosY;
-            eyeball[i].style.transform = "translate(-"+x+",-"+y+")";
+            eyeball[i].style.transform = "translate(-"+this.mousePosX+",-"+this.mousePosY+")";
         }
 
     });
@@ -56,18 +58,17 @@ export default {
   margin: 60px;
 } */
 
-.eyes{
-    background-color: #000;
-  position: absolute;
-  top: 70%;
+eyes{
+  position: relative;
+  top: 50%;
   transform: translateY(-50%);
   width: 100%;
   text-align: center;
 }
 .eye{
-  width: 8rem;
+  width: 7rem;
   height: auto;
-  /* background: #fff; */
+  background: #fff;
   display: inline-block;
   margin: 40px;
   border-radius: 50%;
@@ -76,14 +77,14 @@ export default {
 }
 
 .eyeball{
-  width: 8rem;
+  width: 4rem;
   height: auto;
-  background: rgb(174, 174, 174);
+  /* background: #000; */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   border-radius: 50%;
-  border: 15px solid rgb(255, 251, 246);
+  /* border: 15px solid #333; */
 }
 </style>

@@ -14,7 +14,7 @@
       <gameIntro id="gameIntro_pos" />
       <!-- <itchPage /> -->
       <homenavbar @on-change="onPageChanged" />
-      <!-- <homebg /> -->
+      <homebg />
     </v-container>
   </v-app>
 </template>
