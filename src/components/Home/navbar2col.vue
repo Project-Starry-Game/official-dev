@@ -27,13 +27,14 @@ export default {
     return {
       nav: [
         { name: "trailer", id: "trailer_pos", fade: true },
-        { name: "iOS", id: "", fade: true },
-        { name: "Android", id: "", fade: true },
+        { name: "Lobby", id: "goDowntoLobby", fade: false },
+        { name: "Intro", id: "gameIntro_pos", fade: false },
       ],
     };
   },
   methods: {
     onEmit(ele) {
+      console.log(ele);
       this.$emit("on-change", ele);
     },
   },

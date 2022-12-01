@@ -6,12 +6,12 @@
     <v-container
       class="overflow-y-auto overflow-x-hidden ma-0 pa-0 scroll_view"
       fluid
-      id="scroll-target"
+      id="scroll-target-page"
       style="height: 100vh; position: relative"
+      :value="scrollTar"
     >
       <lobby id="goDowntoLobby" />
-
-      <gameIntro />
+      <gameIntro id="gameIntro_pos" />
       <!-- <itchPage /> -->
       <homenavbar @on-change="onPageChanged" />
       <!-- <homebg /> -->
@@ -35,35 +35,39 @@ import $ from "jquery";
 <script lang="ts">
 export default {
   methods: {
+    data() {
+      return {
+        scrollTar: null,
+      };
+    },
     reportWindowSize() {
       location.reload();
     },
     onPageChanged(ele: any) {
       let body = document.body;
-      console.log(ele);
-
-      body.classList.add("fading");
       if (ele != null) {
         let id = ele.id;
         let fade = ele.fade;
-
         if (fade == true) {
-          $(document.body).animate(
-            {
-              scrollTop: $("#" + id).offset().top,
-            },
-            100
-          );
+          body.classList.add("fading");
+          setTimeout(() => {
+            body.classList.remove("fading");
+          }, 1500);
+
+          document.getElementById(ele.id)!.scrollIntoView();
+        } else {
+          body.classList.add("fadingShort");
+          setTimeout(() => {
+            body.classList.remove("fadingShort");
+          }, 500);
+
+          let offset = document.getElementById(id).getBoundingClientRect();
+          document.getElementById("scroll-target-page").scrollTop = offset.top;
         }
       }
-      // document.getElementById("trailer_pos")!.scrollIntoView();
-      setTimeout(() => {
-        body.classList.remove("fading");
-      }, 1500);
     },
   },
   mounted() {
-    // AOS.init();
     window.onresize = this.reportWindowSize;
     this.onPageChanged(null);
   },
@@ -115,9 +119,19 @@ html:focus-within {
 
 .fading {
   -moz-animation: fadeInAnimation ease 1.5s; /* Firefox */
-  -webkit-animation: fadeInAnimation ease 1s; /* Safari and Chrome */
+  -webkit-animation: fadeInAnimation ease 1.5s; /* Safari and Chrome */
   -o-animation: fadeInAnimation ease 1.5s; /* Opera */
   animation: fadeInAnimation ease 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.fadingShort {
+  -moz-animation: fadeInAnimation ease 0.5s; /* Firefox */
+  -webkit-animation: fadeInAnimation ease 0.5s; /* Safari and Chrome */
+  -o-animation: fadeInAnimation ease 0.5s; /* Opera */
+  animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-play-state: running;

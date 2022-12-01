@@ -100,7 +100,7 @@ export default {
 }
 .img_logo {
   position: relative;
-  width: 30%;
+  width: 40%;
 }
 .background_box {
   width: 100vw;

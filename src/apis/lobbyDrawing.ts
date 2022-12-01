@@ -171,7 +171,7 @@ export function oninitCanvas(
         if (element.fadingOut) element.opacity -= element.fadeRate;
         else element.opacity += element.fadeRate * 2;
 
-        element.x -= 0.7;
+        element.x += 0.7;
         element.y += 0.5;
 
         if (element.opacity <= 0.05) {
