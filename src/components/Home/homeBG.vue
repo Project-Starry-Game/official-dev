@@ -1,25 +1,16 @@
 <template>
   <div class="eyes">
-    <div class="eye">
-      <v-img class="eyeball" :src="eyeball" />
-      <v-img :src="eye" />
-      <!-- <div class="eyeball" /> -->
-    </div>
-
-    <div class="eye">
-      <v-img class="eyeball" :src="eyeball" />
-      <v-img :src="eye" />
-    </div>
-
-    <div class="eye">
-      <v-img class="eyeball" :src="eyeball" />
-      <v-img :src="eye" />
-    </div>
-
-    <div class="eye">
-      <v-img class="eyeball" :src="eyeball" />
-      <v-img :src="eye" />
-    </div>
+    <v-container fluid class="pa-0 ma-0" style="height: 100vh">
+      <v-row v-for="i in 10">
+        <v-col>
+          <div class="eye" v-for="j in i % 2 === 0 ? 6 : 5">
+            <v-img class="eyeball" :src="eyeball" />
+            <v-img :src="eye" />
+            <!-- <div class="eyeball" /> -->
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
@@ -41,9 +32,8 @@ export default {
       var eyeball = document.getElementsByClassName("eyeball");
       this.mousePosX = (e.clientX * 100) / window.innerWidth + "%";
       this.mousePosY = (e.clientY * 100) / window.innerHeight + "%";
-      // console.log(this.mousePosX, this.mousePosY);
 
-      for (var i = 0; i < 4; i++) {
+      for (var i = 0; i < eyeball.length; i++) {
         eyeball[i].style.left = this.mousePosX;
         eyeball[i].style.top = this.mousePosY;
         eyeball[i].style.transform =
@@ -63,15 +53,16 @@ export default {
   margin: 60px;
 } */
 
-eyes {
-  position: sticky;
+.eyes {
+  position: fixed;
   width: 100vw;
   height: 100vh;
   top: 50%;
   transform: translateY(-50%);
   justify-content: center;
   text-align: center;
-  background-color: rgb(42, 42, 33);
+  background-color: rgb(0, 0, 0);
+  z-index: -1;
 }
 .eye {
   width: 7rem;

@@ -54,7 +54,6 @@ export default {
   top: -5vh;
 }
 .divBlock_yellow {
-  background-color: #f49d1a;
   width: 150px;
   position: relative;
   left: -20px;
