@@ -111,7 +111,7 @@ export default {
   },
   mounted() {
     window.onresize = this.reportWindowSize;
-    this.onPageChanged();
+    // this.onPageChanged();
 
     this.nav.map((obj) => {
       let id = obj.id;

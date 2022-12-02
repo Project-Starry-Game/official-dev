@@ -1,7 +1,12 @@
 <template>
-  <div>
-    <other class="hidden-xs" @on-change="scrollToNextSection" />
-    <xs class="hidden-sm-and-up" />
+  <div style="position: relative">
+    <div style="z-index: 5">
+      <other class="hidden-xs" @on-change="scrollToNextSection" />
+      <xs class="hidden-sm-and-up" />
+    </div>
+    <div
+      style="position: sticky; background-color: #fff; height:100vh; width 100vw; z-index:2"
+    />
   </div>
 </template>
 
