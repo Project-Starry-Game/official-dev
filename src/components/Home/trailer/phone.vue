@@ -1,18 +1,18 @@
 <template>
-  <div class="trailer" >
+  <div class="trailer_phone" >
     <div class="butter_logo_container pa-0 ma-0">
       <v-img :src="butterflylogo" class="butter_logo" />
     </div>
    
     <div class="butter_bg">
-
       <v-img class="butter_bg" cover :src="bg_builder" />
     </div>
-    <div class="scrolldown_box">
+    <div class="scrolldown_box_phone">
       <v-btn @click="scrollToNextSection()" color="transparent" elevation="0">
-        <a class="scroll-btn" id="scroll-btn"></a>
+    
+        <a class="scroll_btn" id="scroll_btn"></a>
       </v-btn>
-      <div class="scrolldown_text">Scroll Down</div>
+      <p id="scrolldown_text">Scroll Down</p>
     </div>
     <div class="text_section_phone">
       <p>Swallow the Black liquid, </p>
@@ -44,20 +44,17 @@ export default {
 </script>
 
 <style>
-.trailer {
+.trailer_phone {
   position: relative;
   top: 0;
-  border: 1px solid rgb(255, 140, 0);
+  /* border: 1px solid rgb(255, 140, 0); */
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
   overflow-y: hidden;
   width: 100vw;
   height: 100vh;
-  margin: 0;
-  padding: 0;
-
-  background-color: rgb(230, 207, 207);
+  /* background-color: rgb(230, 207, 207); */
 }
 .butter_logo_container {
   position: absolute;
@@ -80,12 +77,11 @@ export default {
   object-position: center bottom;
 }
 .text_section_phone {
-  border: 1px solid seagreen;
+  /* border: 1px solid seagreen; */
   height: 80%;
-  width: 80%;
+  width: 90%;
   margin: 1%;
   position: fixed;
-  top: 5%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -94,21 +90,21 @@ export default {
   font-size: 0.7rem;
   color: rgb(255, 255, 255);
 }
-.scrolldown_box {
-  border: 1px solid seagreen;
-  position: absolute;
-  bottom: 10vh;
-  width: 100vw;
-  height: 6vh;
+.scrolldown_box_phone {
+  /* border: 1px solid seagreen; */
+  position: relative;
+  top: 85%;
+  width: 80%;
+  height: 10%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   z-index: 10000;
 }
-a#scroll-btn {
-  height: 1rem;
-  width: 1rem;
+a#scroll_btn {
+  height: 0.6rem;
+  width: 0.6rem;
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
   animation: move-down 2s infinite;
@@ -124,8 +120,8 @@ a#scroll-btn {
   }
 }
 
-.scrolldown_text {
-  font-size: 1rem;
+p#scrolldown_text {
+  font-size: 0.6rem;
   color: #fff;
 }
 </style>

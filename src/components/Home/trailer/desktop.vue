@@ -83,6 +83,7 @@ export default {
 .trailer {
   position: relative;
   top: 0%;
+  
   overflow-x: hidden;
   max-height: 100vh;
 }
@@ -112,7 +113,7 @@ export default {
     rgba(0, 0, 0, 1) 43%,
     rgba(46, 35, 27, 0) 100%
   );
-  color: rgb(254, 255, 249);
+  /* color: rgb(254, 255, 249);
   width: 100vw;
   height: 90vh;
   display: flex;
@@ -124,16 +125,29 @@ export default {
   align-items: center;
   justify-content: center;
   align-self: center;
-  justify-self: center;
-}
-.scrolldown_box {
-  position: absolute;
-  bottom: 1%;
-  width: 100vw;
-  height: 6vh;
+  justify-self: center; */
+
+   border: 1px solid seagreen;
+  height: 80%;
+  width: 90%;
+  margin: 1%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
+  align-items: center;
+  align-self: center;
+  font-size: 0.8rem;
+ 
+}
+.scrolldown_box {
+  border: 1px solid seagreen;
+ position: relative;
+  top: 40%;
+  width: 80%;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   z-index: 10000;
 }
