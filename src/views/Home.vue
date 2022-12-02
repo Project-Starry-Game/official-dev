@@ -10,11 +10,13 @@
       id="scroll-target-page"
       style="height: 100vh; position: relative"
     >
-      <homenavbar @on-change="onPageChanged" :nav="nav" :imgs="getImg" />
       <lobby id="goDowntoLobby" />
       <homebg />
       <gameIntro id="gameIntro_pos" />
       <itchPage />
+      <div style="position: sticky">
+        <homenavbar @on-change="onPageChanged" :nav="nav" :imgs="getImg" />
+      </div>
     </v-container>
   </v-app>
 </template>
@@ -30,7 +32,7 @@ import homebg from "@/components/Home/homeBG.vue";
 import bk from "@/assets/background.png";
 import $ from "jquery";
 
-import barLogo from "../assets/Icon.png";
+import barLogoImage from "../assets/Icon.png";
 import eye from "../assets/Reincarnate_Cover.png";
 import eyeball from "../assets/Reincarnate_Eyeball.png";
 </script>
@@ -49,6 +51,7 @@ export default {
       scrollTop: null,
       eyeballImage: null,
       eyeImage: null,
+      trailerImage: null,
       offsetTop: 0,
     };
   },
@@ -119,6 +122,7 @@ export default {
 
     this.eyeballImage = eyeball;
     this.eyeImage = eye;
+    this.trailerImage = barLogoImage;
   },
   computed: {
     getImg() {
@@ -129,7 +133,7 @@ export default {
       this.elements.map((obj) => {
         if (index > 0) {
           let offset = obj.getBoundingClientRect().top;
-          if (offset <= 0) currentPage = index;
+          if (offset <= 1) currentPage = index;
           console.log("index", index, "offset", offset, this.offsetTop);
         }
         index++;
@@ -137,7 +141,7 @@ export default {
 
       index = 0;
       this.elements.map((obj) => {
-        if (index == 0) _imgs.push(this.barLogo);
+        if (index == 0) _imgs.push(this.trailerImage);
         if (index > 0)
           _imgs.push(index == currentPage ? this.eyeballImage : this.eyeImage);
         index++;
@@ -169,6 +173,9 @@ body {
 .home {
   height: auto;
   width: auto;
+}
+.scroll_view {
+  position: relative;
 }
 
 .fadingLong {

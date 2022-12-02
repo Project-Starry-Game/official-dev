@@ -37,8 +37,9 @@ export default {
 
 <style>
 .navbar {
+  display: inline-block;
   border: 1px solid red;
-  position: sticky;
+  position: fixed;
   top: 30%;
   left: 90%;
   display: flex;
@@ -48,6 +49,7 @@ export default {
   justify-content: space-around;
   /* align-items:flex-end; */
   z-index: 1;
+  padding: 0;
 }
 a {
   color: rgb(112, 108, 102);
