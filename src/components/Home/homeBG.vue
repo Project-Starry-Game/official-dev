@@ -1,26 +1,24 @@
 <template>
   <div class="eyes">
-    
     <div class="eye">
-        <v-img class="eyeball" :src="eyeball" />
-        <v-img :src="eye" />
-        <!-- <div class="eyeball" /> -->
-   
+      <v-img class="eyeball" :src="eyeball" />
+      <v-img :src="eye" />
+      <!-- <div class="eyeball" /> -->
     </div>
 
     <div class="eye">
-        <v-img class="eyeball" :src="eyeball" />
-        <v-img :src="eye" />
+      <v-img class="eyeball" :src="eyeball" />
+      <v-img :src="eye" />
     </div>
 
     <div class="eye">
-        <v-img class="eyeball" :src="eyeball" />
-        <v-img :src="eye" />
+      <v-img class="eyeball" :src="eyeball" />
+      <v-img :src="eye" />
     </div>
 
     <div class="eye">
-        <v-img class="eyeball" :src="eyeball" />
-        <v-img :src="eye" />
+      <v-img class="eyeball" :src="eyeball" />
+      <v-img :src="eye" />
     </div>
   </div>
 </template>
@@ -28,12 +26,9 @@
 <script setup lang="ts">
 import eye from "../../assets/Reincarnate_Cover.png";
 import eyeball from "../../assets/Reincarnate_Eyeball.png";
-
 </script>
 
 <script lang="ts">
-
-
 export default {
   data() {
     return {
@@ -43,17 +38,17 @@ export default {
   },
   mounted() {
     document.addEventListener("mousemove", (e) => {
-        var eyeball = document.getElementsByClassName("eyeball");
-        this.mousePosX = e.clientX * 100 / window.innerWidth + "%";
-        this.mousePosY = e.clientY * 100 / window.innerHeight + "%";
-        console.log(this.mousePosX, this.mousePosY);
+      var eyeball = document.getElementsByClassName("eyeball");
+      this.mousePosX = (e.clientX * 100) / window.innerWidth + "%";
+      this.mousePosY = (e.clientY * 100) / window.innerHeight + "%";
+      // console.log(this.mousePosX, this.mousePosY);
 
-        for(var i=0;i<4;i++){
-            eyeball[i].style.left = this.mousePosX;
-            eyeball[i].style.top = this.mousePosY;
-            eyeball[i].style.transform = "translate(-"+this.mousePosX+",-"+this.mousePosY+")";
-        }
-
+      for (var i = 0; i < 4; i++) {
+        eyeball[i].style.left = this.mousePosX;
+        eyeball[i].style.top = this.mousePosY;
+        eyeball[i].style.transform =
+          "translate(-" + this.mousePosX + ",-" + this.mousePosY + ")";
+      }
     });
   },
 };
@@ -68,8 +63,7 @@ export default {
   margin: 60px;
 } */
 
-eyes{
-  
+eyes {
   position: sticky;
   width: 100vw;
   height: 100vh;
@@ -79,7 +73,7 @@ eyes{
   text-align: center;
   background-color: rgb(42, 42, 33);
 }
-.eye{
+.eye {
   width: 7rem;
   height: auto;
   background: #fff;
@@ -90,14 +84,14 @@ eyes{
   overflow: hidden;
 }
 
-.eyeball{
+.eyeball {
   width: 4rem;
   height: auto;
   /* background: #000; */
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   /* border: 15px solid #333; */
 }

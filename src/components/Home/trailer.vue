@@ -22,7 +22,6 @@ export default {
 
   methods: {
     scrollToNextSection(ele) {
-      console.log(12321);
       this.$emit("on-change", ele);
     },
   },

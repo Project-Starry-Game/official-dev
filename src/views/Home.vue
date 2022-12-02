@@ -5,12 +5,13 @@
     </div>
     <v-container
       class="overflow-y-auto overflow-x-hidden ma-0 pa-0 scroll_view"
+      v-scroll:#scroll-target-page="onScroll"
       fluid
       id="scroll-target-page"
       style="height: 100vh; position: relative"
-      :value="scrollTar"
     >
-      <homenavbar @on-change="onPageChanged" /><lobby id="goDowntoLobby" />
+      <homenavbar @on-change="onPageChanged" :nav="nav" :imgs="getImg" />
+      <lobby id="goDowntoLobby" />
       <homebg />
       <gameIntro id="gameIntro_pos" />
       <itchPage />
@@ -28,6 +29,10 @@ import homebg from "@/components/Home/homeBG.vue";
 
 import bk from "@/assets/background.png";
 import $ from "jquery";
+
+import barLogo from "../assets/Icon.png";
+import eye from "../assets/Reincarnate_Cover.png";
+import eyeball from "../assets/Reincarnate_Eyeball.png";
 </script>
 
 <script lang="ts">
@@ -35,6 +40,16 @@ export default {
   data() {
     return {
       ableToTransisit: true,
+      nav: [
+        { name: "Trailer", id: "trailer_pos", fade: true },
+        { name: "Lobby", id: "goDowntoLobby", fade: false },
+        { name: "Intro", id: "gameIntro_pos", fade: false },
+      ],
+      elements: [],
+      scrollTop: null,
+      eyeballImage: null,
+      eyeImage: null,
+      offsetTop: 0,
     };
   },
   methods: {
@@ -46,10 +61,6 @@ export default {
       if (ele != null) {
         let id = ele.id;
         let fade = ele.fade;
-        switch (id) {
-          case "trailer_pos":
-            break;
-        }
         if (fade == true) {
           if (this.ableToTransisit == false) return;
           this.ableToTransisit = false;
@@ -77,7 +88,9 @@ export default {
           }, 500);
 
           let offset = document.getElementById(id).getBoundingClientRect();
+          console.log(id, document.getElementById(id));
           document.getElementById("scroll-target-page").scrollTop = offset.top;
+          console.log(document.getElementById("scroll-target-page").scrollTop);
         }
       } else {
         if (this.ableToTransisit == false) return;
@@ -89,10 +102,51 @@ export default {
         }, 5000);
       }
     },
+    onScroll(e) {
+      this.offsetTop = e.target.scrollTop;
+    },
   },
   mounted() {
     window.onresize = this.reportWindowSize;
     this.onPageChanged();
+
+    this.nav.map((obj) => {
+      let id = obj.id;
+      this.elements.push(document.getElementById(id));
+    });
+
+    this.scrollTop = document.getElementById("scroll-target-page");
+
+    this.eyeballImage = eyeball;
+    this.eyeImage = eye;
+  },
+  computed: {
+    getImg() {
+      let _imgs = [];
+      let currentPage = 0;
+      let index = 0;
+
+      this.elements.map((obj) => {
+        if (index > 0) {
+          let offset = obj.getBoundingClientRect().top;
+          if (offset <= 0) currentPage = index;
+          console.log("index", index, "offset", offset, this.offsetTop);
+        }
+        index++;
+      });
+
+      index = 0;
+      this.elements.map((obj) => {
+        if (index == 0) _imgs.push(this.barLogo);
+        if (index > 0)
+          _imgs.push(index == currentPage ? this.eyeballImage : this.eyeImage);
+        index++;
+      });
+
+      console.log(_imgs);
+      _imgs.push(eye);
+      return _imgs;
+    },
   },
 };
 </script>

@@ -9,47 +9,28 @@
       color="transparent"
     >
       <div class="eye_open">
-        <v-img :src="eyeball" />
+        <v-img :src="imgs[index]" />
       </div>
-
-      <!-- <span>
-        {{ item.name }}
-      </span> -->
-
-      <!-- <span class="text-white">
-        {{ item.name }}
-      </span> -->
     </v-btn>
-
-    <!-- <a 
-            :width="dot.width"
-            :height="dot.height"
-            href="">
-        </a> -->
   </div>
 </template>
 
-<script setup lang="ts">
-import eye from "../../assets/Reincarnate_Cover.png";
-import eyeball from "../../assets/Reincarnate_Eyeball.png";
-</script>
+<script setup lang="ts"></script>
 
 <script lang="ts">
 export default {
+  props: ["nav", "imgs"],
   data() {
-    return {
-      nav: [
-        { name: "Trailer", src: "eyeball", id: "trailer_pos", fade: true },
-        { name: "Lobby", id: "goDowntoLobby", fade: false },
-        { name: "Intro", id: "gameIntro_pos", fade: false },
-      ],
-    };
+    return {};
   },
   methods: {
     onEmit(ele) {
       console.log(ele);
       this.$emit("on-change", ele);
     },
+  },
+  mouted() {
+    console.log(this.imgs);
   },
 };
 </script>
