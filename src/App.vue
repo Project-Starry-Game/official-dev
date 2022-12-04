@@ -8,6 +8,25 @@
 // import HelloWorld from "@/components/HelloWorld.vue";
 </script>
 
+<script lang="ts">
+export default {
+  methods: {
+    calculateVh() {
+      var vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", vh + "px");
+    },
+  },
+  mounted() {
+    // Initial calculation
+    this.calculateVh();
+    // Re-calculate on resize
+    window.addEventListener("resize", this.calculateVh);
+    // Re-calculate on device orientation change
+    window.addEventListener("orientationchange", this.calculateVh);
+  },
+};
+</script>
+
 <style>
 * {
   margin: 0;
@@ -22,14 +41,22 @@ html,
 body {
   overflow-y: hidden;
   overflow-x: hidden;
-  max-height: -webkit-fill-available;
-  height: 100vh;
-  width: 100vw;
   position: fixed;
   scroll-behavior: auto;
   @media not all and (hover: hover) {
     height: var(--app-height);
   }
+}
+
+html {
+  height: fill-available;
+  height: -webkit-fill-available;
+}
+
+body {
+  min-height: 100vh;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
 }
 
 @media only screen and (max-width: 500px) {
