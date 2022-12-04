@@ -11,14 +11,13 @@
       <v-btn @click="scrollToNextSection()" color="transparent" elevation="0">
         <a class="scroll_btn" id="scroll_btn"></a>
       </v-btn>
-      <p id="scrolldown_text">Scroll Down</p>
+      <p id="scrolldown_text">{{ $t("scrollDown") }}</p>
     </div>
     <div class="text_section_phone">
-      <p>Swallow the Black liquid,</p>
-      <p>tell me what you see.</p>
+      <p>{{ $t("trialerIntro.section_one") }}</p>
       <br />
-      <p>A beautiful world with silence? A broken coffin ?</p>
-      <p>Or even just that empty bottle in your hand.</p>
+      <p>{{ $t("trialerIntro.section_two") }}</p>
+      <p>{{ $t("trialerIntro.section_three") }}</p>
     </div>
   </div>
 </template>

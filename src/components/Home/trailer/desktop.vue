@@ -24,6 +24,10 @@
       <p>
         {{ $t("trialerIntro.section_two") }}
       </p>
+      <br />
+      <p>
+        {{ $t("trialerIntro.section_three") }}
+      </p>
     </div>
   </v-container>
 </template>
