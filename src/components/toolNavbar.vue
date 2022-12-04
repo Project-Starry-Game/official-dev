@@ -38,7 +38,7 @@ export default {
 .nav {
   position: fixed;
   top: 90%;
-  left: 0%;
+  left: 2vw;
   z-index: 9999999;
 }
 </style>
