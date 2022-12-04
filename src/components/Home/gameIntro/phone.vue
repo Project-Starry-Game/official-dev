@@ -11,7 +11,7 @@
           <span v-for="(i, index) in genres" :key="index">{{ i }} </span>
         </v-card-subtitle>
       </div>
-      <v-row class="bor box1-1">
+      <v-row class="bor box1-1" justify="center">
         <v-col>
           <p>
             After the mysterious death of her parents, he has been taking care
@@ -34,6 +34,7 @@
             height="168.75px"
             src="https://www.youtube.com/embed/NJ4rHgu-2rY"
             title="YouTube video player"
+            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
