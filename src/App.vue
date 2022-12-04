@@ -17,6 +17,7 @@ export default {
     },
   },
   mounted() {
+    console.log(123);
     // Initial calculation
     this.calculateVh();
     // Re-calculate on resize
