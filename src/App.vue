@@ -1,11 +1,12 @@
 <template>
   <v-app>
     <router-view></router-view>
+    <nav />
   </v-app>
 </template>
 
 <script setup lang="ts">
-// import HelloWorld from "@/components/HelloWorld.vue";
+import nav from "@/components/navbar.vue";
 </script>
 
 <script lang="ts">
@@ -17,7 +18,6 @@ export default {
     },
   },
   mounted() {
-    console.log(123);
     // Initial calculation
     this.calculateVh();
     // Re-calculate on resize
