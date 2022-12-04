@@ -53,7 +53,7 @@
       <iframe
         class="iframe_trailer"
         width="640px"
-        height="310px"
+        height="360px"
         src="https://www.youtube.com/embed/NJ4rHgu-2rY"
         frameborder="0"
         allowfullscreen
