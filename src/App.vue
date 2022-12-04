@@ -1,12 +1,12 @@
 <template>
   <v-app>
     <router-view></router-view>
-    <nav />
+    <toolNavbar />
   </v-app>
 </template>
 
 <script setup lang="ts">
-import nav from "@/components/navbar.vue";
+import toolNavbar from "@/components/toolNavbar.vue";
 </script>
 
 <script lang="ts">
