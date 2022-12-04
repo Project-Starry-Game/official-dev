@@ -23,6 +23,19 @@ body {
   scroll-behavior: auto;
 }
 
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 5.9vw;
+  }
+  h2 {
+    font-size: 3vh;
+  }
+
+  p {
+    font-size: 2vmin;
+  }
+}
+
 .fadingLong {
   -moz-animation: fadeInAnimation ease 5s; /* Firefox */
   -webkit-animation: fadeInAnimation ease 5s; /* Safari and Chrome */

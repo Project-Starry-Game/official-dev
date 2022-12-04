@@ -27,8 +27,8 @@ import homebg from "@/components/Home/homeBG.vue";
 
 import bk from "@/assets/background.png";
 import barLogoImage from "../assets/Icon.png";
-import eye from "../assets/Reincarnate_Cover.png";
-import eyeball from "../assets/Reincarnate_Eyeball.png";
+import eye from "../assets/Eye.png";
+import eyeball from "../assets/Eyeball.png";
 
 import { fading } from "@/apis/sceneTransit.ts";
 </script>
@@ -84,7 +84,7 @@ export default {
     this.scrollTop = document.getElementById("scroll-target-page");
     this.eyeballImage = eyeball;
     this.eyeImage = eye;
-    this.trailerImage = barLogoImage;
+    this.trailerImage = eye;
   },
   computed: {
     getImg() {
