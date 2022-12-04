@@ -14,13 +14,22 @@
   padding: 0;
 }
 
+:root {
+  --app-height: 100%;
+}
+
 html,
 body {
   overflow-y: hidden;
   overflow-x: hidden;
-  height: 100%;
+  max-height: -webkit-fill-available;
+  height: 100vh;
   width: 100vw;
+  position: fixed;
   scroll-behavior: auto;
+  @media not all and (hover: hover) {
+    height: var(--app-height);
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -32,7 +41,7 @@ body {
   }
 
   p {
-    font-size: 2vmin;
+    font-size: 2.5vmin;
   }
 }
 

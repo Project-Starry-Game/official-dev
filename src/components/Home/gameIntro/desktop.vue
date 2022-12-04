@@ -1,13 +1,17 @@
 <template>
   <v-row class="box pa-5 text-primary">
     <v-col class="bor box1" cols="12" md="6">
-      <h1 class="pa-3">
-        Soul of Butterflies series
-        <v-card-subtitle class="pa-0 ma-0">
+      <div d-flex flex-column>
+        <h1 class="pa-3">Soul of Butterflies series</h1>
+        <v-card-subtitle
+          class="pa-4 ma-0"
+          style="position: relative; top: -30px; font-size: 14px"
+        >
           Genres:
           <span v-for="(i, index) in genres" :key="index">{{ i }} </span>
         </v-card-subtitle>
-      </h1>
+      </div>
+
       <v-row class="bor box1-1">
         <v-col>
           <p class="intro_text_block">
@@ -44,7 +48,7 @@
         </v-col>
         <div class="link"></div>
         <v-col class="pl-5 box1-3">
-          <p>Release date</p>
+          <p>Release</p>
           <h2 class="mt-1">Coming Soon</h2>
         </v-col>
       </v-row>
@@ -71,18 +75,10 @@ export default {
 
 <style>
 .bor {
-  /* border: 3px solid brown; */
   padding: 20px;
-}
-@media only screen and (max-width: 500px) {
-  .ibox {
-    margin-bottom: -50px;
-  }
 }
 
 .box {
-  /* background-color: #000; */
-  /* padding-top: 5%; */
   height: auto;
 }
 
@@ -94,13 +90,9 @@ export default {
 .box1-2 {
   display: flex;
   border-radius: 1rem;
-  /* justify-content: center; */
-
-  /* height: 25%; */
 }
 
 .link {
   border-right: 3px solid #fff;
-  /* line-height:120px; */
 }
 </style>

@@ -33,7 +33,7 @@ export default {
   display: inline-block;
   /*border: 1px solid red;*/
   position: fixed;
-  top: 30%;
+  top: 10%;
   left: 90%;
   display: flex;
   flex-direction: column;

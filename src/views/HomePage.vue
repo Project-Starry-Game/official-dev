@@ -65,7 +65,8 @@ export default {
         fading("fadingShort", 200, () => {
           let id = ele.id;
           let offset = document.getElementById(id).getBoundingClientRect();
-          document.getElementById("scroll-target-page").scrollTop = offset.top;
+          document.getElementById("scroll-target-page").scrollTop =
+            offset.top + 10;
         });
       }
     },

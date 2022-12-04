@@ -68,7 +68,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  top: 10vh;
+  top: 15vh;
 }
 .butter_bg {
   height: 100vh;
@@ -91,7 +91,7 @@ export default {
 .scrolldown_box_phone {
   /* border: 1px solid seagreen; */
   position: absolute;
-  top: 90%;
+  top: 80%;
   width: 100%;
   height: 10%;
   display: flex;

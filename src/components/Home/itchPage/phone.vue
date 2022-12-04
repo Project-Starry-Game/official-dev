@@ -4,11 +4,11 @@
     <v-btn
       size="small"
       color="transparent"
-      href="https://project-starry.itch.io/soul-of-butterflies-incubation"
       elevation="0"
       class="itch_btn_phone borderrr ma-3"
       v-for="(item, index) in items"
       :key="index"
+      :href="item.src"
     >
       <v-img width="20" class="pa-2" :src="item.img"> </v-img>
       <!-- <span class="ma-2 pa-2 text-white"> {{ item.name }} </span> -->
@@ -33,10 +33,12 @@ export default {
         {
           img: itchImg,
           name: "GET IT ON ITCH",
+          src: "https://project-starry.itch.io/soul-of-butterflies-incubation",
         },
         {
           img: patreonImg,
           name: "BECOME A PATRON",
+          src: "https://www.patreon.com/bePatron?u=56283261",
         },
       ],
     };
