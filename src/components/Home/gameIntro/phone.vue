@@ -34,7 +34,7 @@
           <v-btn
             variant="outlined"
             color="primary"
-            style="margin-right: 5px"
+            style="margin-right: 5px; margin-bottom: 5px"
             size="small"
             v-for="(item, index) in platforms"
             :key="index"
@@ -55,9 +55,8 @@
       <iframe
         width="300px"
         height="168.75px"
-        src="https://www.youtube.com/embed/NJ4rHgu-2rY"
+        src="https://www.youtube.com/embed/NJ4rHgu-2rY?rel=0&amp;fs=0&amp;showinfo=0"
         title="YouTube video player"
-        frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>

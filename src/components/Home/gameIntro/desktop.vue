@@ -55,9 +55,7 @@
         width="640px"
         height="310px"
         src="https://www.youtube.com/embed/NJ4rHgu-2rY"
-        title="YouTube video player"
         frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
     </v-col>

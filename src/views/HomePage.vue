@@ -95,7 +95,7 @@ export default {
       this.elements.map((obj) => {
         if (index > 0) {
           let offset = obj.getBoundingClientRect().top;
-          if (offset <= 1) currentPage = index;
+          if (offset <= 50) currentPage = index;
           let n = this.offsetTop;
         }
         index++;
