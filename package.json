@@ -8,15 +8,18 @@
     "deploy": "bash deploy.sh"
   },
   "dependencies": {
+    "@intlify/unplugin-vue-i18n": "^0.8.0",
     "@mdi/font": "7.0.96",
     "jquery": "^3.6.1",
     "roboto-fontface": "*",
     "vue": "^3.2.38",
+    "vue-i18n": "^9.2.2",
     "vue-router": "4",
     "vuetify": "^3.0.0",
     "webfontloader": "^1.0.0"
   },
   "devDependencies": {
+    "@intlify/vite-plugin-vue-i18n": "^6.0.3",
     "@types/node": "^18.11.9",
     "@types/webfontloader": "^1.6.35",
     "@vitejs/plugin-vue": "^3.0.3",

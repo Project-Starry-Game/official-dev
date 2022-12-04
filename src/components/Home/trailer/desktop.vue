@@ -16,14 +16,13 @@
         <v-btn @click="scrollToNextSection()" color="transparent" elevation="0">
           <a class="scroll-btn" id="scroll-btn"></a>
         </v-btn>
-        <div class="scrolldown_text">Scroll Down</div>
+        <div class="scrolldown_text">{{ $t("scrollDown") }}</div>
       </div>
     </div>
     <div class="text_section" id="text_section">
-      <p>Swallow the Black liquid, tell me what you see.</p>
+      <p>{{ $t("trialerIntro.section_one") }}</p>
       <p>
-        A beautiful world with silence? A broken coffin ?Or even just that empty
-        bottle in your hand.
+        {{ $t("trialerIntro.section_two") }}
       </p>
     </div>
   </v-container>

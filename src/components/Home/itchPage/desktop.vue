@@ -7,12 +7,12 @@
         width="552"
         height="167"
         ><a href="https://project-starry.itch.io/soul-of-butterflies-incubation"
-          >Soul of Butterflies : Incubation by Project Starry</a
+          >{{ $t("sobIncubation") }} by Project Starry</a
         ></iframe
       >
       <div class="d-flex justify-end" style="position: relative; top: 10px">
         <span class="pa-2 text-white" style="font-size: 10px">
-          If you like this game, you could also
+          {{ $t("ifyoulike") }}
         </span>
         <v-spacer />
         <v-btn
@@ -21,7 +21,7 @@
           elevation="0"
         >
           <v-img width="10%" class="pa-2" :src="patreonImg"> </v-img>
-          <span class="text-white pa-2"> Become a Patron! </span>
+          <span class="text-white pa-2"> {{ $t("becomeAPatreon") }} </span>
         </v-btn>
       </div>
     </div>
