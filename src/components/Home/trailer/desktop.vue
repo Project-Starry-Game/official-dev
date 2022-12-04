@@ -73,7 +73,7 @@ export default {
         ")";
     },
     scrollToNextSection() {
-      this.$emit("on-change", { id: "goDowntoLobby", fade: true });
+      this.$emit("on-change");
     },
   },
 };
@@ -83,7 +83,7 @@ export default {
 .trailer {
   position: relative;
   top: 0%;
-  
+
   overflow-x: hidden;
   max-height: 100vh;
 }

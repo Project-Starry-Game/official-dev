@@ -42,7 +42,7 @@
         <div class="link"></div>
         <v-col class="pl-5 box1-3">
           <p>Release date</p>
-          <h2 class="mt-1">comming soon</h2>
+          <h2 class="mt-1">Coming Soon</h2>
         </v-col>
       </v-row>
     </v-col>
@@ -77,6 +77,12 @@ export default {
   /* border: 3px solid brown; */
   padding: 20px;
 }
+@media only screen and (max-width: 500px) {
+  .ibox {
+    margin-bottom: -50px;
+  }
+}
+
 .box {
   /* background-color: #000; */
   /* padding-top: 5%; */

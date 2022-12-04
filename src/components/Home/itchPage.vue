@@ -1,8 +1,8 @@
 <template>
-  <section class="itchPage">
+  <div class="itchPage">
     <desktop class="hidden-xs" />
     <phone class="hidden-sm-and-up" />
-  </section>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -27,13 +27,5 @@ export default {
 * {
   margin: 0;
   padding: 0;
-}
-
-.itchPage {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 80px;
-  /* position: relative;
-  top: -6vh; */
 }
 </style>
