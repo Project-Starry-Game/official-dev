@@ -7,8 +7,8 @@
           class="pa-4 ma-0"
           style="position: relative; top: -30px; font-size: 14px"
         >
-          {{ $t("generes") }}
-          <span v-for="(i, index) in genres" :key="index">{{ i }} </span>
+          {{ $t("generes.self") }}
+          <span v-for="(i, index) in genres" :key="index">{{ $t(i) }} </span>
         </v-card-subtitle>
       </div>
 

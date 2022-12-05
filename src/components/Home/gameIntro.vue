@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       platforms: [{ name: "Steam" }, { name: "iOS" }, { name: "Android" }],
-      genres: ["Puzzle, ", "Romm Escape"],
+      genres: ["generes.g1", "generes.g2"],
     };
   },
   mounted() {},
