@@ -1,26 +1,24 @@
 <template>
-  <div class="trailer_phone" >
+  <div class="trailer_phone d-flex flex-column">
     <div class="butter_logo_container pa-0 ma-0">
-      <v-img :src="butterflylogo" class="butter_logo" />
+      <v-img :src="butterflylogo" class="butter_logo" cover />
     </div>
-   
+
     <div class="butter_bg">
       <v-img class="butter_bg" cover :src="bg_builder" />
     </div>
     <div class="scrolldown_box_phone">
       <v-btn @click="scrollToNextSection()" color="transparent" elevation="0">
-    
         <a class="scroll_btn" id="scroll_btn"></a>
       </v-btn>
-      <p id="scrolldown_text">Scroll Down</p>
+      <p id="scrolldown_text">{{ $t("scrollDown") }}</p>
     </div>
     <div class="text_section_phone">
-      <p>Swallow the Black liquid, </p>
-      <p>tell me what you see.</p>
-      <br>
-      <p>A beautiful world with silence? A broken coffin ? </p>
-      <p>Or even just that empty bottle in your hand.</p>
-    </div> 
+      <p>{{ $t("trialerIntro.section_one") }}</p>
+      <br />
+      <p>{{ $t("trialerIntro.section_two") }}</p>
+      <p>{{ $t("trialerIntro.section_three") }}</p>
+    </div>
   </div>
 </template>
 
@@ -37,7 +35,7 @@ export default {
 
   methods: {
     scrollToNextSection() {
-      this.$emit("on-change", { id: "goDowntoLobby", fade: true });
+      this.$emit("on-change");
     },
   },
 };
@@ -69,17 +67,16 @@ export default {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  top: 10vh;
+  top: 15vh;
 }
 .butter_bg {
-  height: 100%;
-  max-width: 100%;
+  height: 100vh;
   object-position: center bottom;
 }
 .text_section_phone {
   /* border: 1px solid seagreen; */
   height: 80%;
-  width: 90%;
+  width: 100%;
   margin: 1%;
   position: fixed;
   display: flex;
@@ -92,9 +89,9 @@ export default {
 }
 .scrolldown_box_phone {
   /* border: 1px solid seagreen; */
-  position: relative;
-  top: 85%;
-  width: 80%;
+  position: absolute;
+  top: 80%;
+  width: 100%;
   height: 10%;
   display: flex;
   flex-direction: column;

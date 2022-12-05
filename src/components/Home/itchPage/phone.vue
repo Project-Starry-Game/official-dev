@@ -1,40 +1,27 @@
 <template>
-  <v-card class="mx-auto" max-width="450" elevation="0">
-    <v-card-title> DEMO </v-card-title>
-
-    <v-card-subtitle> View it on itch.io </v-card-subtitle>
-
-    <v-card-actions>
-      <v-spacer></v-spacer>
-
-      <v-btn
-        size="small"
-        color="#EB5254"
-        href="https://project-starry.itch.io/soul-of-butterflies-incubation"
-        elevation="0"
-        class="itch_btn_phone borderrr ma-3"
-      >
-        <v-img width="20%" class="pa-2" :src="itchImg"> </v-img>
-        <span class="pa-1"> Get it on itch </span>
-      </v-btn>
-      <v-btn
-        size="small"
-        color="#EB5254"
-        href="https://www.patreon.com/bePatron?u=56283261"
-        elevation="0"
-        class="borderrr ma-4"
-      >
-        <!-- <v-img width="10%" class="pa-2" :src="patreonImg"> </v-img> -->
-        <span class="pa-2" style="font-size: 1px"> Become a Patron! </span>
-      </v-btn>
-    </v-card-actions>
-  </v-card>
+  <div class="itch_phone">
+    <!-- <v-card-title class="text-white"> DEMO </v-card-title> -->
+    <v-btn
+      size="small"
+      color="transparent"
+      elevation="0"
+      class="itch_btn_phone borderrr ma-3"
+      v-for="(item, index) in items"
+      :key="index"
+      :href="item.src"
+    >
+      <v-img width="20" class="pa-2" :src="item.img"> </v-img>
+      <!-- <span class="ma-2 pa-2 text-white"> {{ item.name }} </span> -->
+    </v-btn>
+    <phone class="hidden-sm-and-up" @on-change="onEmit" :nav="nav" />
+  </div>
 </template>
 
 <script setup lang="ts">
 import patreonImg from "../../../assets/Digital-Patreon-Logo_White.png";
-import itchImg from "../../../assets/itch.svg"; //../../../assets/itch.svg";
+import itchImg from "../../../assets/itch-io.svg"; //../../../assets/itch.svg";
 import appIcon from "../../../assets/icon.png";
+import phone from "@/components/Home/navbar/phone.vue";
 </script>
 
 <script lang="ts">
@@ -42,22 +29,30 @@ export default {
   name: "Home",
   mounted() {},
   methods: {},
+  data() {
+    return {
+      items: [
+        {
+          img: itchImg,
+          name: "GET IT ON ITCH",
+          src: "https://project-starry.itch.io/soul-of-butterflies-incubation",
+        },
+        {
+          img: patreonImg,
+          name: "BECOME A PATRON",
+          src: "https://www.patreon.com/bePatron?u=56283261",
+        },
+      ],
+    };
+  },
 };
 </script>
 
 <style>
-/* .divBlock_yellow_phone {
-  background-color: #f49d1a;
-  width: 250px;
-  position: relative;
-  top: -10px;
-  z-index: 1;
+.itch_phone {
+  position: fixed;
+  top: 75%;
+  left: 85%;
+  right: 10;
 }
-.itch_btn_phone {
-  margin-top: 10px;
-} */
-
-/* .borderrr{
-  border: 3px solid #f49d1a;
-} */
 </style>

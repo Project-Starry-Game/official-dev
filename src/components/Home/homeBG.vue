@@ -71,6 +71,7 @@ export default {
   display: inline-block;
   margin: 40px;
   border-radius: 50%;
+  opacity: 30%;
   position: relative;
   overflow: hidden;
 }
@@ -83,7 +84,8 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 50%;
+  border-radius: 30%;
+  opacity: 50%;
   /* border: 15px solid #333; */
 }
 </style>
