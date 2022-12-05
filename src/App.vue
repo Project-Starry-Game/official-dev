@@ -33,7 +33,6 @@ export default {
 
 html,
 body {
-  overflow-y: hidden;
   overflow-x: hidden;
   position: fixed;
   scroll-behavior: auto;

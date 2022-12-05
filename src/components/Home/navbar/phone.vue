@@ -143,8 +143,8 @@ export default {
     },
   },
   mouted() {
-    var h = window.innerHeight - 200;
-    document.getElementById("menu_card").style.height = h + "px";
+    var h = window.innerHeight;
+    document.body.style.height = h + "px";
   },
 };
 </script>

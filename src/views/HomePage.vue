@@ -4,19 +4,16 @@
       class="overflow-y-auto overflow-x-hidden ma-0 pa-0 scroll_view"
       v-scroll:#scroll-target-page="onScroll"
       fluid
-      id="scroll-target-page"
-      style="height: 100vh; position: relative"
+      id="scroll-target-page home_page"
     >
       <lobby id="goDowntoLobby" />
       <homebg />
       <gameIntro id="gameIntro_pos" />
       <itchPage />
-      <div style="position: sticky">
-        <homenavbar @on-change="onPageChanged" :nav="nav" :imgs="getImg" />
-      </div>
+      <homenavbar @on-change="onPageChanged" :nav="nav" :imgs="getImg" />
       <toolNavbar class="hidden-xs" />
-      <footerBar />
     </v-container>
+    <footerBar />
   </v-app>
 </template>
 
