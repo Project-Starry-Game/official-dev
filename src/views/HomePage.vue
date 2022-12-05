@@ -15,6 +15,7 @@
         <homenavbar @on-change="onPageChanged" :nav="nav" :imgs="getImg" />
       </div>
       <toolNavbar class="hidden-xs" />
+      <footerBar />
     </v-container>
   </v-app>
 </template>
@@ -26,6 +27,7 @@ import gameIntro from "@/components/Home/gameIntro.vue";
 import itchPage from "@/components/Home/itchPage.vue";
 import homenavbar from "@/components/Home/navbar2col.vue";
 import homebg from "@/components/Home/homeBG.vue";
+import footerBar from "@/components/dfooter.vue";
 
 import bk from "@/assets/background.png";
 import barLogoImage from "../assets/Icon.png";

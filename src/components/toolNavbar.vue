@@ -3,8 +3,8 @@
     <div class="nav d-flex flex-column ma-0">
       <v-btn
         @click="changeLocales('zh-TW')"
-        class="ma-0"
-        variant="text"
+        class="ma-2"
+        variant="outlined"
         color="white"
         size="small"
       >
@@ -12,8 +12,8 @@
       </v-btn>
       <v-btn
         @click="changeLocales('en')"
-        class="ma-0"
-        variant="text"
+        class="ma-2"
+        variant="outlined"
         color="white"
         size="small"
       >
@@ -21,8 +21,8 @@
       </v-btn>
       <v-btn
         @click="changeLocales('ja')"
-        class="ma-0"
-        variant="text"
+        class="ma-2"
+        variant="outlined"
         color="white"
         size="small"
       >
@@ -48,7 +48,7 @@ export default {
 <style>
 .nav {
   position: fixed;
-  top: 90%;
+  top: 40%;
   left: 2vw;
   z-index: 10;
 }
