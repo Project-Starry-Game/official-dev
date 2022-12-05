@@ -57,6 +57,14 @@ body {
   min-height: -webkit-fill-available;
 }
 
+.v-btn::before {
+  background-color: transparent;
+}
+
+a::before {
+  background-color: transparent;
+}
+
 @media only screen and (max-width: 500px) {
   h1 {
     font-size: 5.9vw;
