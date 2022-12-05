@@ -1,13 +1,10 @@
 <template>
   <v-app>
     <router-view></router-view>
-    <toolNavbar />
   </v-app>
 </template>
 
-<script setup lang="ts">
-import toolNavbar from "@/components/toolNavbar.vue";
-</script>
+<script setup lang="ts"></script>
 
 <script lang="ts">
 export default {

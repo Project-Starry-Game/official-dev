@@ -14,11 +14,13 @@
       <div style="position: sticky">
         <homenavbar @on-change="onPageChanged" :nav="nav" :imgs="getImg" />
       </div>
+      <toolNavbar class="hidden-xs" />
     </v-container>
   </v-app>
 </template>
 
 <script setup lang="ts">
+import toolNavbar from "@/components/toolNavbar.vue";
 import lobby from "@/components/Home/lobby.vue";
 import gameIntro from "@/components/Home/gameIntro.vue";
 import itchPage from "@/components/Home/itchPage.vue";

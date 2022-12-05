@@ -13,6 +13,7 @@
       <v-img width="20" class="pa-2" :src="item.img"> </v-img>
       <!-- <span class="ma-2 pa-2 text-white"> {{ item.name }} </span> -->
     </v-btn>
+    <phone class="hidden-sm-and-up" @on-change="onEmit" :nav="nav" />
   </div>
 </template>
 
@@ -20,6 +21,7 @@
 import patreonImg from "../../../assets/Digital-Patreon-Logo_White.png";
 import itchImg from "../../../assets/itch-io.svg"; //../../../assets/itch.svg";
 import appIcon from "../../../assets/icon.png";
+import phone from "@/components/Home/navbar/phone.vue";
 </script>
 
 <script lang="ts">
@@ -49,7 +51,7 @@ export default {
 <style>
 .itch_phone {
   position: fixed;
-  top: 85%;
+  top: 75%;
   left: 85%;
   right: 10;
 }

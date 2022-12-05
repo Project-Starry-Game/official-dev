@@ -15,9 +15,6 @@
         <v-col>
           <p>
             {{ $t("gameIntro1") }}
-            <!-- After the mysterious death of her parents, he has been taking care
-            of her sickly younger sister Naila. Anders struggled to bear the
-            huge cost of support and medical care. -->
           </p>
           <br />
           <p class="intro_text_block">
