@@ -69,10 +69,11 @@ export default {
 
 <style>
 .bor {
-  padding: 20px;
+  padding: 0.5rem;
 }
 
 .box {
+  margin: 2rem;
   height: auto;
 }
 
@@ -88,5 +89,10 @@ export default {
 
 .link {
   border-right: 3px solid #fff;
+}
+
+.iframe_trailer{
+  width: 100%;
+  /* height: auto;  */
 }
 </style>

@@ -29,7 +29,7 @@ import homebg from "@/components/Home/homeBG.vue";
 
 import bk from "@/assets/background.png";
 import barLogoImage from "../assets/Icon.png";
-import eye from "../assets/Eye.png";
+import eye from "../assets/Reincarnate_White.png";
 import eyeball from "../assets/Eyeball.png";
 
 import { fading } from "@/apis/sceneTransit.ts";

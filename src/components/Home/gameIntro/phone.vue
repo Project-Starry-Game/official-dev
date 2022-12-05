@@ -22,8 +22,9 @@
           </p>
           <br />
         </v-col>
-        <v-col class="bor box1 ibox ma-2" cols="12" md="6">
+        <v-col class=" box1 ibox ma-2" cols="12" md="6">
           <iframe
+            class="iframe_box_phone"
             width="300px"
             height="168.75px"
             src="https://www.youtube.com/embed/NJ4rHgu-2rY"
@@ -74,5 +75,10 @@ export default {
   .ibox {
     margin-bottom: -50px;
   }
+}
+
+.iframe_box_phone{
+  width: 100%;
+  height: auto;
 }
 </style>

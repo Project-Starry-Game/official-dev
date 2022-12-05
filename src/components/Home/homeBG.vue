@@ -15,8 +15,8 @@
 </template>
 
 <script setup lang="ts">
-import eye from "../../assets/Reincarnate_Cover.png";
-import eyeball from "../../assets/Reincarnate_Eyeball.png";
+import eye from "../../assets/compression_img/sm_img/Reincarnate_Cover_sm.png";
+import eyeball from "../../assets/Eyeball.png";
 </script>
 
 <script lang="ts">
@@ -77,7 +77,7 @@ export default {
 }
 
 .eyeball {
-  width: 4rem;
+  width: 6rem;
   height: auto;
   /* background: #000; */
   position: absolute;

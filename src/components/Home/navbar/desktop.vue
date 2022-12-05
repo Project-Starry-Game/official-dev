@@ -35,16 +35,15 @@ export default {
 <style>
 .navbar {
   display: inline-block;
-  /*border: 1px solid red;*/
+  /* border: 1px solid red; */
   position: fixed;
   top: 30%;
-  left: 90%;
+  left: 92%;
   display: flex;
   flex-direction: column;
   width: 6vw;
-  height: 50vh;
-  justify-content: space-around;
-  /* align-items:flex-end; */
+  height: 30vh;
+  justify-content: space-between;
   z-index: 1;
   padding: 0;
 }
@@ -55,8 +54,9 @@ a {
 }
 
 .eye_open {
-  width: 100px;
-  height: 100px;
+  width: 6vw;
+  height: auto;
+  align-self: center;
   /*border: 1px solid rosybrown;*/
 }
 </style>

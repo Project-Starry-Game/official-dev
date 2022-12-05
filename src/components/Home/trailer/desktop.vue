@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import bg_builder from "../../../assets/bgwithcc.png";
+import bg_builder from "../../../assets/compression_img/bgwithcc.png";
 import butterflylogo from "../../../assets/logo_shadow.png";
 </script>
 
