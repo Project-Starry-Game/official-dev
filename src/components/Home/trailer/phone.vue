@@ -14,10 +14,10 @@
       <p id="scrolldown_text">{{ $t("scrollDown") }}</p>
     </div>
     <div class="text_section_phone">
-      <p>{{ $t("trialerIntro.section_one") }}</p>
+      <p>{{ $t("trialerIntro.section_phone_one") }}</p>
       <br />
-      <p>{{ $t("trialerIntro.section_two") }}</p>
-      <p>{{ $t("trialerIntro.section_three") }}</p>
+      <p>{{ $t("trialerIntro.section_phone_two") }}</p>
+      <p>{{ $t("trialerIntro.section_phone_three") }}</p>
     </div>
   </div>
 </template>
@@ -84,7 +84,7 @@ export default {
   justify-content: flex-end;
   align-items: center;
   align-self: center;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   color: rgb(255, 255, 255);
 }
 .scrolldown_box_phone {

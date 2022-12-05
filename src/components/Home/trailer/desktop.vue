@@ -20,14 +20,14 @@
       </div>
     </div>
     <div class="text_section" id="text_section">
-      <p>{{ $t("trialerIntro.section_one") }}</p>
-      <p>
+      <p class="trailer_paragraph_phone_section">{{ $t("trialerIntro.section_one") }}</p>
+      <p class="trailer_paragraph_phone_section">
         {{ $t("trialerIntro.section_two") }}
       </p>
       <br />
-      <p>
+      <!-- <p>
         {{ $t("trialerIntro.section_three") }}
-      </p>
+      </p> -->
     </div>
   </v-container>
 </template>
@@ -129,6 +129,7 @@ export default {
   justify-content: center;
   align-self: center;
   justify-self: center;
+  font-size: 1.5rem;
 }
 .scrolldown_box {
   position: absolute;
@@ -162,4 +163,7 @@ a#scroll-btn {
   font-size: 1rem;
   color: #fff;
 }
+/* .trailer_paragraph_phone_section{
+  font-size: 3rem;
+} */
 </style>

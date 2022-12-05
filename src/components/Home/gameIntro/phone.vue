@@ -1,5 +1,5 @@
 <template>
-  <v-row class="box pa-5 text-primary">
+  <v-row class="box pa-0 text-primary">
     <v-col class="bor box1" cols="12" md="6">
       <div d-flex flex-column>
         <h1 class="pa-3">{{ $t("gameName") }}</h1>
@@ -13,11 +13,11 @@
       </div>
       <v-row class="bor box1-1" justify="center">
         <v-col>
-          <p>
+          <p class="intro_paragraph_section">
             {{ $t("gameIntro1") }}
           </p>
           <br />
-          <p class="intro_text_block">
+          <p class="intro_paragraph_section">
             {{ $t("gameIntro2") }}
           </p>
           <br />
@@ -80,5 +80,8 @@ export default {
 .iframe_box_phone{
   width: 100%;
   height: auto;
+}
+.intro_paragraph_section{
+  font-size: 0.8rem;
 }
 </style>
