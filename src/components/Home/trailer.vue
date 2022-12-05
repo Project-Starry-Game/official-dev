@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style>
-.trailer {
+/* .trailer {
   position: relative;
   top: 0%;
   overflow-x: hidden;
@@ -45,7 +45,7 @@ export default {
   display: flex;
   justify-content: center;
   position: sticky;
-  top: 10%; /* 移到上面 */
+  top: 10%; 
   width: 100vw;
   z-index: 100;
 }
@@ -111,5 +111,6 @@ a#scroll-btn {
 .scrolldown_text {
   font-size: 1rem;
   color: #fff;
-}
+} */
 </style>
+  
