@@ -2,13 +2,7 @@
   <div class="text-center narbar_phone">
     <v-btn color="black" @click="overlay = !overlay" icon="mdi-menu"> </v-btn>
     <v-overlay class="my-overlay" v-model="overlay" id="menu_card">
-      <v-card
-        min-width="100vw"
-        min-height="100vh"
-        width="100%"
-        height="100%"
-        color="black"
-      >
+      <v-card id="overlay_card" width="100vw" height="90vh" color="black">
         <v-container
           fluid
           style="height: -webkit-fill-available"
@@ -144,7 +138,7 @@ export default {
   },
   mouted() {
     var h = window.innerHeight;
-    document.body.style.height = h + "px";
+    document.getElementById("overlay_card").style.minHeight = h + "px";
   },
 };
 </script>
