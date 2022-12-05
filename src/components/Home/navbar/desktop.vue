@@ -41,8 +41,8 @@ export default {
   left: 92%;
   display: flex;
   flex-direction: column;
-  width: 6vw;
-  height: 30vh;
+  width: 5vw;
+  height: 35vh;
   justify-content: space-between;
   z-index: 1;
   padding: 0;
@@ -54,7 +54,7 @@ a {
 }
 
 .eye_open {
-  width: 6vw;
+  width: 5vw;
   height: auto;
   align-self: center;
   /*border: 1px solid rosybrown;*/
