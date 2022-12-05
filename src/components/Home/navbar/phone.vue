@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center">
+  <div class="text-center narbar_phone">
     <v-btn color="black" @click="overlay = !overlay" icon="mdi-menu"> </v-btn>
     <v-overlay class="my-overlay" v-model="overlay" id="menu_card">
       <v-card
@@ -149,31 +149,4 @@ export default {
 };
 </script>
 
-<style>
-.navbar_drwer {
-  display: inline-block;
-  /*border: 1px solid red;*/
-  position: fixed;
-  top: 65vh;
-  left: 87vw;
-  display: flex;
-  flex-direction: column;
-  width: 10vw;
-  height: 50vh;
-  justify-content: space-around;
-  /* align-items:flex-end; */
-  z-index: 1;
-  padding: 0;
-}
-a {
-  color: rgb(112, 108, 102);
-  text-decoration: none;
-  font-weight: bolder;
-}
-
-.eye_open {
-  width: 100px;
-  height: 100px;
-  /*border: 1px solid rosybrown;*/
-}
-</style>
+<style></style>

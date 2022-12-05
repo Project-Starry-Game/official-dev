@@ -7,8 +7,8 @@
           class="pa-3 ma-0 text-gray"
           style="position: relative; top: -20px; font-size: 12px"
         >
-          {{ $t("generes") }}
-          <span v-for="(i, index) in genres" :key="index">{{ i }} </span>
+          {{ $t("generes.self") }}
+          <span v-for="(i, index) in genres" :key="index">{{ $t(i) }} </span>
         </v-card-subtitle>
       </div>
       <v-row class="bor box1-1" justify="center">
@@ -22,7 +22,7 @@
           </p>
           <br />
         </v-col>
-        <v-col class=" box1 ibox ma-2" cols="12" md="6">
+        <v-col class="box1 ibox ma-2" cols="12" md="6">
           <iframe
             class="iframe_box_phone"
             width="300px"
@@ -77,11 +77,11 @@ export default {
   }
 }
 
-.iframe_box_phone{
+.iframe_box_phone {
   width: 100%;
   height: auto;
 }
-.intro_paragraph_phone_section{
+.intro_paragraph_phone_section {
   font-size: 0.8rem;
 }
 </style>

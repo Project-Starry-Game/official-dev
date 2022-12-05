@@ -1,6 +1,6 @@
 <template>
   <v-app class="home">
-    <v-container class="ma-0 pa-0 scroll_view" fluid id="scroll-target-page">
+    <v-container class="ma-0 pa-0 scroll_view" fluid style="position: relative">
       <lobby id="goDowntoLobby" />
       <homebg />
       <gameIntro id="gameIntro_pos" />
