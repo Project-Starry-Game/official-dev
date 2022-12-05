@@ -1,16 +1,19 @@
 <template>
   <div class="text-center">
     <v-btn color="black" @click="overlay = !overlay" icon="mdi-menu"> </v-btn>
-    <v-overlay class="my-overlay" v-model="overlay">
+    <v-overlay class="my-overlay" v-model="overlay" id="menu_card">
       <v-card
         min-width="100vw"
         min-height="100vh"
         width="100%"
         height="100%"
         color="black"
-        id="menu_card"
       >
-        <v-container fluid style="height: -webkit-fill-available">
+        <v-container
+          fluid
+          style="height: -webkit-fill-available"
+          id="menu_card"
+        >
           <v-row justify="center" align="center">
             <v-col cols="12">
               <v-btn
@@ -140,7 +143,7 @@ export default {
     },
   },
   mouted() {
-    var h = window.innerHeight;
+    var h = window.innerHeight - 200;
     document.getElementById("menu_card").style.height = h + "px";
   },
 };

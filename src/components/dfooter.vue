@@ -44,10 +44,7 @@ export default {
     };
   },
   methods: {},
-  mouted() {
-    var h = window.innerHeight;
-    document.getElementById("dfooter").style.height = h + "px";
-  },
+  mouted() {},
 };
 </script>
 
