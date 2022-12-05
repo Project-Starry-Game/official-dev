@@ -80,23 +80,26 @@ export default {
 }
 .text_section_phone {
   /* border: 1px solid seagreen; */
-  height: 69%;
+  height: 65%;
   width: 100%;
   margin: 1%;
+  font-weight: bold;
   position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   align-self: center;
-  font-size: 0.9rem;
+  /* font-size: 1.5rem; */
   color: rgb(255, 255, 255);
-  text-shadow: -0.5px 0.5px #676767;
+  /* text-shadow: -0.1px 0.1px #5e5e5e; */
+  font-weight: bolder;
+
 }
 .scrolldown_box_phone {
   /* border: 1px solid seagreen; */
   position: absolute;
-  top: 80%;
+  top: 85%;
   width: 100%;
   height: 10%;
   display: flex;
