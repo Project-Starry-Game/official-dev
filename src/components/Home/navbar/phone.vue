@@ -8,6 +8,7 @@
         width="100%"
         height="100%"
         color="black"
+        id="menu_card"
       >
         <v-container fluid style="height: -webkit-fill-available">
           <v-row justify="center" align="center">
@@ -138,7 +139,10 @@ export default {
       this.$i18n.locale = lan;
     },
   },
-  mouted() {},
+  mouted() {
+    var h = window.innerHeight;
+    document.getElementById("menu_card").style.height = h + "px";
+  },
 };
 </script>
 

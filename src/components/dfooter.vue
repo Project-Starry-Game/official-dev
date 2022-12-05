@@ -1,5 +1,5 @@
 <template>
-  <v-footer color="black" class="text-center d-flex flex-column">
+  <v-footer id="dfooter" color="black" class="text-center d-flex flex-column">
     <div>
       <v-btn
         v-for="icon in icons"
@@ -44,7 +44,10 @@ export default {
     };
   },
   methods: {},
-  mouted() {},
+  mouted() {
+    var h = window.innerHeight;
+    document.getElementById("dfooter").style.height = h + "px";
+  },
 };
 </script>
 
