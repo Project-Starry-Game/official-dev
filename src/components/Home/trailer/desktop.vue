@@ -88,7 +88,8 @@ export default {
   top: 0%;
 
   overflow-x: hidden;
-  max-height: 100vh;
+  height: 100vh;
+  max-height: -webkit-fill-available;
 }
 
 .img_container {

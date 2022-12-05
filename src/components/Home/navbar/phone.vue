@@ -33,12 +33,7 @@
               <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
             </v-list-item>
           </v-list-item-group>
-          <v-footer
-            border
-            color="black"
-            app
-            class="text-center d-flex flex-column"
-          >
+          <v-footer color="black" app class="text-center d-flex flex-column">
             <div style="position: relative; top: -20px">
               <v-btn
                 @click="changeLocales('zh-TW')"

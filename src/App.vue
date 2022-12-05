@@ -41,6 +41,8 @@ body {
   overflow-x: hidden;
   position: fixed;
   scroll-behavior: auto;
+  height: 100vh;
+  max-height: -webkit-fill-available;
   @media not all and (hover: hover) {
     height: var(--app-height);
   }
@@ -52,9 +54,9 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   min-height: fill-available;
-  min-height: -webkit-fill-available;
+  max-height: -webkit-fill-available;
 }
 
 .v-btn::before {

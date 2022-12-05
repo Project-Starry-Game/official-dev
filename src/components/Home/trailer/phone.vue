@@ -52,6 +52,7 @@ export default {
   overflow-y: hidden;
   width: 100vw;
   height: 100vh;
+  max-height: -webkit-fill-available;
   /* background-color: rgb(230, 207, 207); */
 }
 .butter_logo_container {
