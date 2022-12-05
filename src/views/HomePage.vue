@@ -5,8 +5,11 @@
       <homebg />
       <gameIntro id="gameIntro_pos" />
       <itchPage />
-      <homenavbar @on-change="onPageChanged" :nav="nav" :imgs="getImg" />
+      <div style="position: sticky">
+        <homenavbar @on-change="onPageChanged" :nav="nav" :imgs="getImg" />
+      </div>
       <toolNavbar class="hidden-xs" />
+      
     </v-container>
     <footerBar />
   </v-app>

@@ -5,7 +5,7 @@
       size="small"
       color="transparent"
       elevation="0"
-      class="itch_btn_phone borderrr ma-3"
+      class="itch_btn_phone borderrr ma-0 pa-0"
       v-for="(item, index) in items"
       :key="index"
       :href="item.src"
@@ -50,8 +50,14 @@ export default {
 
 <style>
 .itch_phone {
-  position: fixed;
-  top: 80%;
+  position: sticky;
+  /* border: 2px solid seashell; */
+  flex-direction: column;
+  align-items: center;
+  width: 10vw;
+  height: 20vh;
+  top: 78%;
   left: 83%;
+  z-index: 100;
 }
 </style>
