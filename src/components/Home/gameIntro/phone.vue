@@ -7,17 +7,17 @@
           class="pa-3 ma-0 text-gray"
           style="position: relative; top: -20px; font-size: 12px"
         >
-          {{ $t("generes.self") }}
-          <span v-for="(i, index) in genres" :key="index">{{ $t(i) }} </span>
+          {{ $t("generes") }}
+          <span v-for="(i, index) in genres" :key="index">{{ i }} </span>
         </v-card-subtitle>
       </div>
       <v-row class="bor box1-1" justify="center">
         <v-col>
-          <p class="intro_paragraph_section">
+          <p class="intro_paragraph_phone_section">
             {{ $t("gameIntro1") }}
           </p>
           <br />
-          <p class="intro_paragraph_section">
+          <p class="intro_paragraph_phone_section">
             {{ $t("gameIntro2") }}
           </p>
           <br />
@@ -81,7 +81,7 @@ export default {
   width: 100%;
   height: auto;
 }
-.intro_paragraph_section{
+.intro_paragraph_phone_section{
   font-size: 0.8rem;
 }
 </style>

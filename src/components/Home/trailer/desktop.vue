@@ -20,8 +20,8 @@
       </div>
     </div>
     <div class="text_section" id="text_section">
-      <p class="trailer_paragraph_phone_section">{{ $t("trialerIntro.section_one") }}</p>
-      <p class="trailer_paragraph_phone_section">
+      <p>{{ $t("trialerIntro.section_one") }}</p>
+      <p>
         {{ $t("trialerIntro.section_two") }}
       </p>
       <br />
@@ -88,8 +88,7 @@ export default {
   top: 0%;
 
   overflow-x: hidden;
-  height: 100vh;
-  max-height: -webkit-fill-available;
+  max-height: 100vh;
 }
 
 .img_container {
@@ -130,7 +129,7 @@ export default {
   justify-content: center;
   align-self: center;
   justify-self: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 .scrolldown_box {
   position: absolute;
@@ -164,7 +163,4 @@ a#scroll-btn {
   font-size: 1rem;
   color: #fff;
 }
-/* .trailer_paragraph_phone_section{
-  font-size: 3rem;
-} */
 </style>

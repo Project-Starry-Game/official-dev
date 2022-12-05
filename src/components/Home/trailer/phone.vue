@@ -80,7 +80,7 @@ export default {
 }
 .text_section_phone {
   /* border: 1px solid seagreen; */
-  height: 80%;
+  height: 69%;
   width: 100%;
   margin: 1%;
   position: fixed;
@@ -91,6 +91,7 @@ export default {
   align-self: center;
   font-size: 0.9rem;
   color: rgb(255, 255, 255);
+  text-shadow: -0.5px 0.5px #676767;
 }
 .scrolldown_box_phone {
   /* border: 1px solid seagreen; */

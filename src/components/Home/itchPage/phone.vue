@@ -37,11 +37,11 @@ export default {
           name: "GET IT ON ITCH",
           src: "https://project-starry.itch.io/soul-of-butterflies-incubation",
         },
-        {
-          img: patreonImg,
-          name: "BECOME A PATRON",
-          src: "https://www.patreon.com/bePatron?u=56283261",
-        },
+        // {
+        //   img: patreonImg,
+        //   name: "BECOME A PATRON",
+        //   src: "https://www.patreon.com/bePatron?u=56283261",
+        // },
       ],
     };
   },
@@ -51,8 +51,7 @@ export default {
 <style>
 .itch_phone {
   position: fixed;
-  top: 75%;
-  left: 85%;
-  right: 10;
+  top: 80%;
+  left: 83%;
 }
 </style>
