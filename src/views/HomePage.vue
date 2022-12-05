@@ -1,11 +1,6 @@
 <template>
   <v-app class="home">
-    <v-container
-      class="overflow-y-auto overflow-x-hidden ma-0 pa-0 scroll_view"
-      v-scroll:#scroll-target-page="onScroll"
-      fluid
-      id="scroll-target-page home_page"
-    >
+    <v-container class="ma-0 pa-0 scroll_view" fluid id="scroll-target-page">
       <lobby id="goDowntoLobby" />
       <homebg />
       <gameIntro id="gameIntro_pos" />

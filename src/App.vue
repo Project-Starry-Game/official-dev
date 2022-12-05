@@ -8,20 +8,8 @@
 
 <script lang="ts">
 export default {
-  methods: {
-    calculateVh() {
-      var vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", vh + "px");
-    },
-  },
-  mounted() {
-    // Initial calculation
-    this.calculateVh();
-    // Re-calculate on resize
-    window.addEventListener("resize", this.calculateVh);
-    // Re-calculate on device orientation change
-    window.addEventListener("orientationchange", this.calculateVh);
-  },
+  methods: {},
+  mounted() {},
 };
 </script>
 
@@ -29,33 +17,6 @@ export default {
 * {
   margin: 0;
   padding: 0;
-}
-
-html,
-body {
-  overflow-x: hidden;
-  position: fixed;
-  scroll-behavior: auto;
-}
-
-html {
-  height: 100vh;
-  height: -webkit-fill-available;
-}
-body,
-body > div,
-.v-application,
-.v-application--wrap {
-  height: 100vh;
-  height: -webkit-fill-available;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-  position: fixed;
-}
-
-.v-application {
-  height: 100vh;
-  height: -webkit-fill-available;
 }
 
 a::before {
