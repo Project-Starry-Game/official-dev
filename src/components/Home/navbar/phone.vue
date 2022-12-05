@@ -58,6 +58,15 @@
               >
                 EN
               </v-btn>
+              <v-btn
+                @click="changeLocales('ja')"
+                class="ma-0"
+                variant="text"
+                color="white"
+                size="small"
+              >
+                日
+              </v-btn>
             </div>
             <div>
               <v-btn
