@@ -9,7 +9,7 @@
         height="100%"
         color="black"
       >
-        <v-container fluid style="height: 100vh">
+        <v-container fluid style="height: -webkit-fill-available">
           <v-row justify="center" align="center">
             <v-col cols="12">
               <v-btn

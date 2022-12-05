@@ -31,36 +31,32 @@ export default {
   padding: 0;
 }
 
-:root {
-  --app-height: 100%;
-}
-
 html,
 body {
   overflow-y: hidden;
   overflow-x: hidden;
   position: fixed;
   scroll-behavior: auto;
-  height: 100vh;
-  max-height: -webkit-fill-available;
-  @media not all and (hover: hover) {
-    height: var(--app-height);
-  }
 }
 
 html {
-  height: fill-available;
+  height: 100vh;
   height: -webkit-fill-available;
 }
-
-body {
+body,
+body > div,
+.v-application,
+.v-application--wrap {
   height: 100vh;
-  min-height: fill-available;
-  max-height: -webkit-fill-available;
+  height: -webkit-fill-available;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  position: fixed;
 }
 
-.v-btn::before {
-  background-color: transparent;
+.v-application {
+  height: 100vh;
+  height: -webkit-fill-available;
 }
 
 a::before {

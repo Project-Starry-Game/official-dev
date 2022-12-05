@@ -1,11 +1,11 @@
 <template>
-  <div class="trailer_phone d-flex flex-column">
+  <div class="trailer_phone d-flex flex-column" id="trailer_phone">
     <div class="butter_logo_container pa-0 ma-0">
       <v-img :src="butterflylogo" class="butter_logo" cover />
     </div>
 
     <div class="butter_bg">
-      <v-img class="butter_bg" cover :src="bg_builder" />
+      <v-img class="butter_bg" id="butter_bg" cover :src="bg_builder" />
     </div>
     <div class="scrolldown_box_phone">
       <v-btn @click="scrollToNextSection()" color="transparent" elevation="0">
@@ -31,7 +31,10 @@ import butterflylogo from "../../../assets/logo_shadow.png";
 export default {
   setup() {},
 
-  mounted() {},
+  mounted() {
+    var h = window.innerHeight;
+    document.getElementById("trailer_phone").style.height = h + "px";
+  },
 
   methods: {
     scrollToNextSection() {
@@ -72,6 +75,7 @@ export default {
 }
 .butter_bg {
   height: 100vh;
+  max-height: -webkit-fill-available;
   object-position: center bottom;
 }
 .text_section_phone {
