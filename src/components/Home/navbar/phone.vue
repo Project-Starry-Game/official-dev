@@ -26,7 +26,9 @@
             <v-list-item
               v-for="(item, index) in items"
               :key="index"
-              @click="menuActionClick(item.action)"
+              @click="menuActionClick(item)"
+              class="text-center"
+              style="height: 100px"
             >
               <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
             </v-list-item>
@@ -37,6 +39,26 @@
             app
             class="text-center d-flex flex-column"
           >
+            <div style="position: relative; top: -20px">
+              <v-btn
+                @click="changeLocales('zh-TW')"
+                class="ma-0"
+                variant="text"
+                color="white"
+                size="small"
+              >
+                繁
+              </v-btn>
+              <v-btn
+                @click="changeLocales('en')"
+                class="ma-0"
+                variant="text"
+                color="white"
+                size="small"
+              >
+                EN
+              </v-btn>
+            </div>
             <div>
               <v-btn
                 v-for="icon in icons"
@@ -52,6 +74,7 @@
                 {{ new Date().getFullYear() }} — <strong>Project Starry</strong>
               </v-col>
             </div>
+
             <!-- <span> PROJECT STARRY </span> -->
           </v-footer>
         </v-container>
@@ -62,6 +85,8 @@
 
 <script setup lang="ts">
 import starryLogo from "../../../assets/Starry Logo.png";
+
+import { fading } from "@/apis/sceneTransit.ts";
 </script>
 
 <script lang="ts">
@@ -80,25 +105,33 @@ export default {
         { icon: "mdi-patreon", src: "https://www.patreon.com/projectstarry" },
       ],
       items: [
-        {
-          title: "menu1",
-          icon: "mdi-close",
-          action: "test",
-        },
-        { title: "menu2", icon: "mdi-close", action: "logout" },
+        { title: "menu1", name: "Trailer", id: "trailer_pos" },
+        { title: "menu2", name: "Lobby", id: "goDowntoLobby" },
+        { title: "menu3", name: "Intro", id: "gameIntro_pos" },
       ],
     };
   },
   methods: {
-    onEmit(ele) {
-      this.$emit("on-change", ele);
-    },
-    menuActionClick(action) {
-      if (action === "test") {
-        alert("TEST!!");
-      } else if (action === "logout") {
-        alert("LOGOUT!!");
+    menuActionClick(ele) {
+      // this.$emit("on-change", action);
+      let name = ele.name;
+      if (name == "Trailer") {
+        fading("fadingLong", 1000, () => {
+          this.$router.push({ name: "Home" });
+        });
+      } else {
+        fading("fadingShort", 200, () => {
+          let id = ele.id;
+          let offset = document.getElementById(id).getBoundingClientRect();
+          document.getElementById("scroll-target-page").scrollTop =
+            offset.top + 10;
+        });
+
+        this.overlay = false;
       }
+    },
+    changeLocales(lan) {
+      this.$i18n.locale = lan;
     },
   },
   mouted() {},
