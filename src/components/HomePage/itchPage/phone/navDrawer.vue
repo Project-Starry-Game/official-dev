@@ -20,11 +20,7 @@
         class="overlay_card"
         color="black"
       >
-        <v-container
-          fluid
-          style="height: -webkit-fill-available"
-          id="menu_card"
-        >
+        <v-container fluid id="menu_card">
           <v-row justify="center" align="center">
             <v-col cols="12">
               <v-btn
@@ -48,7 +44,13 @@
               <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
             </v-list-item>
           </v-list-item-group>
-          <v-footer color="black" app class="text-center d-flex flex-column">
+          <v-divider />
+          <v-container
+            color="black"
+            app
+            class="pa-2 ma-2 text-center d-flex flex-column"
+            style="position: relative; top: 40px"
+          >
             <div style="position: relative; top: -20px">
               <v-btn
                 @click="changeLocales('zh-TW')"
@@ -95,7 +97,7 @@
             </div>
 
             <!-- <span> PROJECT STARRY </span> -->
-          </v-footer>
+          </v-container>
         </v-container>
       </v-card>
     </v-overlay>
@@ -163,7 +165,5 @@ export default {
 <style>
 .overlay_card {
   min-height: 100vh;
-  min-height: fill-available;
-  min-height: -webkit-fill-available;
 }
 </style>
