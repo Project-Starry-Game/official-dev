@@ -33,6 +33,6 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-  base: "/official-dev/",
-  // base: "https://projectstarry.com",
+  // base: "/official-dev/",
+  base: "https://projectstarry.com",
 });
