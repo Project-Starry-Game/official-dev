@@ -1,6 +1,9 @@
 <template>
   <div class="text-center narbar_phone">
-    <v-btn color="black" @click="overlay = !overlay" icon="mdi-menu"> </v-btn>
+    <!-- <v-btn color="black" @click="overlay = !overlay" icon="mdi-menu"> </v-btn> -->
+    <v-btn  @click="overlay = !overlay" > 
+        <v-img  color="white" width="5vw" class="pa-0" :src="menubar"> </v-img>
+    </v-btn>
     <v-overlay class="my-overlay" v-model="overlay" id="menu_card">
       <v-card id="overlay_card" width="100vw" height="90vh" color="black">
         <v-container
@@ -87,7 +90,7 @@
 
 <script setup lang="ts">
 import starryLogo from "../../../assets/Starry Logo.png";
-
+import menubar from "../../../assets/bars-solid.svg";
 import { fading } from "@/apis/sceneTransit.ts";
 </script>
 

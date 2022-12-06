@@ -5,12 +5,12 @@
       size="small"
       color="transparent"
       elevation="0"
-      class="itch_btn_phone borderrr ma-0 pa-0"
+      class="itch_btn_phone  ma-0 pa-0"
       v-for="(item, index) in items"
       :key="index"
       :href="item.src"
     >
-      <v-img width="20" class="pa-2" :src="item.img"> </v-img>
+      <v-img width="10vw" class="pa-2" :src="item.img"> </v-img>
       <!-- <span class="ma-2 pa-2 text-white"> {{ item.name }} </span> -->
     </v-btn>
     <phone class="hidden-sm-and-up" @on-change="onEmit" :nav="nav" />
@@ -51,9 +51,13 @@ export default {
 <style>
 .itch_phone {
   position: sticky;
-  /* border: 2px solid seashell; */
+  border: 2px solid seashell;
+  background-color: antiquewhite;
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  
   width: 10vw;
   height: 20vh;
   top: 78%;
