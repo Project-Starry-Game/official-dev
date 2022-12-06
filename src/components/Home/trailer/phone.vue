@@ -56,6 +56,7 @@ export default {
   width: 100vw;
   height: 100vh;
   max-height: -webkit-fill-available;
+  margin-bottom: -300px;
   /* background-color: rgb(230, 207, 207); */
 }
 .butter_logo_container {
@@ -94,7 +95,6 @@ export default {
   color: rgb(255, 255, 255);
   /* text-shadow: -0.1px 0.1px #5e5e5e; */
   font-weight: bolder;
-
 }
 .scrolldown_box_phone {
   /* border: 1px solid seagreen; */

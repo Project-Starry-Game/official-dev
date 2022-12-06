@@ -17,25 +17,20 @@ export default {
     return {};
   },
   methods: {
-    reportWindowSize() {
-      location.reload();
-    },
     onPageChanged() {
       fading("fadingLong", 1000, () => {
         this.$router.push({ name: "Incubation" });
       });
     },
   },
-  mounted() {
-    window.onresize = this.reportWindowSize;
-  },
+  mounted() {},
 };
 </script>
 
 <style>
 .home {
-  height: auto;
-  width: auto;
+  height: 100vh;
+  width: 100vw;
 }
 .scroll_view {
   position: relative;

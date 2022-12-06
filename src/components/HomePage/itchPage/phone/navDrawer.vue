@@ -1,11 +1,25 @@
 <template>
   <div class="text-center narbar_phone">
-    <!-- <v-btn color="black" @click="overlay = !overlay" icon="mdi-menu"> </v-btn> -->
-    <v-btn  @click="overlay = !overlay" > 
-        <v-img  color="white" width="6vw" class="pa-0" :src="menubar"> </v-img>
+    <v-btn
+      @click="overlay = !overlay"
+      elevation="0"
+      width="31.44px"
+      min-width="31.44px"
+      height="31.44px"
+      max-height="31.44px"
+      color="white"
+      class="pa-0 ma-0"
+    >
+      <v-img width="12.44px" class="pa-2" :src="menubar"> </v-img>
     </v-btn>
     <v-overlay class="my-overlay" v-model="overlay" id="menu_card">
-      <v-card id="overlay_card" width="100vw" height="90vh" color="black">
+      <v-card
+        id="overlay_card"
+        width="100vw"
+        height="100vh"
+        class="overlay_card"
+        color="black"
+      >
         <v-container
           fluid
           style="height: -webkit-fill-available"
@@ -89,8 +103,8 @@
 </template>
 
 <script setup lang="ts">
-import starryLogo from "../../../assets/Starry Logo.png";
-import menubar from "../../../assets/bars-solid.svg";
+import starryLogo from "../../../../assets/Starry Logo.png";
+import menubar from "../../../../assets/bars-solid.svg";
 import { fading } from "@/apis/sceneTransit.ts";
 </script>
 
@@ -146,4 +160,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.overlay_card {
+  min-height: 100vh;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
+}
+</style>

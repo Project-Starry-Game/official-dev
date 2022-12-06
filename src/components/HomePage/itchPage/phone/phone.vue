@@ -1,6 +1,7 @@
 <template>
   <div class="itch_phone">
     <!-- <v-card-title class="text-white"> DEMO </v-card-title> -->
+    <navDrawer class="hidden-sm-and-up" @on-change="onEmit" :nav="nav" />
     <v-btn
       size="small"
       color="transparent"
@@ -11,17 +12,15 @@
       :href="item.src"
     >
       <v-img width="8vw" class="pa-2" :src="item.img"> </v-img>
-      <!-- <span class="ma-2 pa-2 text-white"> {{ item.name }} </span> -->
     </v-btn>
-    <phone class="hidden-sm-and-up" @on-change="onEmit" :nav="nav" />
   </div>
 </template>
 
 <script setup lang="ts">
 import patreonImg from "../../../assets/Digital-Patreon-Logo_White.png";
-import itchImg from "../../../assets/itch-io.svg"; //../../../assets/itch.svg";
+import itchImg from "../../../../assets/itch-io.svg"; //../../../assets/itch.svg";
 import appIcon from "../../../assets/icon.png";
-import phone from "@/components/HomePage/navbar/phone.vue";
+import navDrawer from "@/components/HomePage/itchPage/phone/navDrawer.vue";
 </script>
 
 <script lang="ts">
@@ -51,17 +50,16 @@ export default {
 <style>
 .itch_phone {
   position: fixed;
-  border: 2px solid seashell;
-  background-color: antiquewhite;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
   width: 10vw;
   height: 12vh;
-  top: 69%;
-  left: 83%;
+  top: 40%;
+  left: 87%;
   z-index: 100;
+  /* border: 2px solid seashell; */
+  /* background-color: antiquewhite; */
 }
 </style>

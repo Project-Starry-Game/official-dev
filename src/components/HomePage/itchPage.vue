@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import patreonImg from "../../assets/Digital-Patreon-Logo_Black.png";
 import desktop from "./itchPage/desktop.vue";
-import phone from "./itchPage/phone.vue";
+import phone from "./itchPage/phone/phone.vue";
 </script>
 
 <script lang="ts">
