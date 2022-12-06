@@ -89,6 +89,7 @@ export default {
   z-index: 100;
   color: rgb(255, 255, 255);
   font-weight: bolder;
+  text-shadow: 2px 3px #000;
 }
 .butter_scoll_container {
   position: absolute;
