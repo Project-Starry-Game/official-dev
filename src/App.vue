@@ -18,11 +18,9 @@ export default {
   margin: 0;
   padding: 0;
 }
-
 a::before {
   background-color: transparent;
 }
-
 @media only screen and (max-width: 500px) {
   h1 {
     font-size: 5.9vw;
@@ -30,12 +28,10 @@ a::before {
   h2 {
     font-size: 3vh;
   }
-
   p {
-    font-size: 2.5vmin;
+    font-size: 2vmin;
   }
 }
-
 .fadingLong {
   -moz-animation: fadeInAnimation ease 5s; /* Firefox */
   -webkit-animation: fadeInAnimation ease 5s; /* Safari and Chrome */
@@ -45,7 +41,6 @@ a::before {
   animation-fill-mode: forwards;
   animation-play-state: running;
 }
-
 .fading {
   -moz-animation: fadeInAnimation ease 2s; /* Firefox */
   -webkit-animation: fadeInAnimation ease 2s; /* Safari and Chrome */
@@ -55,7 +50,6 @@ a::before {
   animation-fill-mode: forwards;
   animation-play-state: running;
 }
-
 .fadingShort {
   -moz-animation: fadeInAnimation ease 0.5s; /* Firefox */
   -webkit-animation: fadeInAnimation ease 0.5s; /* Safari and Chrome */
@@ -65,7 +59,6 @@ a::before {
   animation-fill-mode: forwards;
   animation-play-state: running;
 }
-
 @keyframes fadeInAnimation {
   0% {
     opacity: 0;
@@ -77,7 +70,6 @@ a::before {
     opacity: 1;
   }
 }
-
 @-webkit-keyframes fadeInAnimation {
   0% {
     opacity: 0;

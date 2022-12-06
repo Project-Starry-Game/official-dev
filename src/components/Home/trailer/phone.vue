@@ -1,19 +1,26 @@
 <template>
-  <div class="trailer_phone d-flex flex-column" id="trailer_phone">
-    <div class="butter_logo_container pa-0 ma-0">
-      <v-img :src="butterflylogo" class="butter_logo" cover />
+  <div class="home">
+    <div class="butter_logo_phone_container">
+      <v-img class="butter_logo_phone" :src="butterflylogo" cover />
     </div>
 
-    <div class="butter_bg">
-      <v-img class="butter_bg" id="butter_bg" cover :src="bg_builder" />
+    <v-img class="butter_background" cover :src="bg_builder" />
+
+    <div class="butter_scoll_container">
+      <v-btn @click="scrollToNextSection()" color="transparent" elevation="0">
+        <a class="scroll_btn" id="scroll_btn"></a>
+      </v-btn>
+      <p id="scrolldown_text">{{ $t("scrollDown") }}</p>
     </div>
+
     <div class="scrolldown_box_phone">
       <v-btn @click="scrollToNextSection()" color="transparent" elevation="0">
         <a class="scroll_btn" id="scroll_btn"></a>
       </v-btn>
       <p id="scrolldown_text">{{ $t("scrollDown") }}</p>
     </div>
-    <div class="text_section_phone">
+
+    <div class="butter_text_container">
       <p>{{ $t("trialerIntro.section_phone_one") }}</p>
       <br />
       <p>{{ $t("trialerIntro.section_phone_two") }}</p>
@@ -32,8 +39,8 @@ export default {
   setup() {},
 
   mounted() {
-    var h = window.innerHeight;
-    document.getElementById("trailer_phone").style.height = h + "px";
+    // var h = window.innerHeight;
+    // document.getElementById("trailer_phone").style.height = h + "px";
   },
 
   methods: {
@@ -45,21 +52,12 @@ export default {
 </script>
 
 <style>
-.trailer_phone {
+.home {
   position: relative;
-  top: 0;
-  /* border: 1px solid rgb(255, 140, 0); */
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  width: 100vw;
   height: 100vh;
-  max-height: -webkit-fill-available;
-  margin-bottom: -300px;
-  /* background-color: rgb(230, 207, 207); */
+  overflow: hidden;
 }
-.butter_logo_container {
+.butter_logo_phone_container {
   position: absolute;
   top: 0;
   padding: 0;
@@ -67,39 +65,34 @@ export default {
   width: 100vw;
   z-index: 100;
 }
-.butter_logo {
+.butter_logo_phone {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
   top: 15vh;
 }
-.butter_bg {
-  height: 100vh;
-  max-height: -webkit-fill-available;
-  object-position: center bottom;
+.butter_background {
+  height: 100%;
 }
-.text_section_phone {
-  /* border: 1px solid seagreen; */
-  height: 65%;
-  width: 100%;
-  margin: 1%;
-  font-weight: bold;
-  position: fixed;
+.butter_text_container {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   align-self: center;
-  /* font-size: 1.5rem; */
+  top: 55vh;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  z-index: 100;
   color: rgb(255, 255, 255);
-  /* text-shadow: -0.1px 0.1px #5e5e5e; */
   font-weight: bolder;
 }
-.scrolldown_box_phone {
-  /* border: 1px solid seagreen; */
+.butter_scoll_container {
   position: absolute;
-  top: 85%;
+  top: 90%;
   width: 100%;
   height: 10%;
   display: flex;
@@ -107,6 +100,14 @@ export default {
   justify-content: space-around;
   align-items: center;
   z-index: 10000;
+}
+.butter_scroll_btn {
+  height: 0.6rem;
+  width: 0.6rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  animation: move-down 2s infinite;
+  margin-top: -1rem;
 }
 a#scroll_btn {
   height: 0.6rem;
