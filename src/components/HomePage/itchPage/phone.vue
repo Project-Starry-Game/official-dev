@@ -5,7 +5,7 @@
       size="small"
       color="transparent"
       elevation="0"
-      class="itch_btn_phone  ma-0 pa-0"
+      class="itch_btn_phone ma-0 pa-0"
       v-for="(item, index) in items"
       :key="index"
       :href="item.src"
@@ -21,7 +21,7 @@
 import patreonImg from "../../../assets/Digital-Patreon-Logo_White.png";
 import itchImg from "../../../assets/itch-io.svg"; //../../../assets/itch.svg";
 import appIcon from "../../../assets/icon.png";
-import phone from "@/components/Home/navbar/phone.vue";
+import phone from "@/components/HomePage/navbar/phone.vue";
 </script>
 
 <script lang="ts">
@@ -57,7 +57,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  
+
   width: 10vw;
   height: 12vh;
   top: 69%;

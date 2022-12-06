@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import desktop from "@/components/Home/navbar/desktop.vue";
+import desktop from "@/components/HomePage/navbar/desktop.vue";
 </script>
 
 <script lang="ts">
