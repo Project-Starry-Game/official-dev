@@ -10,7 +10,7 @@
       :key="index"
       :href="item.src"
     >
-      <v-img width="10vw" class="pa-2" :src="item.img"> </v-img>
+      <v-img width="8vw" class="pa-2" :src="item.img"> </v-img>
       <!-- <span class="ma-2 pa-2 text-white"> {{ item.name }} </span> -->
     </v-btn>
     <phone class="hidden-sm-and-up" @on-change="onEmit" :nav="nav" />
@@ -50,7 +50,7 @@ export default {
 
 <style>
 .itch_phone {
-  position: sticky;
+  position: fixed;
   border: 2px solid seashell;
   background-color: antiquewhite;
   display: flex;
@@ -59,8 +59,8 @@ export default {
   align-items: center;
   
   width: 10vw;
-  height: 20vh;
-  top: 78%;
+  height: 12vh;
+  top: 69%;
   left: 83%;
   z-index: 100;
 }
