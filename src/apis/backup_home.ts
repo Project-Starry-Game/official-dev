@@ -88,7 +88,7 @@ export default {
     },
   },
   mounted() {
-    window.onresize = this.reportWindowSize;
+    // window.onresize = this.reportWindowSize;
     // this.onPageChanged();
 
     this.nav.map((obj) => {

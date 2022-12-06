@@ -18,7 +18,7 @@
       </div>
 
       <div class="hidden-xs" style="position: sticky">
-        <!-- <homenavbar @on-change="onPageChanged" :nav="nav" /> -->
+        <homenavbar @on-change="onPageChanged" :nav="nav" :imgs="getImg" />
       </div>
 
       <div class="hidden-xs">
@@ -68,6 +68,9 @@ export default {
     };
   },
   methods: {
+    reportWindowSize() {
+      // location.reload();
+    },
     onPageChanged(ele: any) {
       let name = ele.name;
       if (name == "Trailer") {
@@ -84,12 +87,50 @@ export default {
       }
     },
     onScroll(e) {
-      // this.offsetTop = e.target.scrollTop;
+      this.offsetTop = e.target.scrollTop;
     },
   },
   mounted() {
     // window.onresize = this.reportWindowSize;
+
+    this.nav.map((obj) => {
+      let id = obj.id;
+      this.elements.push(document.getElementById(id));
+    });
+
+    this.scrollTop = document.getElementById("scroll-target-page");
+    this.eyeballImage = eyeball;
+    this.eyeImage = eye;
+    this.trailerImage = eye;
   },
-  computed: {},
+  computed: {
+    getImg() {
+      let _imgs = [];
+      let currentPage = 0;
+      let index = 0;
+
+      this.elements.map((obj) => {
+        if (index > 0) {
+          let offset = obj.getBoundingClientRect().top;
+          if (offset <= 50) currentPage = index;
+          let n = this.offsetTop;
+        }
+        index++;
+      });
+
+      index = 0;
+      this.elements.map((obj) => {
+        if (index == 0) _imgs.push(this.trailerImage);
+        if (index > 0) {
+          _imgs.push(index == currentPage ? this.eyeballImage : this.eyeImage);
+          this.nav[index].isActive = index == currentPage ? true : false;
+        }
+        index++;
+      });
+
+      _imgs.push(eye);
+      return _imgs;
+    },
+  },
 };
 </script>
