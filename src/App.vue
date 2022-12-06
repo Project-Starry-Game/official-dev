@@ -29,7 +29,7 @@ a::before {
     font-size: 3vh;
   }
   p {
-    font-size: 2vmin;
+    font-size: 3.5vmin;
   }
 }
 .fadingLong {
