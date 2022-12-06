@@ -1,8 +1,10 @@
 <template>
-  <div style="position: relative">
-    <div style="z-index: 5">
-      <other class="hidden-xs" @on-change="scrollToNextSection" />
-      <xs class="hidden-sm-and-up" @on-change="scrollToNextSection" />
+  <div>
+    <div class="hidden-xs">
+      <other class="hidden-xs-only" @on-change="scrollToNextSection" />
+    </div>
+    <div class="hidden-sm-and-up">
+      <xs @on-change="scrollToNextSection" />
     </div>
   </div>
 </template>

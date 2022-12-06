@@ -9,7 +9,6 @@
         <homenavbar @on-change="onPageChanged" :nav="nav" :imgs="getImg" />
       </div>
       <toolNavbar class="hidden-xs" />
-      
     </v-container>
     <footerBar />
   </v-app>
@@ -17,11 +16,11 @@
 
 <script setup lang="ts">
 import toolNavbar from "@/components/toolNavbar.vue";
-import lobby from "@/components/Home/lobby.vue";
-import gameIntro from "@/components/Home/gameIntro.vue";
-import itchPage from "@/components/Home/itchPage.vue";
-import homenavbar from "@/components/Home/navbar2col.vue";
-import homebg from "@/components/Home/homeBG.vue";
+import lobby from "@/components/HomePage/lobby.vue";
+import gameIntro from "@/components/HomePage/gameIntro.vue";
+import itchPage from "@/components/HomePage/itchPage.vue";
+import homenavbar from "@/components/HomePage/navbar2col.vue";
+import homebg from "@/components/HomePage/homeBG.vue";
 import footerBar from "@/components/dfooter.vue";
 
 import bk from "@/assets/background.png";
