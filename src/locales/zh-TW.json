@@ -23,5 +23,11 @@
   "becomeAPatreon": "成為Patreon會員",
   "menu1": "旅社外觀",
   "menu2": "旅社大廳",
-  "menu3": "遊戲介紹"
+  "menu3": "遊戲介紹",
+  "timeline": {
+    "event1": {
+      "title": "Title test",
+      "content": "Event Content Test"
+    }
+  }
 }

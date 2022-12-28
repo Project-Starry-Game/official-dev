@@ -23,5 +23,11 @@
   "becomeAPatreon": "Become a Patreon",
   "menu1": "Butterfly Inn",
   "menu2": "Lobby",
-  "menu3": "Introduction"
+  "menu3": "Introduction",
+  "timeline": {
+    "event1": {
+      "title": "Title test",
+      "content": "Event Content Test"
+    }
+  }
 }

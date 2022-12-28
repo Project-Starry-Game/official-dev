@@ -1,7 +1,5 @@
 <template>
-  <v-app>
-    <router-view></router-view>
-  </v-app>
+  <router-view></router-view>
 </template>
 
 <script setup lang="ts"></script>
@@ -9,7 +7,10 @@
 <script lang="ts">
 export default {
   methods: {},
-  mounted() {},
+  mounted() {
+    this.$vuetify.theme.dark = true;
+    console.log(this.$vuetify.theme.dark);
+  },
 };
 </script>
 
