@@ -26,8 +26,13 @@
   "menu3": "遊戲介紹",
   "timeline": {
     "event1": {
-      "title": "Title test",
-      "content": "Event Content Test"
+      "title": "2022/09",
+      "subtitle": "sss",
+      "content": "Starry 成立"
+    },
+    "event2": {
+      "title": "2022/12",
+      "content": "G-Eight 參展"
     }
   }
 }
