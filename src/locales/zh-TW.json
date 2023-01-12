@@ -26,12 +26,16 @@
   "menu3": "遊戲介紹",
   "timeline": {
     "event1": {
-      "title": "2022/09",
-      "subtitle": "sss",
-      "content": "Starry 成立"
+      "title": "1",
+      "subtitle": "1",
+      "content": "Starry 成立ㄨㄛjifjdiy dwjij1 jijiji wshuhvpw was bb jifjip"
     },
     "event2": {
-      "title": "2022/12",
+      "title": "2",
+      "content": "G-Eight 參展"
+    },
+    "event3": {
+      "title": "3",
       "content": "G-Eight 參展"
     }
   }

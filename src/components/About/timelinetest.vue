@@ -5,33 +5,33 @@
             <h3 class="timeline-header_subtitle">FATHER OF THE TURKS</h3>
         </div> -->
         <div 
-            v-for=" i in items.length"
-            :key="i"
+            v-for="(item, index) in items"
+            :key="item.id"
             width="50%"
             height="50%"
             class="timeline"
         >
-            <div class="timeline-item" data-text="FATHER OF THE TURKS">
+            <!-- <p>{{item}}+{{index+1}}</p> -->
+            <!-- <div v-if="index < 20"> -->
+              <div class="timeline-item" data-text="FATHER OF THE TURKS">
                 <div class="timeline_content">
-                    <!-- <v-img cover class="timeline_img" width="100%" height="80%" :src="items[i].src"></v-img> -->
-                    <h2 class="timeline_content-title">{{ $t(items[i].title) }}</h2>
-                    <p class="timeline_content-desc">{{ $t(items[i].content) }} </p>
+                    <v-img cover class="timeline_img" width="100%" height="80%" :src="item.src"></v-img>
+                    <h2 class="timeline_content-title">{{ $t(item.title) }}</h2>
+                    <p class="timeline_content-desc">{{ $t(item.content) }} </p>
                 </div>
-            </div>
-            <!-- <div class="timeline-item" data-text="FATHER OF THE TURKS">
+              </div>
+
+              <!-- <div class="timeline-item" data-text="FATHER OF THE TURKS">
                 <div class="timeline_content">
-                    <v-img cover class="timeline_img" :src="item.src"></v-img>
-                    <h2 class="timeline_content-title">{{ $t(items[2*i].title) }}</h2>
-                    <p class="timeline_content-desc">{{ $t(items[2*i].content) }} </p>
+                    <v-img cover class="timeline_img" width="100%" height="80%" :src="item.src"></v-img>
+                    <h2 class="timeline_content-title">{{ $t(item.title) }}</h2>
+                    <p class="timeline_content-desc">{{ $t(item.content) }} </p>
                 </div>
-            </div> -->
-            <!-- <div class="timeline-item" data-text="FATHER OF THE TURKS">
-                <div class="timeline_content">
-                    <img class="timeline_img" src="http://gazetemanifesto.com/wp-content/uploads/2015/11/mustafa-kemal.jpg" />
-                    <h2 class="timeline_content-title">1893</h2>
-                    <p class="timeline_content-desc">First enrolled in a traditionalreligious school, he soon switched to a modern school. In 1893, he entered a military highschool where his mathematics teacher gave him the second name Kemal (meaning perfection)in recognition of young Mustafa's superior achievement.</p>
-                </div>
-            </div> -->
+              </div> -->
+
+             
+            <!-- </div> -->
+
         </div>
     </div>
   
@@ -47,7 +47,8 @@ export default {
     methods: {
         onScroll(e) {
             var bk = document.getElementById("background");
-    }
+    },
+
 }
 
 
