@@ -34,9 +34,7 @@
 
 <script>
 export default {
-  mounted() {
-    console.log(123);
-  },
+  mounted() {},
   methods: {
     changeLocales(lan) {
       this.$i18n.locale = lan;
