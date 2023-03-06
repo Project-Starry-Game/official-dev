@@ -12,7 +12,7 @@
                 color="#EB5254"
                 href="https://www.patreon.com/bePatron?u=56283261"
                 class="patreon_btn_ph"
-                
+                density="conpact"
                 >
                 <!-- <v-img width="10%" class="pa-1" :src="patreonImg"> </v-img> -->
                 <span class="patreon_btn_text_ph text-white"> {{ $t("becomeAPatreon") }} </span>

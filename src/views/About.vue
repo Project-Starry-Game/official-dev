@@ -1,11 +1,7 @@
 <template>
  <v-app class="about">
-
         <!-- <timeline /> -->
-
         <members />
-    
-
  </v-app>
 </template>
 
