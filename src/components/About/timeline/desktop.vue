@@ -1,80 +1,92 @@
 <template>
-    <div class="timeline-container" id="timeline-1">
+    <div class="timeline-container pa-0 ma-0" id="timeline-1">
         <!-- <div class="timeline-header">
             <h2 class="timeline-header_title">mmmmm</h2>
             <h3 class="timeline-header_subtitle">FATHER OF THE TURKS</h3>
         </div> -->
         <div 
-            v-for="(item, index) in items"
-            :key="item.id"
+            v-for="(item, index) in filteredEvents"
+            :key="index"
             width="50%"
             height="50%"
             class="timeline"
         >
-            <!-- <p>{{item}}+{{index+1}}</p> -->
-            <!-- <div v-if="index < 20"> -->
-              <div class="timeline-item" data-text="FATHER OF THE TURKS">
-                <div class="timeline_content">
-                    <v-img cover class="timeline_img" width="100%" height="80%" :src="item.src"></v-img>
-                    <h2 class="timeline_content-title">{{ $t(item.title) }}</h2>
-                    <p class="timeline_content-desc">{{ $t(item.content) }} </p>
-                </div>
+        <!-- <p>{{index}}</p> -->
+          <div class="timeline-item" data-text="FATHER OF THE TURKS">
+              <div class="timeline_content">
+                  <v-img cover class="timeline_img" :width="imgs.width" :height="imgs.height" :src="items[item.id-1].src"></v-img>
+                  <h2 class="timeline_content-title">{{ $t(items[item.id-1].title) }}</h2>
+                  <p class="timeline_content-desc">{{ $t(items[item.id-1].content) }} </p>
+         
               </div>
+            </div>
+            <div class="timeline-item" data-text="FATHER OF THE TURKS">
+              <div class="timeline_content">
+                  <v-img cover class="timeline_img" :width="imgs.width" :height="imgs.height" :src="items[item.id].src"></v-img>
+                  <h2 clsass="timeline_content-title">{{ $t(items[item.id].title) }}</h2>
+                  <p class="timeline_content-desc">{{ $t(items[item.id].content) }} </p>
+              </div>
+            </div>
 
-              <!-- <div class="timeline-item" data-text="FATHER OF THE TURKS">
+
+
+              
+            <!-- <div>{{ items.title }}</div> -->
+            <!-- <div class="timeline-item" data-text="FATHER OF THE TURKS">
                 <div class="timeline_content">
-                    <v-img cover class="timeline_img" width="100%" height="80%" :src="item.src"></v-img>
-                    <h2 class="timeline_content-title">{{ $t(item.title) }}</h2>
-                    <p class="timeline_content-desc">{{ $t(item.content) }} </p>
+                    <v-img cover class="timeline_img" :src="item.src"></v-img>
+                    <h2 class="timeline_content-title">{{ $t(items[2*i].title) }}</h2>
+                    <p class="timeline_content-desc">{{ $t(items[2*i].content) }} </p>
                 </div>
-              </div> -->
-
-             
-            <!-- </div> -->
-
+            </div> -->
+      
         </div>
     </div>
   
 </template>
 
-<script>
+<script lang="ts">
 export default {
-    props: ["items"],
+    props: ["items" , "imgs"],
     data() {
         return {};
     },
-
-    methods: {
-        onScroll(e) {
-            var bk = document.getElementById("background");
+    mounted(){
+      console.log(this.items)
     },
-
-}
-
-
+    computed: {
+      filteredEvents() {
+        let t = this.items.filter(x => {
+          console.log(x);
+          return x.id % 2 != 0
+        });
+        console.log(t)
+        return t;
+      }
+    }
 }
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One');
+/* @import url('https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One'); */
 .timeline {
 	 display: flex;
 	 margin: 0 auto;
 	 flex-wrap: wrap;
 	 flex-direction: column;
-	 max-width: 80vw;
+	 max-width: 70vw;
 	 position: relative;
-     background: rgba(142, 138, 138, 0.8);
+     /* background: rgba(142, 138, 138, 0.8); */
 }
   
 .timeline_content{
-    width: 80%;
-    height: 100%;
+    width: 60%;
+    /* height: 100%; */
 }
 
 .timeline_content-title {
   font-weight: normal;
-  font-size: 66px;
+  font-size: 60px;
   margin: -10px 0 0 0;
   transition: 0.4s;
   /* padding: 0 10px; */
@@ -90,6 +102,7 @@ export default {
   font-family: Cardo;
   font-weight: normal;
   line-height: 25px;
+  width: 100%;
 }
 .timeline:before {
   position: absolute;
@@ -106,13 +119,13 @@ export default {
   }
 }
 .timeline-item {
-  background: rgba(204, 193, 230, 0.8);
+  /* background: rgba(204, 193, 230, 0.8); */
   padding: 40px 0;
   /* filter: blur(2px);  */
   /* transition: 0.5s; */
   box-sizing: border-box;
   /* width: calc(30% - 40px); */
-  width: 20%;
+  width: 30%;
   display: flex;
   position: relative;
   transform: translateY(-80px);
@@ -178,9 +191,8 @@ export default {
   }
 } */
 .timeline_img {
-    background-color: aquamarine;
-  
-  /* box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4); */
+    /* background-color: aquamarine; */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
 }
 .timeline-container {
   width: 100%;
